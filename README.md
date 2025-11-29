@@ -54,3 +54,9 @@ By following this user manual, readers shall be able to run the application on b
     
 
 Instructions:
+
+The Environment Setup and Visual Studio Code Connection grants access to the backend database files as well as the frontend web app page files
+
+To run the application, access the web URI click into the link: http://35.212.180.159/
+
+
