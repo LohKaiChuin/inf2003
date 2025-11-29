@@ -1,0 +1,313 @@
+/**
+ * POI Recommendations Page - Specific Styles
+ * Custom styles for the POI page only
+ */
+
+/* POI Card Styles */
+.poi-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid var(--border-light);
+    height: 100%;
+}
+
+.poi-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.poi-card .card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.poi-card .card-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* Custom Leaflet Marker Styles */
+.custom-marker {
+    background: transparent;
+    border: none;
+}
+
+.custom-marker div {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.custom-marker:hover div {
+    transform: scale(1.2);
+}
+
+/* POI Filter Controls */
+.form-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.form-select,
+.form-control {
+    font-size: 14px;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    padding: 8px 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-select:focus,
+.form-control:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+    outline: none;
+}
+
+.form-select:hover,
+.form-control:hover {
+    border-color: #9ca3af;
+}
+
+/* View Toggle Buttons */
+.btn-group .btn {
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.btn-group .btn svg {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.btn-group .btn.active {
+    background-color: var(--primary-blue);
+    color: white;
+    border-color: var(--primary-blue);
+}
+
+.btn-outline-primary {
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.btn-outline-primary:hover:not(.active) {
+    background-color: rgba(26, 115, 232, 0.1);
+    color: var(--primary-blue);
+}
+
+/* POI List View */
+.list-group-item {
+    border: 1px solid var(--border-light);
+    transition: background-color 0.2s, border-left 0.2s;
+}
+
+.list-group-item:hover {
+    background-color: #f3f4f6;
+    border-left: 4px solid var(--primary-blue);
+}
+
+.list-group-item h6 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+/* Alert Styles */
+.alert {
+    border-radius: 8px;
+    border: 1px solid transparent;
+}
+
+.alert-warning {
+    background-color: #fef3c7;
+    border-color: #fde68a;
+    color: #92400e;
+}
+
+.alert-heading {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.alert hr {
+    border-color: #fbbf24;
+    opacity: 0.3;
+}
+
+/* Rating Badge */
+.badge.bg-warning {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 8px;
+}
+
+/* Map Container Specific */
+#poi-map {
+    border: 1px solid var(--border-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Leaflet Popup Customization */
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.leaflet-popup-content {
+    margin: 12px 16px;
+}
+
+/* Category Chart Bars */
+.category-bar-container {
+    margin-bottom: 16px;
+}
+
+.category-bar-bg {
+    background-color: #e5e7eb;
+    height: 24px;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.category-bar-fill {
+    background: linear-gradient(90deg, var(--primary-blue), #60a5fa);
+    height: 100%;
+    transition: width 0.5s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+}
+
+.category-bar-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.category-bar-label .name {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.category-bar-label .count {
+    color: var(--text-secondary);
+}
+
+/* Top Rated Table Enhancements */
+#top-rated-body td {
+    font-size: 14px;
+}
+
+#top-rated-body td:first-child {
+    width: 60px;
+}
+
+#top-rated-body .badge {
+    font-size: 13px;
+    padding: 6px 10px;
+}
+
+/* Empty State Styling */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.empty-state svg {
+    color: #9ca3af;
+    margin-bottom: 16px;
+}
+
+.empty-state h5 {
+    color: #6b7280;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+/* Loading State */
+.loading-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.spinner-border-sm {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Responsive Adjustments for POI Page */
+@media (max-width: 768px) {
+    .poi-card .card-title {
+        font-size: 14px;
+    }
+
+    .poi-card .card-text {
+        font-size: 13px;
+    }
+
+    #poi-map {
+        height: 400px !important;
+    }
+
+    .btn-group .btn {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+
+    .list-group-item h6 {
+        font-size: 14px;
+    }
+
+    .form-label {
+        font-size: 13px;
+    }
+}
+
+/* Animations for POI Cards */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.poi-card {
+    animation: slideInUp 0.3s ease-out;
+}
+
+/* Stagger animation for multiple cards */
+.poi-card:nth-child(1) { animation-delay: 0.05s; }
+.poi-card:nth-child(2) { animation-delay: 0.1s; }
+.poi-card:nth-child(3) { animation-delay: 0.15s; }
+.poi-card:nth-child(4) { animation-delay: 0.2s; }
+.poi-card:nth-child(5) { animation-delay: 0.25s; }
+.poi-card:nth-child(6) { animation-delay: 0.3s; }
+
+/* Category Color Coding */
+.category-food { color: #ea4335; }
+.category-shopping { color: #fbbc04; }
+.category-entertainment { color: #9c27b0; }
+.category-education { color: #1a73e8; }
+.category-healthcare { color: #34a853; }
+.category-parks { color: #0f9d58; }
+.category-cultural { color: #ff6d00; }
+.category-services { color: #5f6368; }
