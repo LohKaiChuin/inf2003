@@ -6,7 +6,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['role'])) {
     if ($_SESSION['role'] === 'admin') {
         header('Location: admin-dashboard.php');
     } else {
-        header('Location: user-dashboard.php');
+        header('Location: predictive.php');
     }
     exit();
 }
@@ -804,14 +804,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     Your password has been successfully reset. You can now log in with your new password.
                 </div>
 
-                <a href="login.php" style="text-decoration: none;">
+                <a href="index.php" style="text-decoration: none;">
                     <button type="button" class="reset-btn">Go to Login</button>
                 </a>
 
                 <script>
                     // Auto-redirect after 5 seconds
                     setTimeout(function() {
-                        window.location.href = 'login.php';
+                        window.location.href = 'index.php';
                     }, 5000);
                 </script>
             <?php endif; ?>
@@ -819,7 +819,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <?php if ($step !== 'success'): ?>
             <div class="login-link" style="padding: 0 35px;">
-                Remember your password? <a href="login.php">Back to Login</a>
+                Remember your password? <a href="index.php">Back to Login</a>
             </div>
         <?php endif; ?>
 
