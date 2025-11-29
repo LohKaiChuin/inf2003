@@ -212,7 +212,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             animation: slideIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             position: relative;
             z-index: 10;
-            margin: auto;
+            margin: 40px auto;
         }
 
         @keyframes slideIn {
@@ -461,6 +461,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .login-link {
             text-align: center;
             margin-top: 18px;
+            margin-bottom: 10px;
             font-size: 13px;
             color: #64748b;
             font-weight: 500;
