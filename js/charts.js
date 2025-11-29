@@ -15,19 +15,28 @@ const Charts = {
     monthNames: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
 
     /**
-     * Initialize ridership trends chart with year selector
+     * Initialize ridership trends chart with year and mode selectors
      */
     async initRidershipTrends() {
         try {
-            const data = await API.getRidershipTrends();
+            // Get all data initially to populate selectors
+            const allData = await API.getRidershipTrends();
 
-            if (!data || data.length === 0) {
+            if (!allData || allData.length === 0) {
                 displayError('ridership-chart', 'No ridership data available');
                 return;
             }
 
-            // Get unique years
-            const years = [...new Set(data.map(d => d.year))].sort();
+            // Get unique years and modes
+            const years = [...new Set(allData.map(d => d.year))].sort();
+            const modes = [...new Set(allData.map(d => d.label))].sort();
+
+            // Populate mode selector
+            const modeSelector = document.getElementById('mode-selector');
+            modeSelector.innerHTML = '<option value="all">All Modes</option>' +
+                modes.map(mode =>
+                    `<option value="${mode}">${mode}</option>`
+                ).join('');
 
             // Populate year selector
             const yearSelector = document.getElementById('year-selector');
@@ -35,18 +44,27 @@ const Charts = {
                 `<option value="${year}">${year}</option>`
             ).join('');
 
-            // Set default to latest year
+            // Set defaults
+            modeSelector.value = 'all';
             yearSelector.value = years[years.length - 1];
 
             // Create legend
             this.createRidershipLegend();
 
-            // Render chart for selected year
-            const renderChart = () => {
+            // Render chart for selected year and mode
+            const renderChart = async () => {
                 const selectedYear = parseInt(yearSelector.value);
-                this.renderStackedAreaChart(data, selectedYear);
+                const selectedMode = modeSelector.value;
+
+                // Fetch data based on selected mode
+                const data = await API.getRidershipTrends(selectedMode);
+                this.renderStackedAreaChart(data, selectedYear, selectedMode);
+
+                // Update legend visibility based on mode selection
+                this.updateLegendVisibility(selectedMode);
             };
 
+            modeSelector.addEventListener('change', renderChart);
             yearSelector.addEventListener('change', renderChart);
             renderChart();
 
@@ -63,7 +81,7 @@ const Charts = {
         const modes = ['LRT', 'MRT', 'Public Bus'];
 
         legendContainer.innerHTML = modes.map(mode => `
-            <div class="legend-item">
+            <div class="legend-item" data-mode="${mode}">
                 <div class="legend-color" style="background-color: ${this.colors[mode]}"></div>
                 <span>${mode}</span>
             </div>
@@ -71,9 +89,26 @@ const Charts = {
     },
 
     /**
-     * Render stacked area chart
+     * Update legend visibility based on selected mode
      */
-    renderStackedAreaChart(allData, year) {
+    updateLegendVisibility(selectedMode) {
+        const legendContainer = document.getElementById('ridership-legend');
+        const legendItems = legendContainer.querySelectorAll('.legend-item');
+
+        legendItems.forEach(item => {
+            const mode = item.getAttribute('data-mode');
+            if (selectedMode === 'all') {
+                item.style.display = '';
+            } else {
+                item.style.display = (mode === selectedMode) ? '' : 'none';
+            }
+        });
+    },
+
+    /**
+     * Render stacked area chart (or single area chart if one mode selected)
+     */
+    renderStackedAreaChart(allData, year, selectedMode = 'all') {
         const container = document.getElementById('ridership-chart');
         container.innerHTML = '';
 
@@ -84,6 +119,11 @@ const Charts = {
             container.innerHTML = '<div class="loading-spinner">No data for selected year</div>';
             return;
         }
+
+        // Determine which modes to display
+        const availableModes = selectedMode === 'all'
+            ? ['LRT', 'MRT', 'Public Bus']
+            : [selectedMode];
 
         // Group by month
         const monthlyData = {};
@@ -129,7 +169,14 @@ const Charts = {
         }
 
         // Get max value for scale
-        const maxValue = Math.max(...stackedData.map(d => d.Bus_end));
+        let maxValue;
+        if (selectedMode === 'all') {
+            maxValue = Math.max(...stackedData.map(d => d.Bus_end));
+        } else {
+            // For single mode, just get the max value of that mode
+            maxValue = Math.max(...stackedData.map(d => monthlyData[d.month][selectedMode]));
+        }
+
         const yScale = (value) => chartHeight - (value / maxValue * chartHeight);
         const xScale = (month) => ((month - 1) / 11) * chartWidth;
 
@@ -159,21 +206,37 @@ const Charts = {
             g.appendChild(text);
         }
 
-        // Draw stacked areas
-        const modes = [
-            { key: 'LRT', start: 'LRT_start', end: 'LRT_end', color: this.colors.LRT },
-            { key: 'MRT', start: 'MRT_start', end: 'MRT_end', color: this.colors.MRT },
-            { key: 'Bus', start: 'Bus_start', end: 'Bus_end', color: this.colors['Public Bus'] }
-        ];
+        // Draw areas based on selected mode
+        if (selectedMode === 'all') {
+            // Draw stacked areas for all modes
+            const modes = [
+                { key: 'LRT', start: 'LRT_start', end: 'LRT_end', color: this.colors.LRT },
+                { key: 'MRT', start: 'MRT_start', end: 'MRT_end', color: this.colors.MRT },
+                { key: 'Bus', start: 'Bus_start', end: 'Bus_end', color: this.colors['Public Bus'] }
+            ];
 
-        modes.forEach(mode => {
-            const pathData = this.createAreaPath(stackedData, xScale, yScale, mode.start, mode.end, chartHeight);
+            modes.forEach(mode => {
+                const pathData = this.createAreaPath(stackedData, xScale, yScale, mode.start, mode.end, chartHeight);
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                path.setAttribute('class', 'area-path');
+                path.setAttribute('d', pathData);
+                path.setAttribute('fill', mode.color);
+                g.appendChild(path);
+            });
+        } else {
+            // Draw single area for selected mode
+            const singleModeData = stackedData.map(d => ({
+                month: d.month,
+                value: monthlyData[d.month][selectedMode]
+            }));
+
+            const pathData = this.createSingleAreaPath(singleModeData, xScale, yScale, chartHeight);
             const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
             path.setAttribute('class', 'area-path');
             path.setAttribute('d', pathData);
-            path.setAttribute('fill', mode.color);
+            path.setAttribute('fill', this.colors[selectedMode]);
             g.appendChild(path);
-        });
+        }
 
         // X-axis labels
         for (let month = 1; month <= 12; month++) {
@@ -209,6 +272,29 @@ const Charts = {
             const x = xScale(data[i].month);
             const y = yScale(data[i][startKey]);
             path += ` L ${x} ${y}`;
+        }
+
+        path += ' Z';
+        return path;
+    },
+
+    /**
+     * Create SVG path for single mode area chart
+     */
+    createSingleAreaPath(data, xScale, yScale, chartHeight) {
+        let path = `M 0 ${chartHeight}`;
+
+        // Top line
+        data.forEach((d, i) => {
+            const x = xScale(d.month);
+            const y = yScale(d.value);
+            path += ` L ${x} ${y}`;
+        });
+
+        // Bottom line (reversed) - go back along the x-axis at chartHeight
+        for (let i = data.length - 1; i >= 0; i--) {
+            const x = xScale(data[i].month);
+            path += ` L ${x} ${chartHeight}`;
         }
 
         path += ' Z';
@@ -383,9 +469,9 @@ const Charts = {
         const container = document.getElementById('hourly-heatmap-chart');
         container.innerHTML = '';
 
-        const margin = { top: 60, right: 20, bottom: 60, left: 80 };
+        const margin = { top: 70, right: 40, bottom: 80, left: 100 };
         const width = container.offsetWidth;
-        const height = 250;
+        const height = 300;
         const chartWidth = width - margin.left - margin.right;
         const chartHeight = height - margin.top - margin.bottom;
 
@@ -405,15 +491,16 @@ const Charts = {
         const cellWidth = chartWidth / 24;
         const cellHeight = chartHeight / 2;
 
-        // Row labels
+        // Row labels with better styling
         ['Weekday', 'Weekend'].forEach((label, row) => {
             const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttribute('class', 'heatmap-label');
-            text.setAttribute('x', -10);
-            text.setAttribute('y', row * cellHeight + cellHeight / 2 + 5);
+            text.setAttribute('x', -15);
+            text.setAttribute('y', row * cellHeight + cellHeight / 2 + 6);
             text.setAttribute('text-anchor', 'end');
             text.setAttribute('font-weight', '600');
-            text.setAttribute('font-size', '13');
+            text.setAttribute('font-size', '14');
+            text.setAttribute('fill', '#374151');
             text.textContent = label;
             g.appendChild(text);
         });
@@ -425,14 +512,15 @@ const Charts = {
 
         // Draw cells
         data.forEach((d, hour) => {
-            // Hour label at top
-            if (hour % 2 === 0) { // Show every 2 hours to avoid crowding
+            // Hour label at top - show every 2 hours for clarity
+            if (hour % 2 === 0) {
                 const hourText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 hourText.setAttribute('class', 'heatmap-hour-label');
                 hourText.setAttribute('x', hour * cellWidth + cellWidth / 2);
-                hourText.setAttribute('y', -10);
+                hourText.setAttribute('y', -15);
                 hourText.setAttribute('text-anchor', 'middle');
-                hourText.setAttribute('font-size', '11');
+                hourText.setAttribute('font-size', '12');
+                hourText.setAttribute('font-weight', '500');
                 hourText.setAttribute('fill', '#6b7280');
                 hourText.textContent = this.formatHour12(d.hour);
                 g.appendChild(hourText);
@@ -456,16 +544,20 @@ const Charts = {
      * Create horizontal heatmap cell with value inside
      */
     createHorizontalHeatmapCell(parent, value, col, row, cellWidth, cellHeight, minValue, maxValue, tooltip, label, count) {
-        const x = col * cellWidth + 1;
-        const y = row * cellHeight + 1;
+        const x = col * cellWidth + 2;
+        const y = row * cellHeight + 2;
 
         const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
         rect.setAttribute('class', 'heatmap-cell');
         rect.setAttribute('x', x);
         rect.setAttribute('y', y);
-        rect.setAttribute('width', cellWidth - 2);
-        rect.setAttribute('height', cellHeight - 2);
-        rect.setAttribute('rx', 3);
+        rect.setAttribute('width', cellWidth - 4);
+        rect.setAttribute('height', cellHeight - 4);
+        rect.setAttribute('rx', 4);
+        rect.setAttribute('stroke', 'rgba(255, 255, 255, 0.3)');
+        rect.setAttribute('stroke-width', '0.5');
+        rect.style.cursor = 'pointer';
+        rect.style.transition = 'all 0.2s ease';
 
         // Enhanced color scale: green → yellow → orange → red
         const intensity = value > 0 ? (value - minValue) / (maxValue - minValue) : 0;
@@ -485,11 +577,12 @@ const Charts = {
             parent.appendChild(valueText);
         }
 
-        // Tooltip events
+        // Tooltip events with improved hover effect
         rect.addEventListener('mouseenter', (e) => {
             tooltip.innerHTML = `<strong>${label}</strong><br>Boardings: ${count.toLocaleString()}`;
             tooltip.classList.add('show');
-            rect.style.opacity = '0.8';
+            rect.style.filter = 'brightness(1.1)';
+            rect.style.transform = 'scale(1.05)';
         });
 
         rect.addEventListener('mousemove', (e) => {
@@ -499,7 +592,8 @@ const Charts = {
 
         rect.addEventListener('mouseleave', () => {
             tooltip.classList.remove('show');
-            rect.style.opacity = '1';
+            rect.style.filter = 'none';
+            rect.style.transform = 'scale(1)';
         });
 
         parent.appendChild(rect);
@@ -522,11 +616,11 @@ const Charts = {
     },
 
     /**
-     * Add color scale legend
+     * Add color scale legend with improved styling
      */
     addHeatmapLegend(parent, width, y, minValue, maxValue) {
-        const legendWidth = 300;
-        const legendHeight = 20;
+        const legendWidth = 350;
+        const legendHeight = 24;
         const legendX = (width - legendWidth) / 2;
 
         // Draw gradient rectangle
@@ -554,31 +648,36 @@ const Charts = {
         defs.appendChild(gradient);
         parent.appendChild(defs);
 
-        const legendRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-        legendRect.setAttribute('x', legendX);
-        legendRect.setAttribute('y', y);
-        legendRect.setAttribute('width', legendWidth);
-        legendRect.setAttribute('height', legendHeight);
-        legendRect.setAttribute('fill', 'url(#heatmap-gradient)');
-        legendRect.setAttribute('rx', 3);
-        parent.appendChild(legendRect);
+        // Add subtle border around legend
+        const legendBorder = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        legendBorder.setAttribute('x', legendX);
+        legendBorder.setAttribute('y', y);
+        legendBorder.setAttribute('width', legendWidth);
+        legendBorder.setAttribute('height', legendHeight);
+        legendBorder.setAttribute('fill', 'url(#heatmap-gradient)');
+        legendBorder.setAttribute('stroke', '#d1d5db');
+        legendBorder.setAttribute('stroke-width', '1');
+        legendBorder.setAttribute('rx', 4);
+        parent.appendChild(legendBorder);
 
-        // "Low" label
+        // "Low" label with better styling
         const lowText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        lowText.setAttribute('x', legendX - 5);
-        lowText.setAttribute('y', y + legendHeight / 2 + 4);
+        lowText.setAttribute('x', legendX - 8);
+        lowText.setAttribute('y', y + legendHeight / 2 + 5);
         lowText.setAttribute('text-anchor', 'end');
-        lowText.setAttribute('font-size', '11');
+        lowText.setAttribute('font-size', '12');
+        lowText.setAttribute('font-weight', '500');
         lowText.setAttribute('fill', '#6b7280');
         lowText.textContent = 'Low';
         parent.appendChild(lowText);
 
-        // "High" label
+        // "High" label with better styling
         const highText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        highText.setAttribute('x', legendX + legendWidth + 5);
-        highText.setAttribute('y', y + legendHeight / 2 + 4);
+        highText.setAttribute('x', legendX + legendWidth + 8);
+        highText.setAttribute('y', y + legendHeight / 2 + 5);
         highText.setAttribute('text-anchor', 'start');
-        highText.setAttribute('font-size', '11');
+        highText.setAttribute('font-size', '12');
+        highText.setAttribute('font-weight', '500');
         highText.setAttribute('fill', '#6b7280');
         highText.textContent = 'High';
         parent.appendChild(highText);
