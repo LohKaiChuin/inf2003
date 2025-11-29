@@ -1,25 +1,12 @@
-<?php
-session_start();
-
-// Check if user is logged in and is an admin
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header('Location: login.php');
-    exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include "inc/head.inc.php"; ?>
 <body>
     <header class="dashboard-header">
         <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <div>
-                    <h1 class="dashboard-title">YourTrip Analytics Admin Dashboard</h1>
-                    <p class="dashboard-subtitle">Singapore Transport Data</p>
-                </div>
+            <h1 class="dashboard-title">YourTrip Analytics Admin Dashboard</h1>
+            <p class="dashboard-subtitle">Singapore Transport Data</p>
             <?php include "inc/navbar.inc.php"; ?>
-            </div>
         </div>
     </header>
     <!-- Main Content -->
@@ -293,7 +280,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
     <script src="js/metrics.js"></script>
     <script src="js/charts.js"></script>
     <script src="js/map.js"></script>
-    <script src="js/intermodal.js"></script>
+    <script src="js/intermodal.js"></script>    
     <script src="js/main.js"></script>
 </body>
 </html>
