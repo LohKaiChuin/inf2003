@@ -44,15 +44,19 @@ function populateFilters(data) {
     const routeSelector = document.getElementById('route-selector');
     const uniqueRoutes = [...new Set(data.map(item => item.route_id))].sort();
 
-    routeSelector.innerHTML = uniqueRoutes.map(route => `<option value="${route}">${route}</option>`).join('');
-
-    // Set default date if needed
     const datePicker = document.getElementById('date-picker');
-    if (!datePicker.value) {
-        const tomorrow = new Date();
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        datePicker.value = tomorrow.toISOString().split('T')[0];
+    const uniqueDates = [...new Set(data.map(item => item.date))].sort();
+
+    if (uniqueDates.length > 0) {
+        const minDate = uniqueDates[0];
+        const maxDate = uniqueDates[uniqueDates.length - 1];
+        datePicker.min = minDate;
+        datePicker.max = maxDate;
+        // Set default date to the first available date
+        datePicker.value = minDate;
     }
+
+    routeSelector.innerHTML = uniqueRoutes.map(route => `<option value="${route}">${route}</option>`).join('');
 }
 
 /**
@@ -61,16 +65,32 @@ function populateFilters(data) {
 function setupEventListeners() {
     document.getElementById('apply-filters-btn').addEventListener('click', () => {
         const selectedRoute = document.getElementById('route-selector').value;
-        updateDashboard(selectedRoute);
+        const selectedDate = document.getElementById('date-picker').value;
+        updateDashboard(selectedRoute, selectedDate);
     });
 }
 
 /**
  * Updates the chart and table based on the selected route.
  * @param {string} routeId The selected bus route ID.
+ * @param {string} date The selected date (YYYY-MM-DD).
  */
-function updateDashboard(routeId) {
-    const filteredData = allForecastData.filter(item => item.route_id === routeId);
+function updateDashboard(routeId, date) {
+    let filteredData = allForecastData.filter(item => item.route_id === routeId);
+
+    if (date) {
+        filteredData = filteredData.filter(item => item.date === date);
+    }
+
+    if (filteredData.length === 0) {
+        const message = date 
+            ? `No forecast data available for route ${routeId} on ${date}.`
+            : `No forecast data available for route ${routeId}.`;
+        displayError('forecast-chart', message);
+        document.getElementById('forecast-table-body').innerHTML = `<tr><td colspan="4" class="text-center">${message}</td></tr>`;
+        return;
+    }
+
     renderForecastChart(filteredData);
     renderForecastTable(filteredData);
 }
