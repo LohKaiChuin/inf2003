@@ -78,6 +78,27 @@ const API = {
      */
     async getBusiestStops(limit = 10) {
         return await this.fetchData('busiest_stops', { limit });
+    },
+
+    /**
+     * Get all POIs
+     */
+    async getPOIs() {
+        return await this.fetchData('pois');
+    },
+
+    /**
+     * Get POIs by category
+     */
+    async getPOIsByCategory(category) {
+        return await this.fetchData('poi_by_category', { category });
+    },
+
+    /**
+     * Get POI statistics
+     */
+    async getPOIStats() {
+        return await this.fetchData('poi_stats');
     }
 };
 

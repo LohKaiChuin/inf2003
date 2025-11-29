@@ -43,6 +43,19 @@ try {
             echo json_encode(getBusiestStops($pdo, $limit));
             break;
 
+        case 'pois':
+            echo json_encode(getPOIs($pdo));
+            break;
+
+        case 'poi_by_category':
+            $category = $_GET['category'] ?? '';
+            echo json_encode(getPOIsByCategory($pdo, $category));
+            break;
+
+        case 'poi_stats':
+            echo json_encode(getPOIStats($pdo));
+            break;
+
         default:
             http_response_code(400);
             echo json_encode(['error' => 'Invalid action parameter']);
@@ -315,5 +328,165 @@ function getBusiestStops($pdo, $limit = 10) {
     }
 
     return $data;
+}
+
+/**
+ * Get all POIs with transport hub information
+ */
+function getPOIs($pdo) {
+    // Query assumes POI table structure similar to:
+    // POI(poi_id, name, category, rating, latitude, longitude, description, location)
+    // And a relationship to nearest transport hub (bus stop or MRT station)
+
+    try {
+        $stmt = $pdo->query("
+            SELECT
+                p.poi_id as id,
+                p.name,
+                p.category,
+                p.rating,
+                p.latitude,
+                p.longitude,
+                p.description,
+                p.location,
+                p.distance_to_hub,
+                p.nearest_hub_id,
+                COALESCE(bs.LOC_DESC, ms.stop_name) as nearest_hub
+            FROM POI p
+            LEFT JOIN BusStops bs ON p.nearest_hub_id = bs.BUS_STOP
+            LEFT JOIN MRTStations ms ON p.nearest_hub_id = ms.stop_id
+            ORDER BY p.rating DESC, p.name ASC
+        ");
+
+        $data = [];
+        while ($row = $stmt->fetch()) {
+            $data[] = [
+                'id' => (int)$row['id'],
+                'name' => $row['name'],
+                'category' => $row['category'],
+                'rating' => $row['rating'] ? (float)$row['rating'] : null,
+                'latitude' => $row['latitude'] ? (float)$row['latitude'] : null,
+                'longitude' => $row['longitude'] ? (float)$row['longitude'] : null,
+                'description' => $row['description'],
+                'location' => $row['location'],
+                'distance_to_hub' => $row['distance_to_hub'] ? (int)$row['distance_to_hub'] : null,
+                'nearest_hub' => $row['nearest_hub']
+            ];
+        }
+
+        return $data;
+
+    } catch (PDOException $e) {
+        // Return empty array if table doesn't exist yet
+        error_log("POI query error: " . $e->getMessage());
+        return [];
+    }
+}
+
+/**
+ * Get POIs filtered by category
+ */
+function getPOIsByCategory($pdo, $category) {
+    if (empty($category)) {
+        return getPOIs($pdo);
+    }
+
+    try {
+        $stmt = $pdo->prepare("
+            SELECT
+                p.poi_id as id,
+                p.name,
+                p.category,
+                p.rating,
+                p.latitude,
+                p.longitude,
+                p.description,
+                p.location,
+                p.distance_to_hub,
+                p.nearest_hub_id,
+                COALESCE(bs.LOC_DESC, ms.stop_name) as nearest_hub
+            FROM POI p
+            LEFT JOIN BusStops bs ON p.nearest_hub_id = bs.BUS_STOP
+            LEFT JOIN MRTStations ms ON p.nearest_hub_id = ms.stop_id
+            WHERE p.category = ?
+            ORDER BY p.rating DESC, p.name ASC
+        ");
+
+        $stmt->execute([$category]);
+
+        $data = [];
+        while ($row = $stmt->fetch()) {
+            $data[] = [
+                'id' => (int)$row['id'],
+                'name' => $row['name'],
+                'category' => $row['category'],
+                'rating' => $row['rating'] ? (float)$row['rating'] : null,
+                'latitude' => $row['latitude'] ? (float)$row['latitude'] : null,
+                'longitude' => $row['longitude'] ? (float)$row['longitude'] : null,
+                'description' => $row['description'],
+                'location' => $row['location'],
+                'distance_to_hub' => $row['distance_to_hub'] ? (int)$row['distance_to_hub'] : null,
+                'nearest_hub' => $row['nearest_hub']
+            ];
+        }
+
+        return $data;
+
+    } catch (PDOException $e) {
+        error_log("POI by category query error: " . $e->getMessage());
+        return [];
+    }
+}
+
+/**
+ * Get POI statistics
+ */
+function getPOIStats($pdo) {
+    try {
+        $result = [];
+
+        // Total POIs
+        $stmt = $pdo->query("SELECT COUNT(*) as total FROM POI");
+        $total = $stmt->fetch();
+        $result['total_pois'] = (int)$total['total'];
+
+        // Total categories
+        $stmt = $pdo->query("SELECT COUNT(DISTINCT category) as categories FROM POI");
+        $categories = $stmt->fetch();
+        $result['total_categories'] = (int)$categories['categories'];
+
+        // Average rating
+        $stmt = $pdo->query("SELECT AVG(rating) as avg_rating FROM POI WHERE rating IS NOT NULL");
+        $avgRating = $stmt->fetch();
+        $result['avg_rating'] = $avgRating['avg_rating'] ? (float)$avgRating['avg_rating'] : null;
+
+        // Category distribution
+        $stmt = $pdo->query("
+            SELECT category, COUNT(*) as count
+            FROM POI
+            GROUP BY category
+            ORDER BY count DESC
+        ");
+
+        $categoryDist = [];
+        while ($row = $stmt->fetch()) {
+            $categoryDist[] = [
+                'category' => $row['category'],
+                'count' => (int)$row['count']
+            ];
+        }
+        $result['category_distribution'] = $categoryDist;
+
+        return $result;
+
+    } catch (PDOException $e) {
+        error_log("POI stats query error: " . $e->getMessage());
+        return [
+            'total_pois' => 0,
+            'total_categories' => 0,
+            'avg_rating' => null,
+            'category_distribution' => []
+        ];
+    }
 }
 ?>
