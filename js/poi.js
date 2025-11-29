@@ -7,6 +7,8 @@
 let allPOIs = [];
 let filteredPOIs = [];
 let poiMap = null;
+let currentPage = 1;
+const itemsPerPage = 9; // Show 9 POIs per page
 let markersLayer = null;
 
 /**
@@ -204,6 +206,9 @@ function initFilters() {
  * Apply all filters to POI list
  */
 function applyFilters() {
+    // Reset to the first page whenever filters change
+    currentPage = 1;
+
     const category = document.getElementById('category-filter').value;
     const maxDistance = document.getElementById('distance-filter').value;
     const searchTerm = document.getElementById('search-input').value.toLowerCase();
@@ -234,6 +239,16 @@ function applyFilters() {
  */
 function renderPOIList() {
     const container = document.getElementById('poi-results');
+    const paginationContainer = document.getElementById('poi-pagination');
+
+    // Clear previous content
+    container.innerHTML = '';
+    paginationContainer.innerHTML = '';
+
+    // Calculate which POIs to display for the current page
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const poisForPage = filteredPOIs.slice(startIndex, endIndex);
 
     if (filteredPOIs.length === 0) {
         container.innerHTML = `
@@ -251,16 +266,19 @@ function renderPOIList() {
     const viewMode = document.getElementById('view-grid').classList.contains('active') ? 'grid' : 'list';
 
     if (viewMode === 'grid') {
-        container.innerHTML = filteredPOIs.map(poi => createPOICard(poi)).join('');
+        container.innerHTML = poisForPage.map(poi => createPOICard(poi)).join('');
     } else {
         container.innerHTML = `
             <div class="col-12">
                 <div class="list-group">
-                    ${filteredPOIs.map(poi => createPOIListItem(poi)).join('')}
+                    ${poisForPage.map(poi => createPOIListItem(poi)).join('')}
                 </div>
             </div>
         `;
     }
+
+    // Render pagination controls
+    renderPagination();
 }
 
 /**
@@ -314,6 +332,67 @@ function createPOIListItem(poi) {
         </div>
     `;
 }
+
+/**
+ * Render pagination controls
+ */
+function renderPagination() {
+    const paginationContainer = document.getElementById('poi-pagination');
+    const totalPages = Math.ceil(filteredPOIs.length / itemsPerPage);
+
+    if (totalPages <= 1) {
+        paginationContainer.innerHTML = '';
+        return;
+    }
+
+    let paginationHTML = '<ul class="pagination">';
+
+    // Previous button
+    paginationHTML += `
+        <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+            <a class="page-link" href="#" data-page="${currentPage - 1}">Previous</a>
+        </li>
+    `;
+
+    // Page numbers
+    for (let i = 1; i <= totalPages; i++) {
+        paginationHTML += `
+            <li class="page-item ${currentPage === i ? 'active' : ''}">
+                <a class="page-link" href="#" data-page="${i}">${i}</a>
+            </li>
+        `;
+    }
+
+    // Next button
+    paginationHTML += `
+        <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+            <a class="page-link" href="#" data-page="${currentPage + 1}">Next</a>
+        </li>
+    `;
+
+    paginationHTML += '</ul>';
+    paginationContainer.innerHTML = paginationHTML;
+
+    // Add event listeners to pagination links
+    paginationContainer.querySelectorAll('.page-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const page = parseInt(e.target.dataset.page);
+
+            if (page && page !== currentPage) {
+                // Check for valid page range
+                if (page > 0 && page <= totalPages) {
+                    currentPage = page;
+                    renderPOIList();
+
+                    // Scroll to the top of the results list
+                    document.getElementById('poi-list').scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+}
+
 
 /**
  * Set view mode (grid or list)

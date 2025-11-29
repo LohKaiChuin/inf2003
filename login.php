@@ -22,12 +22,7 @@ if (isset($_SESSION['registration_success']) && $_SESSION['registration_success'
     unset($_SESSION['registered_username']);
 }
 
-// Database connection
-$db_host = '127.0.0.1';
-$db_port = 3306;
-$db_user = 'inf2003-sqldev';
-$db_pass = 'Inf2003#DevSecure!2025';
-$db_name = 'yourtrip_db';
+require_once 'config.php';
 
 // Handle login POST request
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -40,12 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
         // Create database connection
-        $conn = new mysqli($db_host, $db_user, $db_pass, $db_name, $db_port);
-
-        // Check connection
-        if ($conn->connect_error) {
-            throw new Exception("Connection failed: " . $conn->connect_error);
-        }
+        $pdo = getDBConnection();
+        $conn = $pdo; // for compatibility with existing code if needed, but better to switch to PDO methods
 
         // Prepare statement to prevent SQL injection
         // Assuming you have a 'users' table with columns: id, username, email, password, role
@@ -70,7 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         $stmt->close();
-        $conn->close();
 
     } catch (Exception $e) {
         error_log("Database error: " . $e->getMessage());

@@ -52,16 +52,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if ($result->num_rows === 1) {
                     $user = $result->fetch_assoc();
 
-                    // Generate a simple 6-digit verification code
-                    $resetCode = sprintf("%06d", mt_rand(1, 999999));
+                    // Generate a secure random token for the user to see (and would be emailed)
+                    $resetCode = sprintf("%06d", mt_rand(1, 999999)); // The code sent to the user
+                    // Generate a secure token to store in the database/session to prevent timing attacks
+                    $token = bin2hex(random_bytes(32));
+                    $token_hash = hash('sha256', $token);
+
                     $resetExpiry = date('Y-m-d H:i:s', strtotime('+15 minutes'));
 
                     // Store reset code in session (in production, you'd send this via email)
                     $_SESSION['reset_email'] = $email;
-                    $_SESSION['reset_code'] = $resetCode;
+                    $_SESSION['reset_code_hash'] = hash('sha256', $resetCode); // Store hash of the code
                     $_SESSION['reset_expiry'] = $resetExpiry;
                     $_SESSION['reset_user_id'] = $user['id'];
-
+ 
                     $step = 'verify';
                     $success = "A verification code has been generated. (In production, this would be sent to your email)";
 
@@ -151,7 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } elseif (strtotime($_SESSION['reset_expiry']) < time()) {
             $error = 'Verification code has expired. Please request a new one.';
             $step = 'verify';
-        } elseif ($code !== $_SESSION['reset_code']) {
+        } elseif (!isset($_SESSION['reset_code_hash']) || !hash_equals($_SESSION['reset_code_hash'], hash('sha256', $code))) {
             $error = 'Invalid verification code';
             $step = 'verify';
         } else {

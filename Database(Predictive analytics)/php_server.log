@@ -1,0 +1,1627 @@
+[Sat Nov 29 16:56:47 2025] PHP 8.4.5 Development Server (http://localhost:8000) started
+[Sat Nov 29 16:56:55 2025] [::1]:54086 Accepted
+[Sat Nov 29 16:56:55 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 16:56:55 2025] [::1]:54086 [500]: GET /Analytics_api.php?action=health
+[Sat Nov 29 16:56:55 2025] [::1]:54086 Closing
+[Sat Nov 29 16:59:24 2025] [::1]:54222 Accepted
+[Sat Nov 29 16:59:24 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 16:59:24 2025] [::1]:54222 [500]: GET /Analytics_api.php?action=health
+[Sat Nov 29 16:59:24 2025] [::1]:54222 Closing
+[Sat Nov 29 16:59:25 2025] [::1]:54226 Accepted
+[Sat Nov 29 16:59:25 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 16:59:25 2025] [::1]:54226 [500]: GET /Analytics_api.php?action=health
+[Sat Nov 29 16:59:25 2025] [::1]:54226 Closing
+[Sat Nov 29 16:59:26 2025] [::1]:54230 Accepted
+[Sat Nov 29 16:59:26 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 16:59:26 2025] [::1]:54230 [500]: GET /Analytics_api.php?action=health
+[Sat Nov 29 16:59:26 2025] [::1]:54230 Closing
+[Sat Nov 29 17:05:19 2025] [::1]:54584 Accepted
+[Sat Nov 29 17:05:19 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:05:20 2025] [::1]:54584 [200]: GET /Analytics_api.php?action=health
+[Sat Nov 29 17:05:20 2025] [::1]:54584 Closing
+[Sat Nov 29 17:05:20 2025] [::1]:54588 Accepted
+[Sat Nov 29 17:05:20 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:05:21 2025] [::1]:54588 [200]: GET /Analytics_api.php?action=data_date_range
+[Sat Nov 29 17:05:21 2025] [::1]:54588 Closing
+[Sat Nov 29 17:05:21 2025] [::1]:54592 Accepted
+[Sat Nov 29 17:05:21 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:05:23 2025] [::1]:54592 [200]: GET /Analytics_api.php?action=routes
+[Sat Nov 29 17:05:23 2025] [::1]:54592 Closing
+[Sat Nov 29 17:05:23 2025] [::1]:54596 Accepted
+[Sat Nov 29 17:05:23 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:05:24 2025] [::1]:54596 [200]: GET /Analytics_api.php?action=available_months
+[Sat Nov 29 17:05:24 2025] [::1]:54596 Closing
+[Sat Nov 29 17:05:24 2025] [::1]:54600 Accepted
+[Sat Nov 29 17:05:24 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:05:25 2025] [::1]:54600 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1&month=202109
+[Sat Nov 29 17:05:25 2025] [::1]:54600 Closing
+[Sat Nov 29 17:05:28 2025] [::1]:54604 Accepted
+[Sat Nov 29 17:05:28 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:05:30 2025] [::1]:54604 [200]: GET /Analytics_api.php?action=get_predictions&limit=20&route_id=118&start_date=2025-11-29T16%3A05%3A28.867073
+[Sat Nov 29 17:05:30 2025] [::1]:54604 Closing
+[Sat Nov 29 17:08:09 2025] [::1]:54714 Accepted
+[Sat Nov 29 17:08:09 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:08:10 2025] [::1]:54714 [200]: GET /Analytics_api.php?action=health
+[Sat Nov 29 17:08:10 2025] [::1]:54714 Closing
+[Sat Nov 29 17:08:10 2025] [::1]:54718 Accepted
+[Sat Nov 29 17:08:10 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:08:11 2025] [::1]:54718 [200]: GET /Analytics_api.php?action=data_date_range
+[Sat Nov 29 17:08:11 2025] [::1]:54718 Closing
+[Sat Nov 29 17:08:11 2025] [::1]:54726 Accepted
+[Sat Nov 29 17:08:11 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:08:12 2025] [::1]:54726 [200]: GET /Analytics_api.php?action=routes
+[Sat Nov 29 17:08:12 2025] [::1]:54726 Closing
+[Sat Nov 29 17:08:12 2025] [::1]:54732 Accepted
+[Sat Nov 29 17:08:12 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:08:14 2025] [::1]:54732 [200]: GET /Analytics_api.php?action=available_months
+[Sat Nov 29 17:08:14 2025] [::1]:54732 Closing
+[Sat Nov 29 17:08:14 2025] [::1]:54738 Accepted
+[Sat Nov 29 17:08:14 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:08:15 2025] [::1]:54738 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1&month=202109
+[Sat Nov 29 17:08:15 2025] [::1]:54738 Closing
+[Sat Nov 29 17:08:16 2025] [::1]:54746 Accepted
+[Sat Nov 29 17:08:16 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:08:17 2025] [::1]:54746 [200]: GET /Analytics_api.php?action=get_predictions&limit=20&route_id=118&start_date=2025-11-29T16%3A08%3A16.156943
+[Sat Nov 29 17:08:17 2025] [::1]:54746 Closing
+[Sat Nov 29 17:08:45 2025] [::1]:54816 Accepted
+[Sat Nov 29 17:08:45 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:08:47 2025] [::1]:54816 [200]: GET /Analytics_api.php?action=available_months
+[Sat Nov 29 17:08:47 2025] [::1]:54816 Closing
+[Sat Nov 29 17:08:47 2025] [::1]:54822 Accepted
+[Sat Nov 29 17:08:47 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:08:48 2025] [::1]:54822 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1&month=202107
+[Sat Nov 29 17:08:48 2025] [::1]:54822 Closing
+[Sat Nov 29 17:08:48 2025] [::1]:54830 Accepted
+[Sat Nov 29 17:08:48 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:08:50 2025] [::1]:54830 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1&month=202107
+[Sat Nov 29 17:08:50 2025] [::1]:54830 Closing
+[Sat Nov 29 17:08:50 2025] [::1]:54837 Accepted
+[Sat Nov 29 17:08:50 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:08:51 2025] [::1]:54837 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100A&direction=1&month=202107
+[Sat Nov 29 17:08:51 2025] [::1]:54837 Closing
+[Sat Nov 29 17:08:51 2025] [::1]:54843 Accepted
+[Sat Nov 29 17:08:51 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:08:52 2025] [::1]:54843 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=101&direction=1&month=202107
+[Sat Nov 29 17:08:52 2025] [::1]:54843 Closing
+[Sat Nov 29 17:08:52 2025] [::1]:54851 Accepted
+[Sat Nov 29 17:08:52 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:08:54 2025] [::1]:54851 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=102&direction=1&month=202107
+[Sat Nov 29 17:08:54 2025] [::1]:54851 Closing
+[Sat Nov 29 17:08:54 2025] [::1]:54857 Accepted
+[Sat Nov 29 17:08:54 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:08:55 2025] [::1]:54857 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1&month=202107
+[Sat Nov 29 17:08:55 2025] [::1]:54857 Closing
+[Sat Nov 29 17:08:55 2025] [::1]:54864 Accepted
+[Sat Nov 29 17:08:55 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:08:56 2025] [::1]:54864 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105B&direction=1&month=202107
+[Sat Nov 29 17:08:56 2025] [::1]:54864 Closing
+[Sat Nov 29 17:08:56 2025] [::1]:54872 Accepted
+[Sat Nov 29 17:08:56 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:08:57 2025] [::1]:54872 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106&direction=1&month=202107
+[Sat Nov 29 17:08:57 2025] [::1]:54872 Closing
+[Sat Nov 29 17:08:57 2025] [::1]:54878 Accepted
+[Sat Nov 29 17:08:57 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:08:59 2025] [::1]:54878 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106A&direction=1&month=202107
+[Sat Nov 29 17:08:59 2025] [::1]:54878 Closing
+[Sat Nov 29 17:08:59 2025] [::1]:54884 Accepted
+[Sat Nov 29 17:08:59 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:09:00 2025] [::1]:54884 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1&month=202107
+[Sat Nov 29 17:09:00 2025] [::1]:54884 Closing
+[Sat Nov 29 17:13:50 2025] [::1]:55014 Accepted
+[Sat Nov 29 17:13:50 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:13:52 2025] [::1]:55014 [200]: GET /Analytics_api.php?action=available_months
+[Sat Nov 29 17:13:52 2025] [::1]:55014 Closing
+[Sat Nov 29 17:13:52 2025] [::1]:55020 Accepted
+[Sat Nov 29 17:13:52 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:13:53 2025] [::1]:55020 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1&month=202107
+[Sat Nov 29 17:13:53 2025] [::1]:55020 Closing
+[Sat Nov 29 17:13:53 2025] [::1]:55028 Accepted
+[Sat Nov 29 17:13:53 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:13:54 2025] [::1]:55028 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1&month=202107
+[Sat Nov 29 17:13:54 2025] [::1]:55028 Closing
+[Sat Nov 29 17:13:54 2025] [::1]:55035 Accepted
+[Sat Nov 29 17:13:54 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:13:56 2025] [::1]:55035 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100A&direction=1&month=202107
+[Sat Nov 29 17:13:56 2025] [::1]:55035 Closing
+[Sat Nov 29 17:13:56 2025] [::1]:55042 Accepted
+[Sat Nov 29 17:13:56 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:13:57 2025] [::1]:55042 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=101&direction=1&month=202107
+[Sat Nov 29 17:13:57 2025] [::1]:55042 Closing
+[Sat Nov 29 17:13:57 2025] [::1]:55051 Accepted
+[Sat Nov 29 17:13:57 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:13:58 2025] [::1]:55051 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=102&direction=1&month=202107
+[Sat Nov 29 17:13:58 2025] [::1]:55051 Closing
+[Sat Nov 29 17:13:58 2025] [::1]:55057 Accepted
+[Sat Nov 29 17:13:58 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:13:59 2025] [::1]:55057 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1&month=202107
+[Sat Nov 29 17:13:59 2025] [::1]:55057 Closing
+[Sat Nov 29 17:13:59 2025] [::1]:55066 Accepted
+[Sat Nov 29 17:13:59 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:14:01 2025] [::1]:55066 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105B&direction=1&month=202107
+[Sat Nov 29 17:14:01 2025] [::1]:55066 Closing
+[Sat Nov 29 17:14:01 2025] [::1]:55072 Accepted
+[Sat Nov 29 17:14:01 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:14:02 2025] [::1]:55072 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106&direction=1&month=202107
+[Sat Nov 29 17:14:02 2025] [::1]:55072 Closing
+[Sat Nov 29 17:14:02 2025] [::1]:55080 Accepted
+[Sat Nov 29 17:14:02 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:14:03 2025] [::1]:55080 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106A&direction=1&month=202107
+[Sat Nov 29 17:14:03 2025] [::1]:55080 Closing
+[Sat Nov 29 17:14:03 2025] [::1]:55086 Accepted
+[Sat Nov 29 17:14:03 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:14:05 2025] [::1]:55086 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1&month=202107
+[Sat Nov 29 17:14:05 2025] [::1]:55086 Closing
+[Sat Nov 29 17:14:20 2025] [::1]:55141 Accepted
+[Sat Nov 29 17:14:20 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:14:21 2025] [::1]:55141 [200]: GET /Analytics_api.php?action=available_months
+[Sat Nov 29 17:14:21 2025] [::1]:55141 Closing
+[Sat Nov 29 17:14:21 2025] [::1]:55147 Accepted
+[Sat Nov 29 17:14:21 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:14:22 2025] [::1]:55147 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1&month=202107
+[Sat Nov 29 17:14:22 2025] [::1]:55147 Closing
+[Sat Nov 29 17:14:22 2025] [::1]:55155 Accepted
+[Sat Nov 29 17:14:22 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:14:23 2025] [::1]:55155 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1&month=202107
+[Sat Nov 29 17:14:23 2025] [::1]:55155 Closing
+[Sat Nov 29 17:14:23 2025] [::1]:55161 Accepted
+[Sat Nov 29 17:14:23 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:14:25 2025] [::1]:55161 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100A&direction=1&month=202107
+[Sat Nov 29 17:14:25 2025] [::1]:55161 Closing
+[Sat Nov 29 17:14:25 2025] [::1]:55167 Accepted
+[Sat Nov 29 17:14:25 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:14:26 2025] [::1]:55167 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=101&direction=1&month=202107
+[Sat Nov 29 17:14:26 2025] [::1]:55167 Closing
+[Sat Nov 29 17:14:26 2025] [::1]:55173 Accepted
+[Sat Nov 29 17:14:26 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:14:27 2025] [::1]:55173 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=102&direction=1&month=202107
+[Sat Nov 29 17:14:27 2025] [::1]:55173 Closing
+[Sat Nov 29 17:14:27 2025] [::1]:55181 Accepted
+[Sat Nov 29 17:14:27 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:14:29 2025] [::1]:55181 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1&month=202107
+[Sat Nov 29 17:14:29 2025] [::1]:55181 Closing
+[Sat Nov 29 17:14:29 2025] [::1]:55187 Accepted
+[Sat Nov 29 17:14:29 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:14:30 2025] [::1]:55187 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105B&direction=1&month=202107
+[Sat Nov 29 17:14:30 2025] [::1]:55187 Closing
+[Sat Nov 29 17:14:30 2025] [::1]:55193 Accepted
+[Sat Nov 29 17:14:30 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:14:31 2025] [::1]:55193 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106&direction=1&month=202107
+[Sat Nov 29 17:14:31 2025] [::1]:55193 Closing
+[Sat Nov 29 17:14:31 2025] [::1]:55201 Accepted
+[Sat Nov 29 17:14:31 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:14:32 2025] [::1]:55201 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106A&direction=1&month=202107
+[Sat Nov 29 17:14:32 2025] [::1]:55201 Closing
+[Sat Nov 29 17:14:33 2025] [::1]:55207 Accepted
+[Sat Nov 29 17:14:33 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:14:34 2025] [::1]:55207 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1&month=202107
+[Sat Nov 29 17:14:34 2025] [::1]:55207 Closing
+[Sat Nov 29 17:14:58 2025] [::1]:55284 Accepted
+[Sat Nov 29 17:14:58 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:14:59 2025] [::1]:55284 [200]: GET /Analytics_api.php?action=available_months
+[Sat Nov 29 17:14:59 2025] [::1]:55284 Closing
+[Sat Nov 29 17:14:59 2025] [::1]:55290 Accepted
+[Sat Nov 29 17:14:59 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:00 2025] [::1]:55290 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1&month=202107
+[Sat Nov 29 17:15:00 2025] [::1]:55290 Closing
+[Sat Nov 29 17:15:00 2025] [::1]:55298 Accepted
+[Sat Nov 29 17:15:00 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:02 2025] [::1]:55298 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1&month=202107
+[Sat Nov 29 17:15:02 2025] [::1]:55298 Closing
+[Sat Nov 29 17:15:02 2025] [::1]:55304 Accepted
+[Sat Nov 29 17:15:02 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:03 2025] [::1]:55304 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100A&direction=1&month=202107
+[Sat Nov 29 17:15:03 2025] [::1]:55304 Closing
+[Sat Nov 29 17:15:03 2025] [::1]:55310 Accepted
+[Sat Nov 29 17:15:03 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:04 2025] [::1]:55310 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=101&direction=1&month=202107
+[Sat Nov 29 17:15:04 2025] [::1]:55310 Closing
+[Sat Nov 29 17:15:04 2025] [::1]:55318 Accepted
+[Sat Nov 29 17:15:04 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:06 2025] [::1]:55318 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=102&direction=1&month=202107
+[Sat Nov 29 17:15:06 2025] [::1]:55318 Closing
+[Sat Nov 29 17:15:06 2025] [::1]:55324 Accepted
+[Sat Nov 29 17:15:06 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:07 2025] [::1]:55324 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1&month=202107
+[Sat Nov 29 17:15:07 2025] [::1]:55324 Closing
+[Sat Nov 29 17:15:07 2025] [::1]:55330 Accepted
+[Sat Nov 29 17:15:07 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:08 2025] [::1]:55330 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105B&direction=1&month=202107
+[Sat Nov 29 17:15:08 2025] [::1]:55330 Closing
+[Sat Nov 29 17:15:08 2025] [::1]:55336 Accepted
+[Sat Nov 29 17:15:08 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:09 2025] [::1]:55336 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106&direction=1&month=202107
+[Sat Nov 29 17:15:09 2025] [::1]:55336 Closing
+[Sat Nov 29 17:15:09 2025] [::1]:55344 Accepted
+[Sat Nov 29 17:15:09 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:11 2025] [::1]:55344 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106A&direction=1&month=202107
+[Sat Nov 29 17:15:11 2025] [::1]:55344 Closing
+[Sat Nov 29 17:15:11 2025] [::1]:55350 Accepted
+[Sat Nov 29 17:15:11 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:12 2025] [::1]:55350 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1&month=202107
+[Sat Nov 29 17:15:12 2025] [::1]:55350 Closing
+[Sat Nov 29 17:15:26 2025] [::1]:55403 Accepted
+[Sat Nov 29 17:15:26 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:28 2025] [::1]:55403 [200]: GET /Analytics_api.php?action=available_months
+[Sat Nov 29 17:15:28 2025] [::1]:55403 Closing
+[Sat Nov 29 17:15:28 2025] [::1]:55409 Accepted
+[Sat Nov 29 17:15:28 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:29 2025] [::1]:55409 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1&month=202107
+[Sat Nov 29 17:15:29 2025] [::1]:55409 Closing
+[Sat Nov 29 17:15:29 2025] [::1]:55415 Accepted
+[Sat Nov 29 17:15:29 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:30 2025] [::1]:55415 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1&month=202107
+[Sat Nov 29 17:15:30 2025] [::1]:55415 Closing
+[Sat Nov 29 17:15:30 2025] [::1]:55423 Accepted
+[Sat Nov 29 17:15:30 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:31 2025] [::1]:55423 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100A&direction=1&month=202107
+[Sat Nov 29 17:15:31 2025] [::1]:55423 Closing
+[Sat Nov 29 17:15:31 2025] [::1]:55430 Accepted
+[Sat Nov 29 17:15:31 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:32 2025] [::1]:55430 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=101&direction=1&month=202107
+[Sat Nov 29 17:15:32 2025] [::1]:55430 Closing
+[Sat Nov 29 17:15:32 2025] [::1]:55436 Accepted
+[Sat Nov 29 17:15:32 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:34 2025] [::1]:55436 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=102&direction=1&month=202107
+[Sat Nov 29 17:15:34 2025] [::1]:55436 Closing
+[Sat Nov 29 17:15:34 2025] [::1]:55443 Accepted
+[Sat Nov 29 17:15:34 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:35 2025] [::1]:55443 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1&month=202107
+[Sat Nov 29 17:15:35 2025] [::1]:55443 Closing
+[Sat Nov 29 17:15:35 2025] [::1]:55450 Accepted
+[Sat Nov 29 17:15:35 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:36 2025] [::1]:55450 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105B&direction=1&month=202107
+[Sat Nov 29 17:15:36 2025] [::1]:55450 Closing
+[Sat Nov 29 17:15:36 2025] [::1]:55458 Accepted
+[Sat Nov 29 17:15:36 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:37 2025] [::1]:55458 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106&direction=1&month=202107
+[Sat Nov 29 17:15:37 2025] [::1]:55458 Closing
+[Sat Nov 29 17:15:37 2025] [::1]:55464 Accepted
+[Sat Nov 29 17:15:37 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:39 2025] [::1]:55464 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106A&direction=1&month=202107
+[Sat Nov 29 17:15:39 2025] [::1]:55464 Closing
+[Sat Nov 29 17:15:39 2025] [::1]:55470 Accepted
+[Sat Nov 29 17:15:39 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:40 2025] [::1]:55470 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1&month=202107
+[Sat Nov 29 17:15:40 2025] [::1]:55470 Closing
+[Sat Nov 29 17:15:57 2025] [::1]:55528 Accepted
+[Sat Nov 29 17:15:57 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:15:59 2025] [::1]:55528 [200]: GET /Analytics_api.php?action=available_months
+[Sat Nov 29 17:15:59 2025] [::1]:55528 Closing
+[Sat Nov 29 17:15:59 2025] [::1]:55534 Accepted
+[Sat Nov 29 17:15:59 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:00 2025] [::1]:55534 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1&month=202107
+[Sat Nov 29 17:16:00 2025] [::1]:55534 Closing
+[Sat Nov 29 17:16:00 2025] [::1]:55542 Accepted
+[Sat Nov 29 17:16:00 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:01 2025] [::1]:55542 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1&month=202107
+[Sat Nov 29 17:16:01 2025] [::1]:55542 Closing
+[Sat Nov 29 17:16:01 2025] [::1]:55548 Accepted
+[Sat Nov 29 17:16:01 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:03 2025] [::1]:55548 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100A&direction=1&month=202107
+[Sat Nov 29 17:16:03 2025] [::1]:55548 Closing
+[Sat Nov 29 17:16:03 2025] [::1]:55554 Accepted
+[Sat Nov 29 17:16:03 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:04 2025] [::1]:55554 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=101&direction=1&month=202107
+[Sat Nov 29 17:16:04 2025] [::1]:55554 Closing
+[Sat Nov 29 17:16:04 2025] [::1]:55563 Accepted
+[Sat Nov 29 17:16:04 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:05 2025] [::1]:55563 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=102&direction=1&month=202107
+[Sat Nov 29 17:16:05 2025] [::1]:55563 Closing
+[Sat Nov 29 17:16:05 2025] [::1]:55569 Accepted
+[Sat Nov 29 17:16:05 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:06 2025] [::1]:55569 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1&month=202107
+[Sat Nov 29 17:16:06 2025] [::1]:55569 Closing
+[Sat Nov 29 17:16:07 2025] [::1]:55575 Accepted
+[Sat Nov 29 17:16:07 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:08 2025] [::1]:55575 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105B&direction=1&month=202107
+[Sat Nov 29 17:16:08 2025] [::1]:55575 Closing
+[Sat Nov 29 17:16:08 2025] [::1]:55583 Accepted
+[Sat Nov 29 17:16:08 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:09 2025] [::1]:55583 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106&direction=1&month=202107
+[Sat Nov 29 17:16:09 2025] [::1]:55583 Closing
+[Sat Nov 29 17:16:09 2025] [::1]:55589 Accepted
+[Sat Nov 29 17:16:09 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:11 2025] [::1]:55589 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106A&direction=1&month=202107
+[Sat Nov 29 17:16:11 2025] [::1]:55589 Closing
+[Sat Nov 29 17:16:11 2025] [::1]:55595 Accepted
+[Sat Nov 29 17:16:11 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:12 2025] [::1]:55595 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1&month=202107
+[Sat Nov 29 17:16:12 2025] [::1]:55595 Closing
+[Sat Nov 29 17:16:31 2025] [::1]:55654 Accepted
+[Sat Nov 29 17:16:31 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:33 2025] [::1]:55654 [200]: GET /Analytics_api.php?action=available_months
+[Sat Nov 29 17:16:33 2025] [::1]:55654 Closing
+[Sat Nov 29 17:16:33 2025] [::1]:55660 Accepted
+[Sat Nov 29 17:16:33 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:34 2025] [::1]:55660 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1&month=202107
+[Sat Nov 29 17:16:34 2025] [::1]:55660 Closing
+[Sat Nov 29 17:16:34 2025] [::1]:55668 Accepted
+[Sat Nov 29 17:16:34 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:35 2025] [::1]:55668 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1&month=202107
+[Sat Nov 29 17:16:35 2025] [::1]:55668 Closing
+[Sat Nov 29 17:16:35 2025] [::1]:55674 Accepted
+[Sat Nov 29 17:16:35 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:37 2025] [::1]:55674 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100A&direction=1&month=202107
+[Sat Nov 29 17:16:37 2025] [::1]:55674 Closing
+[Sat Nov 29 17:16:37 2025] [::1]:55680 Accepted
+[Sat Nov 29 17:16:37 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:38 2025] [::1]:55680 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=101&direction=1&month=202107
+[Sat Nov 29 17:16:38 2025] [::1]:55680 Closing
+[Sat Nov 29 17:16:38 2025] [::1]:55688 Accepted
+[Sat Nov 29 17:16:38 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:39 2025] [::1]:55688 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=102&direction=1&month=202107
+[Sat Nov 29 17:16:39 2025] [::1]:55688 Closing
+[Sat Nov 29 17:16:39 2025] [::1]:55694 Accepted
+[Sat Nov 29 17:16:39 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:40 2025] [::1]:55694 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1&month=202107
+[Sat Nov 29 17:16:40 2025] [::1]:55694 Closing
+[Sat Nov 29 17:16:40 2025] [::1]:55700 Accepted
+[Sat Nov 29 17:16:40 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:41 2025] [::1]:55700 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105B&direction=1&month=202107
+[Sat Nov 29 17:16:41 2025] [::1]:55700 Closing
+[Sat Nov 29 17:16:41 2025] [::1]:55706 Accepted
+[Sat Nov 29 17:16:41 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:43 2025] [::1]:55706 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106&direction=1&month=202107
+[Sat Nov 29 17:16:43 2025] [::1]:55706 Closing
+[Sat Nov 29 17:16:43 2025] [::1]:55712 Accepted
+[Sat Nov 29 17:16:43 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:44 2025] [::1]:55712 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106A&direction=1&month=202107
+[Sat Nov 29 17:16:44 2025] [::1]:55712 Closing
+[Sat Nov 29 17:16:44 2025] [::1]:55720 Accepted
+[Sat Nov 29 17:16:44 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:45 2025] [::1]:55720 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1&month=202107
+[Sat Nov 29 17:16:45 2025] [::1]:55720 Closing
+[Sat Nov 29 17:16:45 2025] [::1]:55726 Accepted
+[Sat Nov 29 17:16:45 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:46 2025] [::1]:55726 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1&month=202108
+[Sat Nov 29 17:16:46 2025] [::1]:55726 Closing
+[Sat Nov 29 17:16:46 2025] [::1]:55732 Accepted
+[Sat Nov 29 17:16:46 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:48 2025] [::1]:55732 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1&month=202108
+[Sat Nov 29 17:16:48 2025] [::1]:55732 Closing
+[Sat Nov 29 17:16:48 2025] [::1]:55740 Accepted
+[Sat Nov 29 17:16:48 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:49 2025] [::1]:55740 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100A&direction=1&month=202108
+[Sat Nov 29 17:16:49 2025] [::1]:55740 Closing
+[Sat Nov 29 17:16:49 2025] [::1]:55746 Accepted
+[Sat Nov 29 17:16:49 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:50 2025] [::1]:55746 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=101&direction=1&month=202108
+[Sat Nov 29 17:16:50 2025] [::1]:55746 Closing
+[Sat Nov 29 17:16:50 2025] [::1]:55752 Accepted
+[Sat Nov 29 17:16:50 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:52 2025] [::1]:55752 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=102&direction=1&month=202108
+[Sat Nov 29 17:16:52 2025] [::1]:55752 Closing
+[Sat Nov 29 17:16:52 2025] [::1]:55758 Accepted
+[Sat Nov 29 17:16:52 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:53 2025] [::1]:55758 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1&month=202108
+[Sat Nov 29 17:16:53 2025] [::1]:55758 Closing
+[Sat Nov 29 17:16:53 2025] [::1]:55766 Accepted
+[Sat Nov 29 17:16:53 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:54 2025] [::1]:55766 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105B&direction=1&month=202108
+[Sat Nov 29 17:16:54 2025] [::1]:55766 Closing
+[Sat Nov 29 17:16:54 2025] [::1]:55775 Accepted
+[Sat Nov 29 17:16:54 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:56 2025] [::1]:55775 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106&direction=1&month=202108
+[Sat Nov 29 17:16:56 2025] [::1]:55775 Closing
+[Sat Nov 29 17:16:56 2025] [::1]:55781 Accepted
+[Sat Nov 29 17:16:56 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:57 2025] [::1]:55781 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106A&direction=1&month=202108
+[Sat Nov 29 17:16:57 2025] [::1]:55781 Closing
+[Sat Nov 29 17:16:57 2025] [::1]:55789 Accepted
+[Sat Nov 29 17:16:57 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:58 2025] [::1]:55789 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1&month=202108
+[Sat Nov 29 17:16:58 2025] [::1]:55789 Closing
+[Sat Nov 29 17:16:58 2025] [::1]:55795 Accepted
+[Sat Nov 29 17:16:58 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:16:59 2025] [::1]:55795 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1&month=202109
+[Sat Nov 29 17:16:59 2025] [::1]:55795 Closing
+[Sat Nov 29 17:16:59 2025] [::1]:55801 Accepted
+[Sat Nov 29 17:16:59 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:01 2025] [::1]:55801 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1&month=202109
+[Sat Nov 29 17:17:01 2025] [::1]:55801 Closing
+[Sat Nov 29 17:17:01 2025] [::1]:55807 Accepted
+[Sat Nov 29 17:17:01 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:02 2025] [::1]:55807 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100A&direction=1&month=202109
+[Sat Nov 29 17:17:02 2025] [::1]:55807 Closing
+[Sat Nov 29 17:17:02 2025] [::1]:55815 Accepted
+[Sat Nov 29 17:17:02 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:03 2025] [::1]:55815 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=101&direction=1&month=202109
+[Sat Nov 29 17:17:03 2025] [::1]:55815 Closing
+[Sat Nov 29 17:17:03 2025] [::1]:55821 Accepted
+[Sat Nov 29 17:17:03 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:05 2025] [::1]:55821 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=102&direction=1&month=202109
+[Sat Nov 29 17:17:05 2025] [::1]:55821 Closing
+[Sat Nov 29 17:17:05 2025] [::1]:55827 Accepted
+[Sat Nov 29 17:17:05 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:06 2025] [::1]:55827 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1&month=202109
+[Sat Nov 29 17:17:06 2025] [::1]:55827 Closing
+[Sat Nov 29 17:17:06 2025] [::1]:55835 Accepted
+[Sat Nov 29 17:17:06 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:07 2025] [::1]:55835 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105B&direction=1&month=202109
+[Sat Nov 29 17:17:07 2025] [::1]:55835 Closing
+[Sat Nov 29 17:17:07 2025] [::1]:55841 Accepted
+[Sat Nov 29 17:17:07 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:08 2025] [::1]:55841 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106&direction=1&month=202109
+[Sat Nov 29 17:17:08 2025] [::1]:55841 Closing
+[Sat Nov 29 17:17:08 2025] [::1]:55847 Accepted
+[Sat Nov 29 17:17:08 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:10 2025] [::1]:55847 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106A&direction=1&month=202109
+[Sat Nov 29 17:17:10 2025] [::1]:55847 Closing
+[Sat Nov 29 17:17:10 2025] [::1]:55853 Accepted
+[Sat Nov 29 17:17:10 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:11 2025] [::1]:55853 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1&month=202109
+[Sat Nov 29 17:17:11 2025] [::1]:55853 Closing
+[Sat Nov 29 17:17:35 2025] [::1]:55925 Accepted
+[Sat Nov 29 17:17:35 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:36 2025] [::1]:55925 [200]: GET /Analytics_api.php?action=available_months
+[Sat Nov 29 17:17:36 2025] [::1]:55925 Closing
+[Sat Nov 29 17:17:36 2025] [::1]:55931 Accepted
+[Sat Nov 29 17:17:36 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:38 2025] [::1]:55931 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1&month=202107
+[Sat Nov 29 17:17:38 2025] [::1]:55931 Closing
+[Sat Nov 29 17:17:38 2025] [::1]:55939 Accepted
+[Sat Nov 29 17:17:38 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:39 2025] [::1]:55939 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1&month=202107
+[Sat Nov 29 17:17:39 2025] [::1]:55939 Closing
+[Sat Nov 29 17:17:39 2025] [::1]:55945 Accepted
+[Sat Nov 29 17:17:39 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:40 2025] [::1]:55945 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100A&direction=1&month=202107
+[Sat Nov 29 17:17:40 2025] [::1]:55945 Closing
+[Sat Nov 29 17:17:40 2025] [::1]:55951 Accepted
+[Sat Nov 29 17:17:40 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:41 2025] [::1]:55951 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=101&direction=1&month=202107
+[Sat Nov 29 17:17:41 2025] [::1]:55951 Closing
+[Sat Nov 29 17:17:41 2025] [::1]:55959 Accepted
+[Sat Nov 29 17:17:41 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:43 2025] [::1]:55959 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=102&direction=1&month=202107
+[Sat Nov 29 17:17:43 2025] [::1]:55959 Closing
+[Sat Nov 29 17:17:43 2025] [::1]:55965 Accepted
+[Sat Nov 29 17:17:43 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:44 2025] [::1]:55965 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1&month=202107
+[Sat Nov 29 17:17:44 2025] [::1]:55965 Closing
+[Sat Nov 29 17:17:44 2025] [::1]:55971 Accepted
+[Sat Nov 29 17:17:44 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:45 2025] [::1]:55971 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105B&direction=1&month=202107
+[Sat Nov 29 17:17:45 2025] [::1]:55971 Closing
+[Sat Nov 29 17:17:45 2025] [::1]:55977 Accepted
+[Sat Nov 29 17:17:45 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:47 2025] [::1]:55977 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106&direction=1&month=202107
+[Sat Nov 29 17:17:47 2025] [::1]:55977 Closing
+[Sat Nov 29 17:17:47 2025] [::1]:55985 Accepted
+[Sat Nov 29 17:17:47 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:48 2025] [::1]:55985 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106A&direction=1&month=202107
+[Sat Nov 29 17:17:48 2025] [::1]:55985 Closing
+[Sat Nov 29 17:17:48 2025] [::1]:55991 Accepted
+[Sat Nov 29 17:17:48 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:49 2025] [::1]:55991 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1&month=202107
+[Sat Nov 29 17:17:49 2025] [::1]:55991 Closing
+[Sat Nov 29 17:17:49 2025] [::1]:55997 Accepted
+[Sat Nov 29 17:17:49 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:50 2025] [::1]:55997 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1&month=202108
+[Sat Nov 29 17:17:50 2025] [::1]:55997 Closing
+[Sat Nov 29 17:17:50 2025] [::1]:56003 Accepted
+[Sat Nov 29 17:17:50 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:52 2025] [::1]:56003 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1&month=202108
+[Sat Nov 29 17:17:52 2025] [::1]:56003 Closing
+[Sat Nov 29 17:17:52 2025] [::1]:56011 Accepted
+[Sat Nov 29 17:17:52 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:53 2025] [::1]:56011 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100A&direction=1&month=202108
+[Sat Nov 29 17:17:53 2025] [::1]:56011 Closing
+[Sat Nov 29 17:17:53 2025] [::1]:56018 Accepted
+[Sat Nov 29 17:17:53 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:54 2025] [::1]:56018 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=101&direction=1&month=202108
+[Sat Nov 29 17:17:54 2025] [::1]:56018 Closing
+[Sat Nov 29 17:17:54 2025] [::1]:56024 Accepted
+[Sat Nov 29 17:17:54 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:55 2025] [::1]:56024 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=102&direction=1&month=202108
+[Sat Nov 29 17:17:55 2025] [::1]:56024 Closing
+[Sat Nov 29 17:17:55 2025] [::1]:56030 Accepted
+[Sat Nov 29 17:17:55 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:57 2025] [::1]:56030 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1&month=202108
+[Sat Nov 29 17:17:57 2025] [::1]:56030 Closing
+[Sat Nov 29 17:17:57 2025] [::1]:56038 Accepted
+[Sat Nov 29 17:17:57 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:58 2025] [::1]:56038 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105B&direction=1&month=202108
+[Sat Nov 29 17:17:58 2025] [::1]:56038 Closing
+[Sat Nov 29 17:17:58 2025] [::1]:56044 Accepted
+[Sat Nov 29 17:17:58 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:17:59 2025] [::1]:56044 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106&direction=1&month=202108
+[Sat Nov 29 17:17:59 2025] [::1]:56044 Closing
+[Sat Nov 29 17:17:59 2025] [::1]:56050 Accepted
+[Sat Nov 29 17:17:59 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:01 2025] [::1]:56050 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106A&direction=1&month=202108
+[Sat Nov 29 17:18:01 2025] [::1]:56050 Closing
+[Sat Nov 29 17:18:01 2025] [::1]:56058 Accepted
+[Sat Nov 29 17:18:01 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:02 2025] [::1]:56058 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1&month=202108
+[Sat Nov 29 17:18:02 2025] [::1]:56058 Closing
+[Sat Nov 29 17:18:02 2025] [::1]:56064 Accepted
+[Sat Nov 29 17:18:02 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:03 2025] [::1]:56064 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1&month=202109
+[Sat Nov 29 17:18:03 2025] [::1]:56064 Closing
+[Sat Nov 29 17:18:03 2025] [::1]:56070 Accepted
+[Sat Nov 29 17:18:03 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:04 2025] [::1]:56070 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1&month=202109
+[Sat Nov 29 17:18:04 2025] [::1]:56070 Closing
+[Sat Nov 29 17:18:04 2025] [::1]:56076 Accepted
+[Sat Nov 29 17:18:04 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:06 2025] [::1]:56076 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100A&direction=1&month=202109
+[Sat Nov 29 17:18:06 2025] [::1]:56076 Closing
+[Sat Nov 29 17:18:06 2025] [::1]:56084 Accepted
+[Sat Nov 29 17:18:06 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:07 2025] [::1]:56084 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=101&direction=1&month=202109
+[Sat Nov 29 17:18:07 2025] [::1]:56084 Closing
+[Sat Nov 29 17:18:07 2025] [::1]:56090 Accepted
+[Sat Nov 29 17:18:07 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:08 2025] [::1]:56090 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=102&direction=1&month=202109
+[Sat Nov 29 17:18:08 2025] [::1]:56090 Closing
+[Sat Nov 29 17:18:08 2025] [::1]:56096 Accepted
+[Sat Nov 29 17:18:08 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:10 2025] [::1]:56096 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1&month=202109
+[Sat Nov 29 17:18:10 2025] [::1]:56096 Closing
+[Sat Nov 29 17:18:10 2025] [::1]:56104 Accepted
+[Sat Nov 29 17:18:10 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:11 2025] [::1]:56104 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105B&direction=1&month=202109
+[Sat Nov 29 17:18:11 2025] [::1]:56104 Closing
+[Sat Nov 29 17:18:11 2025] [::1]:56110 Accepted
+[Sat Nov 29 17:18:11 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:12 2025] [::1]:56110 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106&direction=1&month=202109
+[Sat Nov 29 17:18:12 2025] [::1]:56110 Closing
+[Sat Nov 29 17:18:12 2025] [::1]:56116 Accepted
+[Sat Nov 29 17:18:12 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:13 2025] [::1]:56116 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=106A&direction=1&month=202109
+[Sat Nov 29 17:18:13 2025] [::1]:56116 Closing
+[Sat Nov 29 17:18:13 2025] [::1]:56122 Accepted
+[Sat Nov 29 17:18:13 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:15 2025] [::1]:56122 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1&month=202109
+[Sat Nov 29 17:18:15 2025] [::1]:56122 Closing
+[Sat Nov 29 17:18:20 2025] [::1]:56157 Accepted
+[Sat Nov 29 17:18:20 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:21 2025] [::1]:56157 [200]: GET /Analytics_api.php?action=health
+[Sat Nov 29 17:18:21 2025] [::1]:56157 Closing
+[Sat Nov 29 17:18:21 2025] [::1]:56161 Accepted
+[Sat Nov 29 17:18:21 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:23 2025] [::1]:56161 [200]: GET /Analytics_api.php?action=data_date_range
+[Sat Nov 29 17:18:23 2025] [::1]:56161 Closing
+[Sat Nov 29 17:18:23 2025] [::1]:56169 Accepted
+[Sat Nov 29 17:18:23 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:24 2025] [::1]:56169 [200]: GET /Analytics_api.php?action=routes
+[Sat Nov 29 17:18:24 2025] [::1]:56169 Closing
+[Sat Nov 29 17:18:24 2025] [::1]:56175 Accepted
+[Sat Nov 29 17:18:24 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:26 2025] [::1]:56175 [200]: GET /Analytics_api.php?action=available_months
+[Sat Nov 29 17:18:26 2025] [::1]:56175 Closing
+[Sat Nov 29 17:18:26 2025] [::1]:56183 Accepted
+[Sat Nov 29 17:18:26 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:27 2025] [::1]:56183 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1&month=202109
+[Sat Nov 29 17:18:27 2025] [::1]:56183 Closing
+[Sat Nov 29 17:18:28 2025] [::1]:56191 Accepted
+[Sat Nov 29 17:18:28 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:29 2025] [::1]:56191 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:18:29 2025] [::1]:56191 Closing
+[Sat Nov 29 17:18:29 2025] [::1]:56197 Accepted
+[Sat Nov 29 17:18:29 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:31 2025] [::1]:56197 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:18:31 2025] [::1]:56197 Closing
+[Sat Nov 29 17:18:31 2025] [::1]:56205 Accepted
+[Sat Nov 29 17:18:31 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:32 2025] [::1]:56205 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:18:32 2025] [::1]:56205 Closing
+[Sat Nov 29 17:18:32 2025] [::1]:56211 Accepted
+[Sat Nov 29 17:18:32 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:33 2025] [::1]:56211 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:18:33 2025] [::1]:56211 Closing
+[Sat Nov 29 17:18:33 2025] [::1]:56217 Accepted
+[Sat Nov 29 17:18:33 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:34 2025] [::1]:56217 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:18:34 2025] [::1]:56217 Closing
+[Sat Nov 29 17:18:34 2025] [::1]:56235 Accepted
+[Sat Nov 29 17:18:34 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:35 2025] [::1]:56235 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:18:35 2025] [::1]:56235 Closing
+[Sat Nov 29 17:18:35 2025] [::1]:56243 Accepted
+[Sat Nov 29 17:18:35 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:37 2025] [::1]:56243 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:18:37 2025] [::1]:56243 Closing
+[Sat Nov 29 17:18:37 2025] [::1]:56249 Accepted
+[Sat Nov 29 17:18:37 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:38 2025] [::1]:56249 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:18:38 2025] [::1]:56249 Closing
+[Sat Nov 29 17:18:38 2025] [::1]:56255 Accepted
+[Sat Nov 29 17:18:38 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:40 2025] [::1]:56255 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:18:40 2025] [::1]:56255 Closing
+[Sat Nov 29 17:18:40 2025] [::1]:56263 Accepted
+[Sat Nov 29 17:18:40 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:41 2025] [::1]:56263 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:18:41 2025] [::1]:56263 Closing
+[Sat Nov 29 17:18:41 2025] [::1]:56269 Accepted
+[Sat Nov 29 17:18:41 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:42 2025] [::1]:56269 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:18:42 2025] [::1]:56269 Closing
+[Sat Nov 29 17:18:42 2025] [::1]:56275 Accepted
+[Sat Nov 29 17:18:42 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:43 2025] [::1]:56275 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:18:43 2025] [::1]:56275 Closing
+[Sat Nov 29 17:18:43 2025] [::1]:56281 Accepted
+[Sat Nov 29 17:18:43 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:45 2025] [::1]:56281 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:18:45 2025] [::1]:56281 Closing
+[Sat Nov 29 17:18:45 2025] [::1]:56289 Accepted
+[Sat Nov 29 17:18:45 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:46 2025] [::1]:56289 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:18:46 2025] [::1]:56289 Closing
+[Sat Nov 29 17:18:46 2025] [::1]:56307 Accepted
+[Sat Nov 29 17:18:46 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:47 2025] [::1]:56307 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:18:47 2025] [::1]:56307 Closing
+[Sat Nov 29 17:18:47 2025] [::1]:56313 Accepted
+[Sat Nov 29 17:18:47 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:49 2025] [::1]:56313 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:18:49 2025] [::1]:56313 Closing
+[Sat Nov 29 17:18:49 2025] [::1]:56321 Accepted
+[Sat Nov 29 17:18:49 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:50 2025] [::1]:56321 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:18:50 2025] [::1]:56321 Closing
+[Sat Nov 29 17:18:50 2025] [::1]:56328 Accepted
+[Sat Nov 29 17:18:50 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:51 2025] [::1]:56328 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:18:51 2025] [::1]:56328 Closing
+[Sat Nov 29 17:18:51 2025] [::1]:56334 Accepted
+[Sat Nov 29 17:18:51 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:53 2025] [::1]:56334 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:18:53 2025] [::1]:56334 Closing
+[Sat Nov 29 17:18:53 2025] [::1]:56342 Accepted
+[Sat Nov 29 17:18:53 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:54 2025] [::1]:56342 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:18:54 2025] [::1]:56342 Closing
+[Sat Nov 29 17:18:54 2025] [::1]:56348 Accepted
+[Sat Nov 29 17:18:54 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:55 2025] [::1]:56348 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:18:55 2025] [::1]:56348 Closing
+[Sat Nov 29 17:18:55 2025] [::1]:56357 Accepted
+[Sat Nov 29 17:18:55 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:56 2025] [::1]:56357 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:18:56 2025] [::1]:56357 Closing
+[Sat Nov 29 17:18:56 2025] [::1]:56364 Accepted
+[Sat Nov 29 17:18:56 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:57 2025] [::1]:56364 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:18:57 2025] [::1]:56364 Closing
+[Sat Nov 29 17:18:57 2025] [::1]:56370 Accepted
+[Sat Nov 29 17:18:57 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:18:59 2025] [::1]:56370 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:18:59 2025] [::1]:56370 Closing
+[Sat Nov 29 17:18:59 2025] [::1]:56378 Accepted
+[Sat Nov 29 17:18:59 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:00 2025] [::1]:56378 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:00 2025] [::1]:56378 Closing
+[Sat Nov 29 17:19:00 2025] [::1]:56384 Accepted
+[Sat Nov 29 17:19:00 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:01 2025] [::1]:56384 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:19:01 2025] [::1]:56384 Closing
+[Sat Nov 29 17:19:01 2025] [::1]:56390 Accepted
+[Sat Nov 29 17:19:01 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:02 2025] [::1]:56390 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:02 2025] [::1]:56390 Closing
+[Sat Nov 29 17:19:02 2025] [::1]:56396 Accepted
+[Sat Nov 29 17:19:02 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:04 2025] [::1]:56396 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:19:04 2025] [::1]:56396 Closing
+[Sat Nov 29 17:19:04 2025] [::1]:56404 Accepted
+[Sat Nov 29 17:19:04 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:05 2025] [::1]:56404 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:05 2025] [::1]:56404 Closing
+[Sat Nov 29 17:19:05 2025] [::1]:56410 Accepted
+[Sat Nov 29 17:19:05 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:06 2025] [::1]:56410 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:19:06 2025] [::1]:56410 Closing
+[Sat Nov 29 17:19:06 2025] [::1]:56416 Accepted
+[Sat Nov 29 17:19:06 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:08 2025] [::1]:56416 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:08 2025] [::1]:56416 Closing
+[Sat Nov 29 17:19:08 2025] [::1]:56424 Accepted
+[Sat Nov 29 17:19:08 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:09 2025] [::1]:56424 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1
+[Sat Nov 29 17:19:09 2025] [::1]:56424 Closing
+[Sat Nov 29 17:19:09 2025] [::1]:56430 Accepted
+[Sat Nov 29 17:19:09 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:10 2025] [::1]:56430 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:10 2025] [::1]:56430 Closing
+[Sat Nov 29 17:19:10 2025] [::1]:56436 Accepted
+[Sat Nov 29 17:19:10 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:12 2025] [::1]:56436 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1
+[Sat Nov 29 17:19:12 2025] [::1]:56436 Closing
+[Sat Nov 29 17:19:12 2025] [::1]:56445 Accepted
+[Sat Nov 29 17:19:12 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:13 2025] [::1]:56445 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:13 2025] [::1]:56445 Closing
+[Sat Nov 29 17:19:13 2025] [::1]:56451 Accepted
+[Sat Nov 29 17:19:13 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:15 2025] [::1]:56451 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1
+[Sat Nov 29 17:19:15 2025] [::1]:56451 Closing
+[Sat Nov 29 17:19:15 2025] [::1]:56459 Accepted
+[Sat Nov 29 17:19:15 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:16 2025] [::1]:56459 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:16 2025] [::1]:56459 Closing
+[Sat Nov 29 17:19:16 2025] [::1]:56466 Accepted
+[Sat Nov 29 17:19:16 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:17 2025] [::1]:56466 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1
+[Sat Nov 29 17:19:17 2025] [::1]:56466 Closing
+[Sat Nov 29 17:19:17 2025] [::1]:56472 Accepted
+[Sat Nov 29 17:19:17 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:18 2025] [::1]:56472 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:18 2025] [::1]:56472 Closing
+[Sat Nov 29 17:19:18 2025] [::1]:56478 Accepted
+[Sat Nov 29 17:19:18 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:20 2025] [::1]:56478 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1
+[Sat Nov 29 17:19:20 2025] [::1]:56478 Closing
+[Sat Nov 29 17:19:20 2025] [::1]:56486 Accepted
+[Sat Nov 29 17:19:20 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:21 2025] [::1]:56486 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:21 2025] [::1]:56486 Closing
+[Sat Nov 29 17:19:21 2025] [::1]:56492 Accepted
+[Sat Nov 29 17:19:21 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:22 2025] [::1]:56492 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1
+[Sat Nov 29 17:19:22 2025] [::1]:56492 Closing
+[Sat Nov 29 17:19:23 2025] [::1]:56498 Accepted
+[Sat Nov 29 17:19:23 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:24 2025] [::1]:56498 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:24 2025] [::1]:56498 Closing
+[Sat Nov 29 17:19:24 2025] [::1]:56506 Accepted
+[Sat Nov 29 17:19:24 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:25 2025] [::1]:56506 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1
+[Sat Nov 29 17:19:25 2025] [::1]:56506 Closing
+[Sat Nov 29 17:19:25 2025] [::1]:56512 Accepted
+[Sat Nov 29 17:19:25 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:26 2025] [::1]:56512 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:26 2025] [::1]:56512 Closing
+[Sat Nov 29 17:19:26 2025] [::1]:56518 Accepted
+[Sat Nov 29 17:19:26 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:28 2025] [::1]:56518 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1
+[Sat Nov 29 17:19:28 2025] [::1]:56518 Closing
+[Sat Nov 29 17:19:28 2025] [::1]:56526 Accepted
+[Sat Nov 29 17:19:28 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:29 2025] [::1]:56526 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:29 2025] [::1]:56526 Closing
+[Sat Nov 29 17:19:29 2025] [::1]:56532 Accepted
+[Sat Nov 29 17:19:29 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:30 2025] [::1]:56532 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1
+[Sat Nov 29 17:19:30 2025] [::1]:56532 Closing
+[Sat Nov 29 17:19:30 2025] [::1]:56538 Accepted
+[Sat Nov 29 17:19:30 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:32 2025] [::1]:56538 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:32 2025] [::1]:56538 Closing
+[Sat Nov 29 17:19:32 2025] [::1]:56544 Accepted
+[Sat Nov 29 17:19:32 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:33 2025] [::1]:56544 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1
+[Sat Nov 29 17:19:33 2025] [::1]:56544 Closing
+[Sat Nov 29 17:19:33 2025] [::1]:56552 Accepted
+[Sat Nov 29 17:19:33 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:34 2025] [::1]:56552 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:34 2025] [::1]:56552 Closing
+[Sat Nov 29 17:19:34 2025] [::1]:56558 Accepted
+[Sat Nov 29 17:19:34 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:35 2025] [::1]:56558 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1
+[Sat Nov 29 17:19:35 2025] [::1]:56558 Closing
+[Sat Nov 29 17:19:35 2025] [::1]:56564 Accepted
+[Sat Nov 29 17:19:35 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:37 2025] [::1]:56564 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:37 2025] [::1]:56564 Closing
+[Sat Nov 29 17:19:37 2025] [::1]:56570 Accepted
+[Sat Nov 29 17:19:37 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:38 2025] [::1]:56570 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1
+[Sat Nov 29 17:19:38 2025] [::1]:56570 Closing
+[Sat Nov 29 17:19:38 2025] [::1]:56578 Accepted
+[Sat Nov 29 17:19:38 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:39 2025] [::1]:56578 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:39 2025] [::1]:56578 Closing
+[Sat Nov 29 17:19:39 2025] [::1]:56584 Accepted
+[Sat Nov 29 17:19:39 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:40 2025] [::1]:56584 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1
+[Sat Nov 29 17:19:40 2025] [::1]:56584 Closing
+[Sat Nov 29 17:19:41 2025] [::1]:56590 Accepted
+[Sat Nov 29 17:19:41 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:42 2025] [::1]:56590 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:42 2025] [::1]:56590 Closing
+[Sat Nov 29 17:19:42 2025] [::1]:56598 Accepted
+[Sat Nov 29 17:19:42 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:43 2025] [::1]:56598 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1
+[Sat Nov 29 17:19:43 2025] [::1]:56598 Closing
+[Sat Nov 29 17:19:43 2025] [::1]:56604 Accepted
+[Sat Nov 29 17:19:43 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:44 2025] [::1]:56604 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:44 2025] [::1]:56604 Closing
+[Sat Nov 29 17:19:44 2025] [::1]:56610 Accepted
+[Sat Nov 29 17:19:44 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:46 2025] [::1]:56610 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1
+[Sat Nov 29 17:19:46 2025] [::1]:56610 Closing
+[Sat Nov 29 17:19:46 2025] [::1]:56616 Accepted
+[Sat Nov 29 17:19:46 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:47 2025] [::1]:56616 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:47 2025] [::1]:56616 Closing
+[Sat Nov 29 17:19:47 2025] [::1]:56624 Accepted
+[Sat Nov 29 17:19:47 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:48 2025] [::1]:56624 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1
+[Sat Nov 29 17:19:48 2025] [::1]:56624 Closing
+[Sat Nov 29 17:19:48 2025] [::1]:56630 Accepted
+[Sat Nov 29 17:19:48 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:49 2025] [::1]:56630 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:49 2025] [::1]:56630 Closing
+[Sat Nov 29 17:19:49 2025] [::1]:56636 Accepted
+[Sat Nov 29 17:19:49 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:51 2025] [::1]:56636 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1
+[Sat Nov 29 17:19:51 2025] [::1]:56636 Closing
+[Sat Nov 29 17:19:51 2025] [::1]:56644 Accepted
+[Sat Nov 29 17:19:51 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:52 2025] [::1]:56644 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:52 2025] [::1]:56644 Closing
+[Sat Nov 29 17:19:52 2025] [::1]:56650 Accepted
+[Sat Nov 29 17:19:52 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:53 2025] [::1]:56650 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1
+[Sat Nov 29 17:19:53 2025] [::1]:56650 Closing
+[Sat Nov 29 17:19:53 2025] [::1]:56656 Accepted
+[Sat Nov 29 17:19:53 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:55 2025] [::1]:56656 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:19:55 2025] [::1]:56656 Closing
+[Sat Nov 29 17:19:55 2025] [::1]:56665 Accepted
+[Sat Nov 29 17:19:55 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:56 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:56 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:56 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:56 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:56 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:56 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:56 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:56 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:56 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:56 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:56 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:56 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:56 2025] [::1]:56665 [200]: GET /Analytics_api.php?action=get_predictions&limit=20&route_id=118&start_date=2025-11-29T16%3A19%3A55.242110
+[Sat Nov 29 17:19:56 2025] [::1]:56665 Closing
+[Sat Nov 29 17:19:57 2025] [::1]:56673 Accepted
+[Sat Nov 29 17:19:57 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:19:58 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:58 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:58 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:58 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:58 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:58 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:58 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:58 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:58 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:58 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:58 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:58 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:19:58 2025] [::1]:56673 [200]: GET /Analytics_api.php?action=get_predictions&limit=20&route_id=118&start_date=2025-11-29T16%3A19%3A55.242110
+[Sat Nov 29 17:19:58 2025] [::1]:56673 Closing
+[Sat Nov 29 17:19:59 2025] [::1]:56681 Accepted
+[Sat Nov 29 17:19:59 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:01 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:20:01 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:20:01 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:20:01 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:20:01 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:20:01 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:20:01 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:20:01 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:20:01 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:20:01 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:20:01 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:20:01 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:20:01 2025] [::1]:56681 [200]: GET /Analytics_api.php?action=get_predictions&limit=20&route_id=118&start_date=2025-11-29T16%3A19%3A55.242110
+[Sat Nov 29 17:20:01 2025] [::1]:56681 Closing
+[Sat Nov 29 17:20:01 2025] [::1]:56689 Accepted
+[Sat Nov 29 17:20:01 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:02 2025] [::1]:56689 [200]: GET /Analytics_api.php?action=available_months
+[Sat Nov 29 17:20:02 2025] [::1]:56689 Closing
+[Sat Nov 29 17:20:02 2025] [::1]:56697 Accepted
+[Sat Nov 29 17:20:02 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:04 2025] [::1]:56697 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1&month=202109
+[Sat Nov 29 17:20:04 2025] [::1]:56697 Closing
+[Sat Nov 29 17:20:04 2025] [::1]:56703 Accepted
+[Sat Nov 29 17:20:04 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:05 2025] [::1]:56703 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:05 2025] [::1]:56703 Closing
+[Sat Nov 29 17:20:05 2025] [::1]:56711 Accepted
+[Sat Nov 29 17:20:05 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:06 2025] [::1]:56711 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:06 2025] [::1]:56711 Closing
+[Sat Nov 29 17:20:06 2025] [::1]:56717 Accepted
+[Sat Nov 29 17:20:06 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:08 2025] [::1]:56717 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:08 2025] [::1]:56717 Closing
+[Sat Nov 29 17:20:08 2025] [::1]:56723 Accepted
+[Sat Nov 29 17:20:08 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:09 2025] [::1]:56723 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:09 2025] [::1]:56723 Closing
+[Sat Nov 29 17:20:09 2025] [::1]:56731 Accepted
+[Sat Nov 29 17:20:09 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:10 2025] [::1]:56731 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:10 2025] [::1]:56731 Closing
+[Sat Nov 29 17:20:10 2025] [::1]:56737 Accepted
+[Sat Nov 29 17:20:10 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:11 2025] [::1]:56737 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:11 2025] [::1]:56737 Closing
+[Sat Nov 29 17:20:11 2025] [::1]:56743 Accepted
+[Sat Nov 29 17:20:11 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:13 2025] [::1]:56743 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:13 2025] [::1]:56743 Closing
+[Sat Nov 29 17:20:13 2025] [::1]:56749 Accepted
+[Sat Nov 29 17:20:13 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:14 2025] [::1]:56749 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:14 2025] [::1]:56749 Closing
+[Sat Nov 29 17:20:14 2025] [::1]:56757 Accepted
+[Sat Nov 29 17:20:14 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:15 2025] [::1]:56757 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:15 2025] [::1]:56757 Closing
+[Sat Nov 29 17:20:15 2025] [::1]:56763 Accepted
+[Sat Nov 29 17:20:15 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:17 2025] [::1]:56763 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:17 2025] [::1]:56763 Closing
+[Sat Nov 29 17:20:17 2025] [::1]:56769 Accepted
+[Sat Nov 29 17:20:17 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:18 2025] [::1]:56769 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:18 2025] [::1]:56769 Closing
+[Sat Nov 29 17:20:18 2025] [::1]:56777 Accepted
+[Sat Nov 29 17:20:18 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:19 2025] [::1]:56777 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:19 2025] [::1]:56777 Closing
+[Sat Nov 29 17:20:19 2025] [::1]:56783 Accepted
+[Sat Nov 29 17:20:19 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:21 2025] [::1]:56783 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:21 2025] [::1]:56783 Closing
+[Sat Nov 29 17:20:21 2025] [::1]:56806 Accepted
+[Sat Nov 29 17:20:21 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:22 2025] [::1]:56806 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:22 2025] [::1]:56806 Closing
+[Sat Nov 29 17:20:22 2025] [::1]:56812 Accepted
+[Sat Nov 29 17:20:22 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:23 2025] [::1]:56812 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:23 2025] [::1]:56812 Closing
+[Sat Nov 29 17:20:23 2025] [::1]:56816 Accepted
+[Sat Nov 29 17:20:23 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:25 2025] [::1]:56816 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:25 2025] [::1]:56816 Closing
+[Sat Nov 29 17:20:25 2025] [::1]:56834 Accepted
+[Sat Nov 29 17:20:25 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:26 2025] [::1]:56834 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:26 2025] [::1]:56834 Closing
+[Sat Nov 29 17:20:26 2025] [::1]:56838 Accepted
+[Sat Nov 29 17:20:26 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:27 2025] [::1]:56838 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:27 2025] [::1]:56838 Closing
+[Sat Nov 29 17:20:27 2025] [::1]:56845 Accepted
+[Sat Nov 29 17:20:27 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:28 2025] [::1]:56845 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:28 2025] [::1]:56845 Closing
+[Sat Nov 29 17:20:29 2025] [::1]:56849 Accepted
+[Sat Nov 29 17:20:29 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:30 2025] [::1]:56849 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:30 2025] [::1]:56849 Closing
+[Sat Nov 29 17:20:30 2025] [::1]:56855 Accepted
+[Sat Nov 29 17:20:30 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:31 2025] [::1]:56855 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:31 2025] [::1]:56855 Closing
+[Sat Nov 29 17:20:31 2025] [::1]:56861 Accepted
+[Sat Nov 29 17:20:31 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:32 2025] [::1]:56861 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:32 2025] [::1]:56861 Closing
+[Sat Nov 29 17:20:32 2025] [::1]:56869 Accepted
+[Sat Nov 29 17:20:32 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:33 2025] [::1]:56869 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:33 2025] [::1]:56869 Closing
+[Sat Nov 29 17:20:33 2025] [::1]:56875 Accepted
+[Sat Nov 29 17:20:33 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:35 2025] [::1]:56875 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:35 2025] [::1]:56875 Closing
+[Sat Nov 29 17:20:35 2025] [::1]:56881 Accepted
+[Sat Nov 29 17:20:35 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:36 2025] [::1]:56881 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:36 2025] [::1]:56881 Closing
+[Sat Nov 29 17:20:36 2025] [::1]:56890 Accepted
+[Sat Nov 29 17:20:36 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:37 2025] [::1]:56890 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:37 2025] [::1]:56890 Closing
+[Sat Nov 29 17:20:37 2025] [::1]:56898 Accepted
+[Sat Nov 29 17:20:37 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:39 2025] [::1]:56898 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:39 2025] [::1]:56898 Closing
+[Sat Nov 29 17:20:39 2025] [::1]:56904 Accepted
+[Sat Nov 29 17:20:39 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:40 2025] [::1]:56904 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:40 2025] [::1]:56904 Closing
+[Sat Nov 29 17:20:40 2025] [::1]:56910 Accepted
+[Sat Nov 29 17:20:40 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:41 2025] [::1]:56910 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:41 2025] [::1]:56910 Closing
+[Sat Nov 29 17:20:41 2025] [::1]:56918 Accepted
+[Sat Nov 29 17:20:41 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:43 2025] [::1]:56918 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:43 2025] [::1]:56918 Closing
+[Sat Nov 29 17:20:43 2025] [::1]:56941 Accepted
+[Sat Nov 29 17:20:43 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:44 2025] [::1]:56941 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:44 2025] [::1]:56941 Closing
+[Sat Nov 29 17:20:44 2025] [::1]:56947 Accepted
+[Sat Nov 29 17:20:44 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:45 2025] [::1]:56947 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:45 2025] [::1]:56947 Closing
+[Sat Nov 29 17:20:45 2025] [::1]:56951 Accepted
+[Sat Nov 29 17:20:45 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:47 2025] [::1]:56951 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:47 2025] [::1]:56951 Closing
+[Sat Nov 29 17:20:47 2025] [::1]:56967 Accepted
+[Sat Nov 29 17:20:47 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:48 2025] [::1]:56967 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:48 2025] [::1]:56967 Closing
+[Sat Nov 29 17:20:48 2025] [::1]:56971 Accepted
+[Sat Nov 29 17:20:48 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:49 2025] [::1]:56971 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:49 2025] [::1]:56971 Closing
+[Sat Nov 29 17:20:49 2025] [::1]:56975 Accepted
+[Sat Nov 29 17:20:49 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:50 2025] [::1]:56975 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:50 2025] [::1]:56975 Closing
+[Sat Nov 29 17:20:51 2025] [::1]:56982 Accepted
+[Sat Nov 29 17:20:51 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:52 2025] [::1]:56982 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:52 2025] [::1]:56982 Closing
+[Sat Nov 29 17:20:52 2025] [::1]:56986 Accepted
+[Sat Nov 29 17:20:52 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:53 2025] [::1]:56986 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:53 2025] [::1]:56986 Closing
+[Sat Nov 29 17:20:53 2025] [::1]:56992 Accepted
+[Sat Nov 29 17:20:53 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:54 2025] [::1]:56992 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:54 2025] [::1]:56992 Closing
+[Sat Nov 29 17:20:54 2025] [::1]:57001 Accepted
+[Sat Nov 29 17:20:54 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:56 2025] [::1]:57001 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:56 2025] [::1]:57001 Closing
+[Sat Nov 29 17:20:56 2025] [::1]:57007 Accepted
+[Sat Nov 29 17:20:56 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:57 2025] [::1]:57007 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:57 2025] [::1]:57007 Closing
+[Sat Nov 29 17:20:57 2025] [::1]:57013 Accepted
+[Sat Nov 29 17:20:57 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:20:58 2025] [::1]:57013 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:20:58 2025] [::1]:57013 Closing
+[Sat Nov 29 17:20:58 2025] [::1]:57021 Accepted
+[Sat Nov 29 17:20:58 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:21:00 2025] [::1]:57021 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:21:00 2025] [::1]:57021 Closing
+[Sat Nov 29 17:21:27 2025] [::1]:57092 Accepted
+[Sat Nov 29 17:21:27 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:21:28 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:21:28 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:21:28 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:21:28 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:21:28 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:21:28 2025] [::1]:57092 [200]: GET /Analytics_api.php?action=get_predictions&limit=5
+[Sat Nov 29 17:21:28 2025] [::1]:57092 Closing
+[Sat Nov 29 17:21:40 2025] [::1]:57137 Accepted
+[Sat Nov 29 17:21:40 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:21:41 2025] PHP Warning:  Undefined array key "prediction_id" in /Users/justin/Desktop/MODS/Y2T1/INF2003 Database System/Project/ethan help/Database(Predictive analytics)/Analytics_api.php on line 503
+[Sat Nov 29 17:21:41 2025] [::1]:57137 [200]: GET /Analytics_api.php?action=get_predictions&limit=1
+[Sat Nov 29 17:21:41 2025] [::1]:57137 Closing
+[Sat Nov 29 17:22:00 2025] [::1]:57205 Accepted
+[Sat Nov 29 17:22:00 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:01 2025] [::1]:57205 [200]: GET /Analytics_api.php?action=get_predictions&limit=2
+[Sat Nov 29 17:22:01 2025] [::1]:57205 Closing
+[Sat Nov 29 17:22:21 2025] [::1]:57255 Accepted
+[Sat Nov 29 17:22:21 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:22 2025] [::1]:57255 [200]: GET /Analytics_api.php?action=health
+[Sat Nov 29 17:22:22 2025] [::1]:57255 Closing
+[Sat Nov 29 17:22:22 2025] [::1]:57261 Accepted
+[Sat Nov 29 17:22:22 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:23 2025] [::1]:57261 [200]: GET /Analytics_api.php?action=data_date_range
+[Sat Nov 29 17:22:23 2025] [::1]:57261 Closing
+[Sat Nov 29 17:22:23 2025] [::1]:57267 Accepted
+[Sat Nov 29 17:22:23 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:25 2025] [::1]:57267 [200]: GET /Analytics_api.php?action=routes
+[Sat Nov 29 17:22:25 2025] [::1]:57267 Closing
+[Sat Nov 29 17:22:25 2025] [::1]:57275 Accepted
+[Sat Nov 29 17:22:25 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:27 2025] [::1]:57275 [200]: GET /Analytics_api.php?action=available_months
+[Sat Nov 29 17:22:27 2025] [::1]:57275 Closing
+[Sat Nov 29 17:22:27 2025] [::1]:57281 Accepted
+[Sat Nov 29 17:22:27 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:28 2025] [::1]:57281 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1&month=202109
+[Sat Nov 29 17:22:28 2025] [::1]:57281 Closing
+[Sat Nov 29 17:22:29 2025] [::1]:57289 Accepted
+[Sat Nov 29 17:22:29 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:30 2025] [::1]:57289 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:22:30 2025] [::1]:57289 Closing
+[Sat Nov 29 17:22:30 2025] [::1]:57295 Accepted
+[Sat Nov 29 17:22:30 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:31 2025] [::1]:57295 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:22:31 2025] [::1]:57295 Closing
+[Sat Nov 29 17:22:31 2025] [::1]:57303 Accepted
+[Sat Nov 29 17:22:31 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:32 2025] [::1]:57303 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:22:32 2025] [::1]:57303 Closing
+[Sat Nov 29 17:22:32 2025] [::1]:57309 Accepted
+[Sat Nov 29 17:22:32 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:34 2025] [::1]:57309 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:22:34 2025] [::1]:57309 Closing
+[Sat Nov 29 17:22:34 2025] [::1]:57315 Accepted
+[Sat Nov 29 17:22:34 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:35 2025] [::1]:57315 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:22:35 2025] [::1]:57315 Closing
+[Sat Nov 29 17:22:35 2025] [::1]:57323 Accepted
+[Sat Nov 29 17:22:35 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:36 2025] [::1]:57323 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:22:36 2025] [::1]:57323 Closing
+[Sat Nov 29 17:22:36 2025] [::1]:57329 Accepted
+[Sat Nov 29 17:22:36 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:38 2025] [::1]:57329 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:22:38 2025] [::1]:57329 Closing
+[Sat Nov 29 17:22:38 2025] [::1]:57335 Accepted
+[Sat Nov 29 17:22:38 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:39 2025] [::1]:57335 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:22:39 2025] [::1]:57335 Closing
+[Sat Nov 29 17:22:39 2025] [::1]:57341 Accepted
+[Sat Nov 29 17:22:39 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:40 2025] [::1]:57341 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:22:40 2025] [::1]:57341 Closing
+[Sat Nov 29 17:22:40 2025] [::1]:57349 Accepted
+[Sat Nov 29 17:22:40 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:41 2025] [::1]:57349 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:22:41 2025] [::1]:57349 Closing
+[Sat Nov 29 17:22:41 2025] [::1]:57355 Accepted
+[Sat Nov 29 17:22:41 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:42 2025] [::1]:57355 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:22:42 2025] [::1]:57355 Closing
+[Sat Nov 29 17:22:42 2025] [::1]:57361 Accepted
+[Sat Nov 29 17:22:42 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:44 2025] [::1]:57361 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:22:44 2025] [::1]:57361 Closing
+[Sat Nov 29 17:22:44 2025] [::1]:57367 Accepted
+[Sat Nov 29 17:22:44 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:45 2025] [::1]:57367 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:22:45 2025] [::1]:57367 Closing
+[Sat Nov 29 17:22:45 2025] [::1]:57373 Accepted
+[Sat Nov 29 17:22:45 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:46 2025] [::1]:57373 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:22:46 2025] [::1]:57373 Closing
+[Sat Nov 29 17:22:46 2025] [::1]:57381 Accepted
+[Sat Nov 29 17:22:46 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:48 2025] [::1]:57381 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:22:48 2025] [::1]:57381 Closing
+[Sat Nov 29 17:22:48 2025] [::1]:57387 Accepted
+[Sat Nov 29 17:22:48 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:49 2025] [::1]:57387 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:22:49 2025] [::1]:57387 Closing
+[Sat Nov 29 17:22:49 2025] [::1]:57395 Accepted
+[Sat Nov 29 17:22:49 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:50 2025] [::1]:57395 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:22:50 2025] [::1]:57395 Closing
+[Sat Nov 29 17:22:50 2025] [::1]:57401 Accepted
+[Sat Nov 29 17:22:50 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:52 2025] [::1]:57401 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:22:52 2025] [::1]:57401 Closing
+[Sat Nov 29 17:22:52 2025] [::1]:57407 Accepted
+[Sat Nov 29 17:22:52 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:53 2025] [::1]:57407 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:22:53 2025] [::1]:57407 Closing
+[Sat Nov 29 17:22:53 2025] [::1]:57415 Accepted
+[Sat Nov 29 17:22:53 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:54 2025] [::1]:57415 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:22:54 2025] [::1]:57415 Closing
+[Sat Nov 29 17:22:54 2025] [::1]:57423 Accepted
+[Sat Nov 29 17:22:54 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:56 2025] [::1]:57423 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:22:56 2025] [::1]:57423 Closing
+[Sat Nov 29 17:22:56 2025] [::1]:57429 Accepted
+[Sat Nov 29 17:22:56 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:57 2025] [::1]:57429 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:22:57 2025] [::1]:57429 Closing
+[Sat Nov 29 17:22:57 2025] [::1]:57435 Accepted
+[Sat Nov 29 17:22:57 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:58 2025] [::1]:57435 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:22:58 2025] [::1]:57435 Closing
+[Sat Nov 29 17:22:58 2025] [::1]:57443 Accepted
+[Sat Nov 29 17:22:58 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:22:59 2025] [::1]:57443 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:22:59 2025] [::1]:57443 Closing
+[Sat Nov 29 17:23:00 2025] [::1]:57449 Accepted
+[Sat Nov 29 17:23:00 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:01 2025] [::1]:57449 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:01 2025] [::1]:57449 Closing
+[Sat Nov 29 17:23:01 2025] [::1]:57455 Accepted
+[Sat Nov 29 17:23:01 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:02 2025] [::1]:57455 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:23:02 2025] [::1]:57455 Closing
+[Sat Nov 29 17:23:02 2025] [::1]:57461 Accepted
+[Sat Nov 29 17:23:02 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:03 2025] [::1]:57461 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:03 2025] [::1]:57461 Closing
+[Sat Nov 29 17:23:03 2025] [::1]:57469 Accepted
+[Sat Nov 29 17:23:03 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:04 2025] [::1]:57469 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:23:04 2025] [::1]:57469 Closing
+[Sat Nov 29 17:23:04 2025] [::1]:57475 Accepted
+[Sat Nov 29 17:23:04 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:06 2025] [::1]:57475 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:06 2025] [::1]:57475 Closing
+[Sat Nov 29 17:23:06 2025] [::1]:57481 Accepted
+[Sat Nov 29 17:23:06 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:07 2025] [::1]:57481 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:23:07 2025] [::1]:57481 Closing
+[Sat Nov 29 17:23:07 2025] [::1]:57489 Accepted
+[Sat Nov 29 17:23:07 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:08 2025] [::1]:57489 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:08 2025] [::1]:57489 Closing
+[Sat Nov 29 17:23:08 2025] [::1]:57495 Accepted
+[Sat Nov 29 17:23:08 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:10 2025] [::1]:57495 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1
+[Sat Nov 29 17:23:10 2025] [::1]:57495 Closing
+[Sat Nov 29 17:23:10 2025] [::1]:57501 Accepted
+[Sat Nov 29 17:23:10 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:11 2025] [::1]:57501 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:11 2025] [::1]:57501 Closing
+[Sat Nov 29 17:23:11 2025] [::1]:57507 Accepted
+[Sat Nov 29 17:23:11 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:12 2025] [::1]:57507 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1
+[Sat Nov 29 17:23:12 2025] [::1]:57507 Closing
+[Sat Nov 29 17:23:12 2025] [::1]:57515 Accepted
+[Sat Nov 29 17:23:12 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:14 2025] [::1]:57515 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:14 2025] [::1]:57515 Closing
+[Sat Nov 29 17:23:14 2025] [::1]:57523 Accepted
+[Sat Nov 29 17:23:14 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:16 2025] [::1]:57523 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1
+[Sat Nov 29 17:23:16 2025] [::1]:57523 Closing
+[Sat Nov 29 17:23:16 2025] [::1]:57529 Accepted
+[Sat Nov 29 17:23:16 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:17 2025] [::1]:57529 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:17 2025] [::1]:57529 Closing
+[Sat Nov 29 17:23:17 2025] [::1]:57535 Accepted
+[Sat Nov 29 17:23:17 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:18 2025] [::1]:57535 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1
+[Sat Nov 29 17:23:18 2025] [::1]:57535 Closing
+[Sat Nov 29 17:23:18 2025] [::1]:57543 Accepted
+[Sat Nov 29 17:23:18 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:20 2025] [::1]:57543 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:20 2025] [::1]:57543 Closing
+[Sat Nov 29 17:23:20 2025] [::1]:57549 Accepted
+[Sat Nov 29 17:23:20 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:21 2025] [::1]:57549 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1
+[Sat Nov 29 17:23:21 2025] [::1]:57549 Closing
+[Sat Nov 29 17:23:21 2025] [::1]:57555 Accepted
+[Sat Nov 29 17:23:21 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:22 2025] [::1]:57555 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:22 2025] [::1]:57555 Closing
+[Sat Nov 29 17:23:22 2025] [::1]:57563 Accepted
+[Sat Nov 29 17:23:22 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:24 2025] [::1]:57563 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=10&direction=1
+[Sat Nov 29 17:23:24 2025] [::1]:57563 Closing
+[Sat Nov 29 17:23:24 2025] [::1]:57569 Accepted
+[Sat Nov 29 17:23:24 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:25 2025] [::1]:57569 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:25 2025] [::1]:57569 Closing
+[Sat Nov 29 17:23:25 2025] [::1]:57575 Accepted
+[Sat Nov 29 17:23:25 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:26 2025] [::1]:57575 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1
+[Sat Nov 29 17:23:26 2025] [::1]:57575 Closing
+[Sat Nov 29 17:23:26 2025] [::1]:57583 Accepted
+[Sat Nov 29 17:23:26 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:27 2025] [::1]:57583 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:27 2025] [::1]:57583 Closing
+[Sat Nov 29 17:23:27 2025] [::1]:57589 Accepted
+[Sat Nov 29 17:23:27 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:29 2025] [::1]:57589 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1
+[Sat Nov 29 17:23:29 2025] [::1]:57589 Closing
+[Sat Nov 29 17:23:29 2025] [::1]:57595 Accepted
+[Sat Nov 29 17:23:29 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:30 2025] [::1]:57595 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:30 2025] [::1]:57595 Closing
+[Sat Nov 29 17:23:30 2025] [::1]:57603 Accepted
+[Sat Nov 29 17:23:30 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:31 2025] [::1]:57603 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1
+[Sat Nov 29 17:23:31 2025] [::1]:57603 Closing
+[Sat Nov 29 17:23:31 2025] [::1]:57609 Accepted
+[Sat Nov 29 17:23:31 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:33 2025] [::1]:57609 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:33 2025] [::1]:57609 Closing
+[Sat Nov 29 17:23:33 2025] [::1]:57615 Accepted
+[Sat Nov 29 17:23:33 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:34 2025] [::1]:57615 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1
+[Sat Nov 29 17:23:34 2025] [::1]:57615 Closing
+[Sat Nov 29 17:23:34 2025] [::1]:57623 Accepted
+[Sat Nov 29 17:23:34 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:35 2025] [::1]:57623 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:35 2025] [::1]:57623 Closing
+[Sat Nov 29 17:23:35 2025] [::1]:57629 Accepted
+[Sat Nov 29 17:23:35 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:36 2025] [::1]:57629 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1
+[Sat Nov 29 17:23:36 2025] [::1]:57629 Closing
+[Sat Nov 29 17:23:36 2025] [::1]:57635 Accepted
+[Sat Nov 29 17:23:36 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:38 2025] [::1]:57635 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:38 2025] [::1]:57635 Closing
+[Sat Nov 29 17:23:38 2025] [::1]:57641 Accepted
+[Sat Nov 29 17:23:38 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:39 2025] [::1]:57641 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=100&direction=1
+[Sat Nov 29 17:23:39 2025] [::1]:57641 Closing
+[Sat Nov 29 17:23:39 2025] [::1]:57647 Accepted
+[Sat Nov 29 17:23:39 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:40 2025] [::1]:57647 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:40 2025] [::1]:57647 Closing
+[Sat Nov 29 17:23:40 2025] [::1]:57655 Accepted
+[Sat Nov 29 17:23:40 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:41 2025] [::1]:57655 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1
+[Sat Nov 29 17:23:41 2025] [::1]:57655 Closing
+[Sat Nov 29 17:23:41 2025] [::1]:57661 Accepted
+[Sat Nov 29 17:23:41 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:43 2025] [::1]:57661 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:43 2025] [::1]:57661 Closing
+[Sat Nov 29 17:23:43 2025] [::1]:57667 Accepted
+[Sat Nov 29 17:23:43 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:44 2025] [::1]:57667 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1
+[Sat Nov 29 17:23:44 2025] [::1]:57667 Closing
+[Sat Nov 29 17:23:44 2025] [::1]:57673 Accepted
+[Sat Nov 29 17:23:44 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:45 2025] [::1]:57673 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:45 2025] [::1]:57673 Closing
+[Sat Nov 29 17:23:45 2025] [::1]:57681 Accepted
+[Sat Nov 29 17:23:45 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:47 2025] [::1]:57681 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1
+[Sat Nov 29 17:23:47 2025] [::1]:57681 Closing
+[Sat Nov 29 17:23:47 2025] [::1]:57687 Accepted
+[Sat Nov 29 17:23:47 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:48 2025] [::1]:57687 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:48 2025] [::1]:57687 Closing
+[Sat Nov 29 17:23:48 2025] [::1]:57693 Accepted
+[Sat Nov 29 17:23:48 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:49 2025] [::1]:57693 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1
+[Sat Nov 29 17:23:49 2025] [::1]:57693 Closing
+[Sat Nov 29 17:23:49 2025] [::1]:57701 Accepted
+[Sat Nov 29 17:23:49 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:51 2025] [::1]:57701 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:51 2025] [::1]:57701 Closing
+[Sat Nov 29 17:23:51 2025] [::1]:57708 Accepted
+[Sat Nov 29 17:23:51 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:52 2025] [::1]:57708 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1
+[Sat Nov 29 17:23:52 2025] [::1]:57708 Closing
+[Sat Nov 29 17:23:52 2025] [::1]:57714 Accepted
+[Sat Nov 29 17:23:52 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:53 2025] [::1]:57714 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:53 2025] [::1]:57714 Closing
+[Sat Nov 29 17:23:53 2025] [::1]:57722 Accepted
+[Sat Nov 29 17:23:53 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:55 2025] [::1]:57722 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=105&direction=1
+[Sat Nov 29 17:23:55 2025] [::1]:57722 Closing
+[Sat Nov 29 17:23:55 2025] [::1]:57729 Accepted
+[Sat Nov 29 17:23:55 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:56 2025] [::1]:57729 [200]: POST /Analytics_api.php?action=save_prediction
+[Sat Nov 29 17:23:56 2025] [::1]:57729 Closing
+[Sat Nov 29 17:23:56 2025] [::1]:57735 Accepted
+[Sat Nov 29 17:23:56 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:57 2025] [::1]:57735 [200]: GET /Analytics_api.php?action=get_predictions&limit=20&route_id=118&start_date=2025-11-29T16%3A23%3A56.406752
+[Sat Nov 29 17:23:57 2025] [::1]:57735 Closing
+[Sat Nov 29 17:23:57 2025] [::1]:57743 Accepted
+[Sat Nov 29 17:23:57 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:23:58 2025] [::1]:57743 [200]: GET /Analytics_api.php?action=get_predictions&limit=1000
+[Sat Nov 29 17:23:58 2025] [::1]:57743 Closing
+[Sat Nov 29 17:23:58 2025] [::1]:57749 Accepted
+[Sat Nov 29 17:23:58 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:00 2025] [::1]:57749 [200]: GET /Analytics_api.php?action=available_months
+[Sat Nov 29 17:24:00 2025] [::1]:57749 Closing
+[Sat Nov 29 17:24:00 2025] [::1]:57755 Accepted
+[Sat Nov 29 17:24:00 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:01 2025] [::1]:57755 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1&month=202109
+[Sat Nov 29 17:24:01 2025] [::1]:57755 Closing
+[Sat Nov 29 17:24:01 2025] [::1]:57763 Accepted
+[Sat Nov 29 17:24:01 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:02 2025] [::1]:57763 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:02 2025] [::1]:57763 Closing
+[Sat Nov 29 17:24:02 2025] [::1]:57769 Accepted
+[Sat Nov 29 17:24:02 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:04 2025] [::1]:57769 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:04 2025] [::1]:57769 Closing
+[Sat Nov 29 17:24:04 2025] [::1]:57775 Accepted
+[Sat Nov 29 17:24:04 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:05 2025] [::1]:57775 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:05 2025] [::1]:57775 Closing
+[Sat Nov 29 17:24:05 2025] [::1]:57781 Accepted
+[Sat Nov 29 17:24:05 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:06 2025] [::1]:57781 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:06 2025] [::1]:57781 Closing
+[Sat Nov 29 17:24:06 2025] [::1]:57789 Accepted
+[Sat Nov 29 17:24:06 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:08 2025] [::1]:57789 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:08 2025] [::1]:57789 Closing
+[Sat Nov 29 17:24:08 2025] [::1]:57795 Accepted
+[Sat Nov 29 17:24:08 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:09 2025] [::1]:57795 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:09 2025] [::1]:57795 Closing
+[Sat Nov 29 17:24:09 2025] [::1]:57801 Accepted
+[Sat Nov 29 17:24:09 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:10 2025] [::1]:57801 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:10 2025] [::1]:57801 Closing
+[Sat Nov 29 17:24:10 2025] [::1]:57809 Accepted
+[Sat Nov 29 17:24:10 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:12 2025] [::1]:57809 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:12 2025] [::1]:57809 Closing
+[Sat Nov 29 17:24:12 2025] [::1]:57815 Accepted
+[Sat Nov 29 17:24:12 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:13 2025] [::1]:57815 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:13 2025] [::1]:57815 Closing
+[Sat Nov 29 17:24:13 2025] [::1]:57821 Accepted
+[Sat Nov 29 17:24:13 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:14 2025] [::1]:57821 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:14 2025] [::1]:57821 Closing
+[Sat Nov 29 17:24:14 2025] [::1]:57829 Accepted
+[Sat Nov 29 17:24:14 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:15 2025] [::1]:57829 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:15 2025] [::1]:57829 Closing
+[Sat Nov 29 17:24:16 2025] [::1]:57835 Accepted
+[Sat Nov 29 17:24:16 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:17 2025] [::1]:57835 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:17 2025] [::1]:57835 Closing
+[Sat Nov 29 17:24:17 2025] [::1]:57841 Accepted
+[Sat Nov 29 17:24:17 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:18 2025] [::1]:57841 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:18 2025] [::1]:57841 Closing
+[Sat Nov 29 17:24:18 2025] [::1]:57847 Accepted
+[Sat Nov 29 17:24:18 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:19 2025] [::1]:57847 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:19 2025] [::1]:57847 Closing
+[Sat Nov 29 17:24:19 2025] [::1]:57855 Accepted
+[Sat Nov 29 17:24:19 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:21 2025] [::1]:57855 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:21 2025] [::1]:57855 Closing
+[Sat Nov 29 17:24:21 2025] [::1]:57877 Accepted
+[Sat Nov 29 17:24:21 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:22 2025] [::1]:57877 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:22 2025] [::1]:57877 Closing
+[Sat Nov 29 17:24:22 2025] [::1]:57883 Accepted
+[Sat Nov 29 17:24:22 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:23 2025] [::1]:57883 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:23 2025] [::1]:57883 Closing
+[Sat Nov 29 17:24:23 2025] [::1]:57887 Accepted
+[Sat Nov 29 17:24:23 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:24 2025] [::1]:57887 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:24 2025] [::1]:57887 Closing
+[Sat Nov 29 17:24:24 2025] [::1]:57894 Accepted
+[Sat Nov 29 17:24:24 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:26 2025] [::1]:57894 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:26 2025] [::1]:57894 Closing
+[Sat Nov 29 17:24:26 2025] [::1]:57898 Accepted
+[Sat Nov 29 17:24:26 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:27 2025] [::1]:57898 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:27 2025] [::1]:57898 Closing
+[Sat Nov 29 17:24:27 2025] [::1]:57906 Accepted
+[Sat Nov 29 17:24:27 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:28 2025] [::1]:57906 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:28 2025] [::1]:57906 Closing
+[Sat Nov 29 17:24:28 2025] [::1]:57912 Accepted
+[Sat Nov 29 17:24:28 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:30 2025] [::1]:57912 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:30 2025] [::1]:57912 Closing
+[Sat Nov 29 17:24:30 2025] [::1]:57918 Accepted
+[Sat Nov 29 17:24:30 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:31 2025] [::1]:57918 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:31 2025] [::1]:57918 Closing
+[Sat Nov 29 17:24:31 2025] [::1]:57926 Accepted
+[Sat Nov 29 17:24:31 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:32 2025] [::1]:57926 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:32 2025] [::1]:57926 Closing
+[Sat Nov 29 17:24:32 2025] [::1]:57932 Accepted
+[Sat Nov 29 17:24:32 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:34 2025] [::1]:57932 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:34 2025] [::1]:57932 Closing
+[Sat Nov 29 17:24:34 2025] [::1]:57938 Accepted
+[Sat Nov 29 17:24:34 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:35 2025] [::1]:57938 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:35 2025] [::1]:57938 Closing
+[Sat Nov 29 17:24:35 2025] [::1]:57946 Accepted
+[Sat Nov 29 17:24:35 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:36 2025] [::1]:57946 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:36 2025] [::1]:57946 Closing
+[Sat Nov 29 17:24:36 2025] [::1]:57955 Accepted
+[Sat Nov 29 17:24:36 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:38 2025] [::1]:57955 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:38 2025] [::1]:57955 Closing
+[Sat Nov 29 17:24:38 2025] [::1]:57961 Accepted
+[Sat Nov 29 17:24:38 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:39 2025] [::1]:57961 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:39 2025] [::1]:57961 Closing
+[Sat Nov 29 17:24:39 2025] [::1]:57967 Accepted
+[Sat Nov 29 17:24:39 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:40 2025] [::1]:57967 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:40 2025] [::1]:57967 Closing
+[Sat Nov 29 17:24:40 2025] [::1]:57975 Accepted
+[Sat Nov 29 17:24:40 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:41 2025] [::1]:57975 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:41 2025] [::1]:57975 Closing
+[Sat Nov 29 17:24:41 2025] [::1]:57981 Accepted
+[Sat Nov 29 17:24:41 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:42 2025] [::1]:57981 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:42 2025] [::1]:57981 Closing
+[Sat Nov 29 17:24:42 2025] [::1]:57987 Accepted
+[Sat Nov 29 17:24:42 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:44 2025] [::1]:57987 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:44 2025] [::1]:57987 Closing
+[Sat Nov 29 17:24:44 2025] [::1]:57993 Accepted
+[Sat Nov 29 17:24:44 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:45 2025] [::1]:57993 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:45 2025] [::1]:57993 Closing
+[Sat Nov 29 17:24:45 2025] [::1]:58001 Accepted
+[Sat Nov 29 17:24:45 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:46 2025] [::1]:58001 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:46 2025] [::1]:58001 Closing
+[Sat Nov 29 17:24:46 2025] [::1]:58007 Accepted
+[Sat Nov 29 17:24:46 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:48 2025] [::1]:58007 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:48 2025] [::1]:58007 Closing
+[Sat Nov 29 17:24:48 2025] [::1]:58013 Accepted
+[Sat Nov 29 17:24:48 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:49 2025] [::1]:58013 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:49 2025] [::1]:58013 Closing
+[Sat Nov 29 17:24:49 2025] [::1]:58021 Accepted
+[Sat Nov 29 17:24:49 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:50 2025] [::1]:58021 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:50 2025] [::1]:58021 Closing
+[Sat Nov 29 17:24:50 2025] [::1]:58027 Accepted
+[Sat Nov 29 17:24:50 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:52 2025] [::1]:58027 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:52 2025] [::1]:58027 Closing
+[Sat Nov 29 17:24:52 2025] [::1]:58033 Accepted
+[Sat Nov 29 17:24:52 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:53 2025] [::1]:58033 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:53 2025] [::1]:58033 Closing
+[Sat Nov 29 17:24:53 2025] [::1]:58041 Accepted
+[Sat Nov 29 17:24:53 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:54 2025] [::1]:58041 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:54 2025] [::1]:58041 Closing
+[Sat Nov 29 17:24:54 2025] [::1]:58048 Accepted
+[Sat Nov 29 17:24:54 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:56 2025] [::1]:58048 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:56 2025] [::1]:58048 Closing
+[Sat Nov 29 17:24:56 2025] [::1]:58054 Accepted
+[Sat Nov 29 17:24:56 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:24:57 2025] [::1]:58054 [200]: GET /Analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:24:57 2025] [::1]:58054 Closing
+[Sat Nov 29 17:30:25 2025] [::1]:58401 Accepted
+[Sat Nov 29 17:30:25 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:30:26 2025] [::1]:58401 [200]: GET /analytics_api.php?action=health
+[Sat Nov 29 17:30:26 2025] [::1]:58401 Closing
+[Sat Nov 29 17:30:26 2025] [::1]:58405 Accepted
+[Sat Nov 29 17:30:26 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:30:27 2025] [::1]:58405 [200]: GET /analytics_api.php?action=data_date_range
+[Sat Nov 29 17:30:27 2025] [::1]:58405 Closing
+[Sat Nov 29 17:30:27 2025] [::1]:58413 Accepted
+[Sat Nov 29 17:30:27 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:30:29 2025] [::1]:58413 [200]: GET /analytics_api.php?action=routes
+[Sat Nov 29 17:30:29 2025] [::1]:58413 Closing
+[Sat Nov 29 17:30:29 2025] [::1]:58419 Accepted
+[Sat Nov 29 17:30:29 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:30:30 2025] [::1]:58419 [200]: GET /analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:30:30 2025] [::1]:58419 Closing
+[Sat Nov 29 17:30:30 2025] [::1]:58423 Accepted
+[Sat Nov 29 17:30:30 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:30:31 2025] [::1]:58423 [200]: GET /analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:30:31 2025] [::1]:58423 Closing
+[Sat Nov 29 17:30:31 2025] [::1]:58427 Accepted
+[Sat Nov 29 17:30:31 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:30:32 2025] [::1]:58427 [200]: GET /analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:30:32 2025] [::1]:58427 Closing
+[Sat Nov 29 17:30:33 2025] [::1]:58431 Accepted
+[Sat Nov 29 17:30:33 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:30:34 2025] [::1]:58431 [200]: GET /analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:30:34 2025] [::1]:58431 Closing
+[Sat Nov 29 17:30:34 2025] [::1]:58435 Accepted
+[Sat Nov 29 17:30:34 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:30:35 2025] [::1]:58435 [200]: GET /analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:30:35 2025] [::1]:58435 Closing
+[Sat Nov 29 17:30:35 2025] [::1]:58439 Accepted
+[Sat Nov 29 17:30:35 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:30:36 2025] [::1]:58439 [200]: GET /analytics_api.php?action=volume_by_route&service_no=118&direction=1
+[Sat Nov 29 17:30:36 2025] [::1]:58439 Closing
+[Sat Nov 29 17:39:45 2025] [::1]:58951 Accepted
+[Sat Nov 29 17:39:45 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 29 17:39:47 2025] [::1]:58951 [200]: GET /Analytics_api.php?action=routes
+[Sat Nov 29 17:39:47 2025] [::1]:58951 Closing

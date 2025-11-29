@@ -72,6 +72,11 @@ try {
             echo json_encode(getMRTStationsList($pdo));
             break;
 
+        case 'ridership_forecast':
+            // New endpoint to serve predictive data from the JSON file
+            echo getRidershipForecastData();
+            break;
+
         default:
             http_response_code(400);
             echo json_encode(['error' => 'Invalid action parameter']);
@@ -677,5 +682,24 @@ function getIntermodalAnalysis($pdo, $stationId, $radius = 500) {
         'total_bus_stops' => count($busStopsWithinRadius),
         'unique_bus_services' => count($allBusServices)
     ];
+}
+
+/**
+ * Get ridership forecast data from the processed JSON file.
+ * In a production environment, this might query a database or call a machine learning model API.
+ */
+function getRidershipForecastData() {
+    $filePath = __DIR__ . '/Database(Predictive analytics)/data/processed_hourly_ridership.json';
+
+    if (!file_exists($filePath)) {
+        http_response_code(404);
+        return json_encode(['error' => 'Forecast data file not found.']);
+    }
+
+    $jsonData = file_get_contents($filePath);
+    // No need to decode and re-encode, just output the raw JSON content.
+    // This is more efficient.
+    header('Content-Type: application/json');
+    return $jsonData;
 }
 ?>
