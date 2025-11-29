@@ -3,7 +3,7 @@
  * Database Configuration for YourTrip Analytics
  *
  * Connection via SSH tunnel:
- * ssh -L 33060:127.0.0.1:3306 inf2003-dev@35.212.180.159
+ * ssh -L 33060:127.0.0.1:3306 inf2003-dev@104.198.169.207
  */
 
 // Database credentials

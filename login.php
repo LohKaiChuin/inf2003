@@ -11,6 +11,17 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['role'])) {
     exit();
 }
 
+// Check for registration success
+$registrationSuccess = false;
+$registeredUsername = '';
+if (isset($_SESSION['registration_success']) && $_SESSION['registration_success'] === true) {
+    $registrationSuccess = true;
+    $registeredUsername = $_SESSION['registered_username'] ?? '';
+    // Clear the session variables
+    unset($_SESSION['registration_success']);
+    unset($_SESSION['registered_username']);
+}
+
 // Database connection
 $db_host = '127.0.0.1';
 $db_port = 3306;
@@ -323,6 +334,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             font-size: 14px;
         }
 
+        .success-message {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            font-size: 14px;
+            text-align: center;
+            animation: fadeInError 0.3s ease;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .success-message::before {
+            content: '✓';
+            font-size: 18px;
+        }
+
         @keyframes fadeInError {
             from {
                 opacity: 0;
@@ -500,6 +533,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <form class="login-form" method="POST" action="login.php">
+            <?php if ($registrationSuccess): ?>
+                <div class="success-message">
+                    Account created successfully! Please login with your credentials.
+                </div>
+            <?php endif; ?>
+
             <?php if (isset($error)): ?>
                 <div class="error-message show" style="margin-bottom: 20px;">
                     <?php echo htmlspecialchars($error); ?>
@@ -514,7 +553,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         id="username"
                         name="username"
                         placeholder="Enter your username or email"
-                        value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>"
+                        value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ($registrationSuccess && !empty($registeredUsername) ? htmlspecialchars($registeredUsername) : ''); ?>"
                         required
                     >
                 </div>
@@ -539,7 +578,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="checkbox" id="rememberMe" name="rememberMe">
                     <span>Remember me</span>
                 </label>
-                <a href="forgot-password.php" class="forgot-password">Forgot Password?</a>
+                <a href="forget_password.php" class="forgot-password">Forgot Password?</a>
             </div>
 
             <button type="submit" class="login-btn">Login</button>
