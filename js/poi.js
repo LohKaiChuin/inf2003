@@ -112,7 +112,6 @@ function updateMapMarkers() {
             });
 
             // Create popup content
-            const displayHub = poi.translatedHub || poi.nearest_hub;
             const popupContent = `
                 <div style="min-width: 200px;">
                     <h6 style="margin: 0 0 8px 0; color: #1a73e8;">${poi.name}</h6>
@@ -130,9 +129,9 @@ function updateMapMarkers() {
                                 <strong>Distance:</strong> ${poi.distance_to_hub}m to hub
                             </div>
                         ` : ''}
-                        ${displayHub ? `
+                        ${poi.nearest_hub ? `
                             <div>
-                                <strong>Nearest Hub:</strong> ${displayHub}
+                                <strong>Nearest Hub:</strong> ${poi.nearest_hub}
                             </div>
                         ` : ''}
                     </div>
@@ -312,7 +311,6 @@ function renderPOIList() {
  * Create POI card (grid view)
  */
 function createPOICard(poi) {
-    const displayHub = poi.translatedHub || poi.nearest_hub || 'transport hub';
     return `
         <div class="col-md-6 col-lg-4">
             <div class="card h-100 poi-card">
@@ -331,7 +329,7 @@ function createPOICard(poi) {
                                 <svg width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                                 </svg>
-                                ${poi.distance_to_hub}m from ${displayHub}
+                                ${poi.distance_to_hub}m from ${poi.nearest_hub || 'transport hub'}
                             </small></p>
                         ` : ''}
                     </div>
@@ -345,7 +343,6 @@ function createPOICard(poi) {
  * Create POI list item (list view)
  */
 function createPOIListItem(poi) {
-    const displayHub = poi.translatedHub || poi.nearest_hub || 'transport hub';
     return `
         <div class="list-group-item">
             <div class="d-flex w-100 justify-content-between align-items-center">
@@ -353,7 +350,7 @@ function createPOIListItem(poi) {
                     <h6 class="mb-1">${poi.name}</h6>
                     <p class="mb-1 text-muted"><small>${poi.category}</small></p>
                     ${poi.distance_to_hub ? `
-                        <small class="text-muted">${poi.distance_to_hub}m from ${displayHub}</small>
+                        <small class="text-muted">${poi.distance_to_hub}m from ${poi.nearest_hub || 'transport hub'}</small>
                     ` : ''}
                 </div>
                 ${poi.rating ? `<span class="badge bg-warning text-dark">${poi.rating} ★</span>` : ''}
@@ -449,21 +446,18 @@ function renderTopRated() {
         return;
     }
 
-    tableBody.innerHTML = topRated.map((poi, index) => {
-        const displayHub = poi.translatedHub || poi.nearest_hub || '-';
-        return `
-            <tr>
-                <td>
-                    <span class="badge ${index < 3 ? 'bg-warning text-dark' : 'bg-secondary'}">${index + 1}</span>
-                </td>
-                <td><strong>${poi.name}</strong></td>
-                <td>${poi.category}</td>
-                <td>${poi.rating} ★</td>
-                <td>${poi.distance_to_hub ? poi.distance_to_hub + 'm' : '-'}</td>
-                <td>${displayHub}</td>
-            </tr>
-        `;
-    }).join('');
+    tableBody.innerHTML = topRated.map((poi, index) => `
+        <tr>
+            <td>
+                <span class="badge ${index < 3 ? 'bg-warning text-dark' : 'bg-secondary'}">${index + 1}</span>
+            </td>
+            <td><strong>${poi.name}</strong></td>
+            <td>${poi.category}</td>
+            <td>${poi.rating} ★</td>
+            <td>${poi.distance_to_hub ? poi.distance_to_hub + 'm' : '-'}</td>
+            <td>${poi.nearest_hub || '-'}</td>
+        </tr>
+    `).join('');
 }
 
 /**
@@ -496,83 +490,6 @@ function showNoDataMessage() {
             <p class="text-muted">The POI database is currently being populated. Please check back later.</p>
         </div>
     `;
-}
-
-/**
- * Update transport stop names (MRT/Bus) with translations
- * Keep business/POI names in English
- */
-async function updateTransportStopNames(language) {
-    console.log('Updating transport stop names to language:', language);
-
-    try {
-        // Fetch translated MRT stations from multilingual API
-        const response = await MultilingualAPI.getStops('mrt', language);
-
-        if (!response || !response.stops) {
-            console.warn('No MRT station translations available');
-            return;
-        }
-
-        // Create translation map: English name (uppercase) -> Translated name
-        const translationMap = {};
-        response.stops.forEach(stop => {
-            if (stop.names && stop.names.en) {
-                // Map both with and without "MRT Station" suffix
-                const englishName = stop.names.en.toUpperCase();
-                translationMap[englishName] = stop.name;
-
-                // Also map without "MRT Station" for matching
-                const baseName = englishName.replace(' MRT STATION', '').replace(' MRT', '');
-                translationMap[baseName] = stop.name;
-            }
-        });
-
-        console.log('Translation map created with', Object.keys(translationMap).length, 'entries');
-
-        // Update both allPOIs and filteredPOIs
-        [allPOIs, filteredPOIs].forEach(poiList => {
-            poiList.forEach(poi => {
-                // Check if nearest_hub is a transport stop (contains MRT, LRT, or Bus)
-                if (poi.nearest_hub &&
-                    (poi.nearest_hub.includes('MRT') ||
-                     poi.nearest_hub.includes('LRT') ||
-                     poi.nearest_hub.includes('Bus'))) {
-
-                    const upperHub = poi.nearest_hub.toUpperCase();
-                    const baseHub = upperHub.replace(' MRT STATION', '').replace(' MRT', '');
-
-                    // Try to find translation
-                    const translated = translationMap[upperHub] || translationMap[baseHub];
-
-                    if (translated && translated !== poi.nearest_hub) {
-                        console.log(`Translating: ${poi.nearest_hub} -> ${translated}`);
-                        poi.translatedHub = translated;
-                    } else {
-                        poi.translatedHub = poi.nearest_hub;
-                    }
-                } else {
-                    // Keep non-transport locations in English
-                    poi.translatedHub = poi.nearest_hub;
-                }
-            });
-        });
-
-        // Re-render the UI with updated translations
-        updateMapMarkers();
-        renderPOIList();
-
-        console.log('Transport stop names updated successfully');
-
-    } catch (error) {
-        console.error('Error updating transport stop names:', error);
-        // On error, keep original names
-        [allPOIs, filteredPOIs].forEach(poiList => {
-            poiList.forEach(poi => {
-                poi.translatedHub = poi.nearest_hub;
-            });
-        });
-    }
 }
 
 /**
@@ -611,9 +528,6 @@ function generateMockData() {
 
     return mockPOIs;
 }
-
-// Export updateTransportStopNames for use by multilingual.js
-window.updateTransportStopNames = updateTransportStopNames;
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', initPOIPage);

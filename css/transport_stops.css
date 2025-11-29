@@ -1,0 +1,30 @@
+/**
+ * Transport Stops Page Styles
+ */
+
+/* Table styling */
+#transport-results tbody tr {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#transport-results tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Custom marker styling */
+.custom-marker {
+    background: transparent;
+    border: none;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+    #transport-results {
+        font-size: 0.9rem;
+    }
+
+    #transport-map {
+        height: 400px !important;
+    }
+}

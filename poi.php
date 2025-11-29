@@ -161,7 +161,6 @@
 
     <!-- Custom JS -->
     <script src="js/api.js"></script>
-    <script src="js/multilingual.js"></script>
     <script src="js/poi.js"></script>
 </body>
 </html>
