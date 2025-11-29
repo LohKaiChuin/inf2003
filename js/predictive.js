@@ -1,148 +1,166 @@
 /**
- * Predictive Analytics Page - Main Module
- * Handles data loading and visualization for forecasts.
+ * Predictive Analytics Module
+ * Handles fetching and displaying ridership forecast data.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Add a specific API endpoint for our new forecast data
-    API.getForecast = async () => await API.fetchData('ridership_forecast');
-    console.log('Predictive Analytics page initializing...');
     initPredictivePage();
 });
 
+let forecastChart = null;
+let allForecastData = [];
+
 /**
- * Initialize all components on the predictive analytics page.
+ * Initializes the predictive analytics page.
  */
 async function initPredictivePage() {
     try {
-        // Load data in parallel for performance
-        await Promise.all([
-            loadPredictiveMetrics(),
-            initForecastChart(),
-            initHotspotMap()
-        ]);
+        showLoading('forecast-chart');
+        allForecastData = await API.getForecast();
 
-        console.log('✓ Predictive Analytics page initialized successfully!');
+        if (!allForecastData || allForecastData.length === 0) {
+            displayError('forecast-chart', 'No forecast data is available. Please run the prediction model.');
+            return;
+        }
+
+        populateFilters(allForecastData);
+        setupEventListeners();
+
+        // Initial render
+        const initialRoute = document.getElementById('route-selector').value;
+        updateDashboard(initialRoute);
 
     } catch (error) {
         console.error('Error initializing predictive page:', error);
-        // You can show a global error on the page if needed
+        displayError('forecast-chart', `Failed to load forecast data: ${error.message}`);
     }
 }
 
 /**
- * Load and display the top predictive metric cards.
+ * Populates the filter dropdowns.
+ * @param {Array} data The forecast data.
  */
-async function loadPredictiveMetrics() {
-    console.log('Loading predictive metrics...');
-    // TODO: Replace with your actual API call for predictive metrics
-    // const metrics = await API.getPredictiveSummary();
+function populateFilters(data) {
+    const routeSelector = document.getElementById('route-selector');
+    const uniqueRoutes = [...new Set(data.map(item => item.route_id))].sort();
 
-    // Using mock data for now
-    const mockMetrics = {
-        nextMonthRidership: 85_500_000,
-        predictedPeak: '6:00 PM',
-        demandHotspot: 'Jurong East',
-        modelAccuracy: '94.5%'
-    };
+    routeSelector.innerHTML = uniqueRoutes.map(route => `<option value="${route}">${route}</option>`).join('');
 
-    document.getElementById('metric-next-month-ridership').textContent = (mockMetrics.nextMonthRidership / 1_000_000).toFixed(1) + 'M';
-    document.getElementById('metric-predicted-peak').textContent = mockMetrics.predictedPeak;
-    document.getElementById('metric-demand-hotspot').textContent = mockMetrics.demandHotspot;
-    document.getElementById('metric-model-accuracy').textContent = mockMetrics.modelAccuracy;
-    console.log('✓ Predictive metrics loaded.');
+    // Set default date if needed
+    const datePicker = document.getElementById('date-picker');
+    if (!datePicker.value) {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        datePicker.value = tomorrow.toISOString().split('T')[0];
+    }
 }
 
 /**
- * Initialize the ridership forecast chart.
+ * Sets up event listeners for filters.
  */
-async function initForecastChart() {
-    console.log('Initializing forecast chart...');
-    try {
-        const forecastData = await API.getForecast();
+function setupEventListeners() {
+    document.getElementById('apply-filters-btn').addEventListener('click', () => {
+        const selectedRoute = document.getElementById('route-selector').value;
+        updateDashboard(selectedRoute);
+    });
+}
 
-        // Group data by month and sum passengers
-        const monthlyData = forecastData.reduce((acc, record) => {
-            // Extract YYYY-MM from the date string
-            const monthKey = record.date.substring(0, 7);
-            if (!acc[monthKey]) {
-                acc[monthKey] = 0;
-            }
-            acc[monthKey] += record.passengers;
-            return acc;
-        }, {});
+/**
+ * Updates the chart and table based on the selected route.
+ * @param {string} routeId The selected bus route ID.
+ */
+function updateDashboard(routeId) {
+    const filteredData = allForecastData.filter(item => item.route_id === routeId);
+    renderForecastChart(filteredData);
+    renderForecastTable(filteredData);
+}
 
-        const labels = Object.keys(monthlyData);
-        const dataPoints = Object.values(monthlyData);
+/**
+ * Renders the forecast chart using Chart.js.
+ * @param {Array} data The data for the selected route.
+ */
+function renderForecastChart(data) {
+    const chartContainer = document.getElementById('forecast-chart');
+    chartContainer.innerHTML = '<canvas id="forecast-canvas"></canvas>'; // Clear previous chart
+    const ctx = document.getElementById('forecast-canvas').getContext('2d');
 
-        const container = document.getElementById('forecast-chart');
-        container.innerHTML = '<canvas id="ridershipForecastCanvas"></canvas>'; // Add a canvas element
-        const ctx = document.getElementById('ridershipForecastCanvas').getContext('2d');
+    const labels = data.map(item => `${item.date} ${String(item.hour).padStart(2, '0')}:00`);
+    const passengerData = data.map(item => item.passengers);
 
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Predicted Ridership',
-                    data: dataPoints,
-                    borderColor: '#1a73e8',
-                    backgroundColor: 'rgba(26, 115, 232, 0.1)',
-                    fill: true,
-                    tension: 0.4, // Makes the line smooth
-                    pointBackgroundColor: '#1a73e8',
-                    pointRadius: 4,
-                    pointHoverRadius: 6,
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Total Passengers'
-                        }
+    if (forecastChart) {
+        forecastChart.destroy();
+    }
+
+    forecastChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Predicted Passengers',
+                data: passengerData,
+                borderColor: 'rgba(26, 115, 232, 1)',
+                backgroundColor: 'rgba(26, 115, 232, 0.1)',
+                fill: true,
+                tension: 0.4,
+                pointRadius: 4,
+                pointBackgroundColor: 'rgba(26, 115, 232, 1)',
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Date & Hour'
                     },
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Month'
-                        }
+                    ticks: {
+                        maxRotation: 45,
+                        minRotation: 45,
+                        autoSkip: true,
+                        maxTicksLimit: 24 // Show a reasonable number of ticks
                     }
                 },
-                plugins: {
-                    legend: {
-                        display: false // Hide legend as there's only one dataset
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Passengers'
                     }
                 }
+            },
+            plugins: {
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                legend: {
+                    display: false
+                }
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
             }
-        });
-    } catch (error) {
-        console.error('Error rendering forecast chart:', error);
-    }
-    console.log('✓ Forecast chart initialized.');
+        }
+    });
 }
 
 /**
- * Initialize the demand hotspot map.
+ * Renders the forecast data in a table.
+ * @param {Array} data The data for the selected route.
  */
-async function initHotspotMap() {
-    console.log('Initializing hotspot map...');
-    const mapContainer = document.getElementById('hotspot-map');
+function renderForecastTable(data) {
+    const tableBody = document.getElementById('forecast-table-body');
+    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
-    // TODO: Add your Leaflet map logic here.
-    // You can display polygons or a heatmap of predicted high-demand areas.
-    const map = L.map(mapContainer).setView([1.3521, 103.8198], 12);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-    }).addTo(map);
-
-    // Example: Add a sample marker
-    L.marker([1.3329, 103.7436]).addTo(map)
-        .bindPopup('<b>Predicted Hotspot:</b><br>Jurong East Area');
-
-    console.log('✓ Hotspot map initialized.');
+    tableBody.innerHTML = data.map(item => `
+        <tr>
+            <td>${item.date}</td>
+            <td>${String(item.hour).padStart(2, '0')}:00</td>
+            <td>${days[item.day_of_week]}</td>
+            <td>${Math.round(item.passengers)}</td>
+        </tr>
+    `).join('');
 }

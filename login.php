@@ -91,6 +91,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ]), time() + (86400 * 30), '/'); // 30 days
         }
 
+        // Set a simple session cookie to indicate login status for client-side JS
+        // This cookie will be cleared on logout. It doesn't contain sensitive info.
+        setcookie('ltaWannabeUser', 'loggedIn', 0, '/');
+
         // Redirect based on role
         if ($role === 'admin') {
             header('Location: admin-dashboard.php');

@@ -57,7 +57,7 @@ const Charts = {
                 const selectedMode = modeSelector.value;
 
                 // Fetch data based on selected mode
-                const data = await API.getRidershipTrends(selectedMode);
+                const data = await API.getRidershipTrends({ mode: selectedMode });
                 this.renderStackedAreaChart(data, selectedYear, selectedMode);
 
                 // Update legend visibility based on mode selection

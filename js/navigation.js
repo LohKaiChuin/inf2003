@@ -22,6 +22,7 @@
             // Initialize navigation functionality
             initNavigation();
             setActivePage();
+            updateAuthStatus();
 
         } catch (error) {
             console.error('Error loading navigation:', error);
@@ -64,19 +65,56 @@
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         const navLinks = document.querySelectorAll('.nav-link');
 
+        let pageIdentifier = currentPage.split('.')[0];
+        if (pageIdentifier === 'index' || pageIdentifier === '') {
+            pageIdentifier = 'index';
+        }
+
         navLinks.forEach(link => {
-            const href = link.getAttribute('href');
+            const linkPage = link.getAttribute('data-page');
 
             // Remove active class from all links
             link.classList.remove('active');
 
             // Add active class to current page link
-            if (href === currentPage ||
-                (currentPage === '' && href === 'index.html') ||
-                (currentPage === '/' && href === 'index.html')) {
+            if (linkPage === pageIdentifier) {
                 link.classList.add('active');
             }
         });
+    }
+
+    /**
+     * Checks login status and updates the Login/Logout button.
+     * This is a client-side check based on a session cookie.
+     */
+    function updateAuthStatus() {
+        const authLink = document.getElementById('auth-link');
+        const authLinkText = document.getElementById('auth-link-text');
+
+        if (!authLink || !authLinkText) return;
+
+        // Check for a session cookie (e.g., 'ltaWannabeUser')
+        const isLoggedIn = document.cookie.split(';').some((item) => item.trim().startsWith('ltaWannabeUser='));
+
+        if (isLoggedIn) {
+            // User is logged in
+            authLink.href = 'logout.php';
+            authLinkText.textContent = 'Logout';
+            authLink.classList.remove('nav-link-login');
+            authLink.classList.add('nav-link-logout');
+            authLink.onclick = function(e) {
+                if (!confirm('Are you sure you want to logout?')) {
+                    e.preventDefault();
+                }
+            };
+        } else {
+            // User is not logged in
+            authLink.href = 'login.php';
+            authLinkText.textContent = 'Login';
+            authLink.classList.remove('nav-link-logout');
+            authLink.classList.add('nav-link-login');
+            authLink.onclick = null; // Remove any previous click handler
+        }
     }
 
     // Load navigation when DOM is ready

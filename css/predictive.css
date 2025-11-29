@@ -1,0 +1,41 @@
+/**
+ * Predictive Analytics Page - Specific Styles
+ */
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    width: 100%;
+    min-height: 450px;
+}
+
+/* Filter Controls */
+.form-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.form-select,
+.form-control {
+    font-size: 14px;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    padding: 8px 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-select:focus,
+.form-control:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+    outline: none;
+}
+
+/* Table Styles */
+.table thead th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: var(--text-primary);
+}

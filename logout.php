@@ -11,7 +11,7 @@ if (isset($_COOKIE[session_name()])) {
 
 // Clear the remember me cookie
 if (isset($_COOKIE['ltaWannabeUser'])) {
-    setcookie('ltaWannabeUser', '', time() - 3600, '/');
+    setcookie('ltaWannabeUser', '', time() - 3600, '/'); // Clear both potential cookies
 }
 
 // Destroy the session

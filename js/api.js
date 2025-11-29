@@ -48,8 +48,8 @@ const API = {
     /**
      * Get ridership trends for stacked area chart
      */
-    async getRidershipTrends() {
-        return await this.fetchData('ridership_trends');
+    async getRidershipTrends(params = {}) {
+        return await this.fetchData('ridership_trends', params);
     },
 
     /**
@@ -99,6 +99,13 @@ const API = {
      */
     async getPOIStats() {
         return await this.fetchData('poi_stats');
+    },
+
+    /**
+     * Get ridership forecast data
+     */
+    async getForecast() {
+        return await this.fetchData('ridership_forecast');
     }
 };
 

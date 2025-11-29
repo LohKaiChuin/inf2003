@@ -12,7 +12,7 @@
         </button>
         <ul class="nav-links" id="navLinks">
             <li>
-                <a href="ethan.html" class="nav-link nav-link-home" data-page="index">
+                <a href="index.php" class="nav-link nav-link-home" data-page="index">
                     <svg fill="currentColor" viewBox="0 0 16 16">
                         <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
                     </svg>
@@ -20,11 +20,28 @@
                 </a>
             </li>
             <li>
-                <a href="poi.html" class="nav-link nav-link-poi" data-page="poi">
+                <a href="poi.php" class="nav-link nav-link-poi" data-page="poi">
                     <svg fill="currentColor" viewBox="0 0 16 16">
                         <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
                     </svg>
                     POI Recommendations
+                </a>
+            </li>
+            <li>
+                <a href="predictive.php" class="nav-link nav-link-predictive" data-page="predictive">
+                    <svg fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M11.5 2.021-1.48 8.982l-.003.003L0 9.5v5h5l.518-1.482.003-.003L13.979 4.5 11.5 2.021zm-1.13 1.13 2.46 2.46-7.5 7.5-2.46-2.46 7.5-7.5z"/>
+                    </svg>
+                    Predictive Analytics
+                </a>
+            </li>
+            <!-- User Authentication Section -->
+            <li class="nav-auth-section">
+                <a href="login.php" class="nav-link nav-link-login" id="auth-link">
+                    <svg fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                    </svg>
+                    <span id="auth-link-text">Login</span>
                 </a>
             </li>
         </ul>
