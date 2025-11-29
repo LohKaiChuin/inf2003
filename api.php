@@ -23,7 +23,8 @@ try {
             break;
 
         case 'ridership_trends':
-            echo json_encode(getRidershipTrends($pdo));
+            $mode = isset($_GET['mode']) ? $_GET['mode'] : null;
+            echo json_encode(getRidershipTrends($pdo, $mode));
             break;
 
         case 'bus_metrics':
@@ -43,17 +44,21 @@ try {
             echo json_encode(getBusiestStops($pdo, $limit));
             break;
 
-        case 'pois':
-            echo json_encode(getPOIs($pdo));
+        case 'intermodal_analysis':
+            $stationId = isset($_GET['station_id']) ? $_GET['station_id'] : null;
+            $radius = isset($_GET['radius']) ? (int)$_GET['radius'] : 500;
+
+            if ($stationId === null) {
+                http_response_code(400);
+                echo json_encode(['error' => 'station_id parameter is required']);
+                break;
+            }
+
+            echo json_encode(getIntermodalAnalysis($pdo, $stationId, $radius));
             break;
 
-        case 'poi_by_category':
-            $category = $_GET['category'] ?? '';
-            echo json_encode(getPOIsByCategory($pdo, $category));
-            break;
-
-        case 'poi_stats':
-            echo json_encode(getPOIStats($pdo));
+        case 'mrt_stations_list':
+            echo json_encode(getMRTStationsList($pdo));
             break;
 
         default:
@@ -131,8 +136,9 @@ function getSummaryData($pdo) {
 /**
  * Get ridership trends data for stacked area chart
  */
-function getRidershipTrends($pdo) {
-    $stmt = $pdo->query("
+function getRidershipTrends($pdo, $mode = null) {
+    // Build query with optional mode filter
+    $query = "
         SELECT
             date,
             year,
@@ -140,8 +146,23 @@ function getRidershipTrends($pdo) {
             mode as label,
             ridership as total_passengers
         FROM Ridership
-        ORDER BY year ASC, month ASC, mode ASC
-    ");
+    ";
+
+    // Add WHERE clause if mode is specified
+    if ($mode !== null && $mode !== '' && $mode !== 'all') {
+        $query .= " WHERE mode = :mode";
+    }
+
+    $query .= " ORDER BY year ASC, month ASC, mode ASC";
+
+    $stmt = $pdo->prepare($query);
+
+    // Bind parameter if mode is specified
+    if ($mode !== null && $mode !== '' && $mode !== 'all') {
+        $stmt->bindParam(':mode', $mode, PDO::PARAM_STR);
+    }
+
+    $stmt->execute();
 
     $data = [];
     while ($row = $stmt->fetch()) {
@@ -295,22 +316,29 @@ function getHourlyRidership($pdo) {
 
 /**
  * Get busiest bus stops for table and map
+ * OPTIMIZED: Pre-aggregate volumes before joining with BusStops
  */
 function getBusiestStops($pdo, $limit = 10) {
     $stmt = $pdo->prepare("
         SELECT
-            bv.stop_id,
+            top_stops.stop_id,
             bs.BUS_STOP as BusStopCode,
             bs.LOC_DESC as stop_name,
-            SUM(bv.vol_in) as total_boarding,
+            top_stops.total_boarding,
             bs.Latitude as lat,
             bs.Longitude as lng
-        FROM BusVolume bv
-        LEFT JOIN BusStops bs ON bv.stop_id = bs.BUS_STOP
+        FROM (
+            SELECT
+                stop_id,
+                SUM(vol_in) as total_boarding
+            FROM BusVolume
+            GROUP BY stop_id
+            ORDER BY total_boarding DESC
+            LIMIT ?
+        ) AS top_stops
+        INNER JOIN BusStops bs ON top_stops.stop_id = bs.BUS_STOP
         WHERE bs.LOC_DESC IS NOT NULL
-        GROUP BY bv.stop_id, bs.BUS_STOP, bs.LOC_DESC, bs.Latitude, bs.Longitude
-        ORDER BY total_boarding DESC
-        LIMIT ?
+        ORDER BY top_stops.total_boarding DESC
     ");
 
     $stmt->execute([$limit]);
@@ -331,162 +359,207 @@ function getBusiestStops($pdo, $limit = 10) {
 }
 
 /**
- * Get all POIs with transport hub information
+ * Get list of all MRT stations for dropdown
+ * Returns only UNIQUE station names (no duplicates)
  */
-function getPOIs($pdo) {
-    // Query assumes POI table structure similar to:
-    // POI(poi_id, name, category, rating, latitude, longitude, description, location)
-    // And a relationship to nearest transport hub (bus stop or MRT station)
+function getMRTStationsList($pdo) {
+    $stmt = $pdo->query("
+        SELECT DISTINCT
+            stop_id,
+            name,
+            lat,
+            lng
+        FROM MRTStations
+        GROUP BY name, stop_id, lat, lng
+        ORDER BY name ASC
+    ");
 
-    try {
-        $stmt = $pdo->query("
-            SELECT
-                p.poi_id as id,
-                p.name,
-                p.category,
-                p.rating,
-                p.latitude,
-                p.longitude,
-                p.description,
-                p.location,
-                p.distance_to_hub,
-                p.nearest_hub_id,
-                COALESCE(bs.LOC_DESC, ms.stop_name) as nearest_hub
-            FROM POI p
-            LEFT JOIN BusStops bs ON p.nearest_hub_id = bs.BUS_STOP
-            LEFT JOIN MRTStations ms ON p.nearest_hub_id = ms.stop_id
-            ORDER BY p.rating DESC, p.name ASC
-        ");
+    $data = [];
+    $seenNames = [];
 
-        $data = [];
-        while ($row = $stmt->fetch()) {
+    while ($row = $stmt->fetch()) {
+        // Additional check to ensure unique names in the result
+        if (!in_array($row['name'], $seenNames)) {
             $data[] = [
-                'id' => (int)$row['id'],
-                'name' => $row['name'],
-                'category' => $row['category'],
-                'rating' => $row['rating'] ? (float)$row['rating'] : null,
-                'latitude' => $row['latitude'] ? (float)$row['latitude'] : null,
-                'longitude' => $row['longitude'] ? (float)$row['longitude'] : null,
-                'description' => $row['description'],
-                'location' => $row['location'],
-                'distance_to_hub' => $row['distance_to_hub'] ? (int)$row['distance_to_hub'] : null,
-                'nearest_hub' => $row['nearest_hub']
+                'stop_id' => $row['stop_id'],
+                'stop_name' => $row['name'],
+                'lat' => (float)$row['lat'],
+                'lng' => (float)$row['lng']
             ];
+            $seenNames[] = $row['name'];
         }
-
-        return $data;
-
-    } catch (PDOException $e) {
-        // Return empty array if table doesn't exist yet
-        error_log("POI query error: " . $e->getMessage());
-        return [];
     }
+
+    return $data;
 }
 
 /**
- * Get POIs filtered by category
+ * Calculate distance between two coordinates using Haversine formula
+ * Returns distance in meters
  */
-function getPOIsByCategory($pdo, $category) {
-    if (empty($category)) {
-        return getPOIs($pdo);
-    }
+function calculateDistance($lat1, $lon1, $lat2, $lon2) {
+    $earthRadius = 6371000; // Earth's radius in meters
 
-    try {
-        $stmt = $pdo->prepare("
-            SELECT
-                p.poi_id as id,
-                p.name,
-                p.category,
-                p.rating,
-                p.latitude,
-                p.longitude,
-                p.description,
-                p.location,
-                p.distance_to_hub,
-                p.nearest_hub_id,
-                COALESCE(bs.LOC_DESC, ms.stop_name) as nearest_hub
-            FROM POI p
-            LEFT JOIN BusStops bs ON p.nearest_hub_id = bs.BUS_STOP
-            LEFT JOIN MRTStations ms ON p.nearest_hub_id = ms.stop_id
-            WHERE p.category = ?
-            ORDER BY p.rating DESC, p.name ASC
-        ");
+    $dLat = deg2rad($lat2 - $lat1);
+    $dLon = deg2rad($lon2 - $lon1);
 
-        $stmt->execute([$category]);
+    $a = sin($dLat / 2) * sin($dLat / 2) +
+         cos(deg2rad($lat1)) * cos(deg2rad($lat2)) *
+         sin($dLon / 2) * sin($dLon / 2);
 
-        $data = [];
-        while ($row = $stmt->fetch()) {
-            $data[] = [
-                'id' => (int)$row['id'],
-                'name' => $row['name'],
-                'category' => $row['category'],
-                'rating' => $row['rating'] ? (float)$row['rating'] : null,
-                'latitude' => $row['latitude'] ? (float)$row['latitude'] : null,
-                'longitude' => $row['longitude'] ? (float)$row['longitude'] : null,
-                'description' => $row['description'],
-                'location' => $row['location'],
-                'distance_to_hub' => $row['distance_to_hub'] ? (int)$row['distance_to_hub'] : null,
-                'nearest_hub' => $row['nearest_hub']
-            ];
-        }
+    $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
 
-        return $data;
+    $distance = $earthRadius * $c;
 
-    } catch (PDOException $e) {
-        error_log("POI by category query error: " . $e->getMessage());
-        return [];
-    }
+    return $distance;
 }
 
 /**
- * Get POI statistics
+ * Get intermodal transfer analysis for a specific MRT station
+ * OPTIMIZED: Uses SQL-based distance calculation and single query
  */
-function getPOIStats($pdo) {
-    try {
-        $result = [];
+function getIntermodalAnalysis($pdo, $stationId, $radius = 500) {
+    // Get MRT station details
+    $stmt = $pdo->prepare("
+        SELECT
+            stop_id,
+            name,
+            lat,
+            lng
+        FROM MRTStations
+        WHERE stop_id = ?
+    ");
+    $stmt->execute([$stationId]);
+    $station = $stmt->fetch();
 
-        // Total POIs
-        $stmt = $pdo->query("SELECT COUNT(*) as total FROM POI");
-        $total = $stmt->fetch();
-        $result['total_pois'] = (int)$total['total'];
+    if (!$station) {
+        return ['error' => 'MRT station not found'];
+    }
 
-        // Total categories
-        $stmt = $pdo->query("SELECT COUNT(DISTINCT category) as categories FROM POI");
-        $categories = $stmt->fetch();
-        $result['total_categories'] = (int)$categories['categories'];
+    $stationLat = (float)$station['lat'];
+    $stationLng = (float)$station['lng'];
+    $radiusKm = $radius / 1000; // Convert to km for calculation
 
-        // Average rating
-        $stmt = $pdo->query("SELECT AVG(rating) as avg_rating FROM POI WHERE rating IS NOT NULL");
-        $avgRating = $stmt->fetch();
-        $result['avg_rating'] = $avgRating['avg_rating'] ? (float)$avgRating['avg_rating'] : null;
+    // Calculate bounding box (approximate, 1 degree ≈ 111km)
+    $latDelta = $radiusKm / 111;
+    $lngDelta = $radiusKm / (111 * cos(deg2rad($stationLat)));
 
-        // Category distribution
-        $stmt = $pdo->query("
-            SELECT category, COUNT(*) as count
-            FROM POI
-            GROUP BY category
-            ORDER BY count DESC
-        ");
+    // OPTIMIZED: Get bus stops within radius using SQL-based Haversine formula
+    // This replaces the PHP loop that was fetching ALL bus stops
+    $stmt = $pdo->prepare("
+        SELECT
+            BUS_STOP,
+            LOC_DESC,
+            Latitude,
+            Longitude,
+            (6371000 * acos(
+                cos(radians(:lat1)) * cos(radians(Latitude))
+                * cos(radians(Longitude) - radians(:lng1))
+                + sin(radians(:lat2)) * sin(radians(Latitude))
+            )) AS distance
+        FROM BusStops
+        WHERE LOC_DESC IS NOT NULL
+            AND Latitude IS NOT NULL
+            AND Longitude IS NOT NULL
+            AND Latitude BETWEEN :minLat AND :maxLat
+            AND Longitude BETWEEN :minLng AND :maxLng
+        HAVING distance <= :radius
+        ORDER BY distance
+    ");
 
-        $categoryDist = [];
-        while ($row = $stmt->fetch()) {
-            $categoryDist[] = [
-                'category' => $row['category'],
-                'count' => (int)$row['count']
-            ];
-        }
-        $result['category_distribution'] = $categoryDist;
+    $stmt->execute([
+        'lat1' => $stationLat,
+        'lat2' => $stationLat,
+        'lng1' => $stationLng,
+        'minLat' => $stationLat - $latDelta,
+        'maxLat' => $stationLat + $latDelta,
+        'minLng' => $stationLng - $lngDelta,
+        'maxLng' => $stationLng + $lngDelta,
+        'radius' => $radius
+    ]);
 
-        return $result;
+    $busStops = $stmt->fetchAll();
 
-    } catch (PDOException $e) {
-        error_log("POI stats query error: " . $e->getMessage());
+    if (empty($busStops)) {
         return [
-            'total_pois' => 0,
-            'total_categories' => 0,
-            'avg_rating' => null,
-            'category_distribution' => []
+            'station' => [
+                'stop_id' => $station['stop_id'],
+                'stop_name' => $station['name'],
+                'lat' => $stationLat,
+                'lng' => $stationLng
+            ],
+            'radius' => $radius,
+            'bus_stops' => [],
+            'total_bus_stops' => 0,
+            'unique_bus_services' => 0
         ];
     }
+
+    // Get all stop codes for batch query
+    $stopCodes = array_column($busStops, 'BUS_STOP');
+    $placeholders = str_repeat('?,', count($stopCodes) - 1) . '?';
+
+    // OPTIMIZED: Get all services for all stops in ONE query instead of N queries
+    // No JOINs needed - just get unique service numbers per stop
+    $stmt = $pdo->prepare("
+        SELECT DISTINCT
+            r.BusStopCode,
+            r.ServiceNo
+        FROM Routes r
+        WHERE r.BusStopCode IN ($placeholders)
+        ORDER BY r.BusStopCode, r.ServiceNo
+    ");
+    $stmt->execute($stopCodes);
+    $allServices = $stmt->fetchAll();
+
+    // Group services by bus stop
+    $servicesByStop = [];
+    foreach ($allServices as $service) {
+        $stopCode = $service['BusStopCode'];
+        if (!isset($servicesByStop[$stopCode])) {
+            $servicesByStop[$stopCode] = [];
+        }
+        $servicesByStop[$stopCode][] = [
+            'service_no' => $service['ServiceNo']
+        ];
+    }
+
+    // Build final result with services
+    $busStopsWithinRadius = [];
+    $allBusServices = [];
+
+    foreach ($busStops as $stop) {
+        $stopCode = $stop['BUS_STOP'];
+        $services = $servicesByStop[$stopCode] ?? [];
+
+        // Track unique services
+        foreach ($services as $service) {
+            if (!in_array($service['service_no'], $allBusServices)) {
+                $allBusServices[] = $service['service_no'];
+            }
+        }
+
+        $busStopsWithinRadius[] = [
+            'stop_code' => $stopCode,
+            'stop_name' => $stop['LOC_DESC'],
+            'lat' => (float)$stop['Latitude'],
+            'lng' => (float)$stop['Longitude'],
+            'distance' => round($stop['distance']),
+            'services' => $services
+        ];
+    }
+
+    return [
+        'station' => [
+            'stop_id' => $station['stop_id'],
+            'stop_name' => $station['name'],
+            'lat' => $stationLat,
+            'lng' => $stationLng
+        ],
+        'radius' => $radius,
+        'bus_stops' => $busStopsWithinRadius,
+        'total_bus_stops' => count($busStopsWithinRadius),
+        'unique_bus_services' => count($allBusServices)
+    ];
 }
 ?>
