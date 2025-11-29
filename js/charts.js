@@ -57,7 +57,7 @@ const Charts = {
                 const selectedMode = modeSelector.value;
 
                 // Fetch data based on selected mode
-                const data = await API.getRidershipTrends({ mode: selectedMode });
+                const data = await API.getRidershipTrends(selectedMode);
                 this.renderStackedAreaChart(data, selectedYear, selectedMode);
 
                 // Update legend visibility based on mode selection
@@ -153,6 +153,11 @@ const Charts = {
         svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
         svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
 
+        // Create tooltip
+        const tooltip = document.createElement('div');
+        tooltip.className = 'chart-tooltip';
+        container.appendChild(tooltip);
+
         // Calculate stacked values
         const stackedData = [];
         for (let month = 1; month <= 12; month++) {
@@ -168,16 +173,22 @@ const Charts = {
             });
         }
 
-        // Get max value for scale
-        let maxValue;
+        // Get max value for scale and min value (for zooming into variance)
+        let maxValue, minValue;
         if (selectedMode === 'all') {
             maxValue = Math.max(...stackedData.map(d => d.Bus_end));
+            minValue = 0;
         } else {
-            // For single mode, just get the max value of that mode
-            maxValue = Math.max(...stackedData.map(d => monthlyData[d.month][selectedMode]));
+            // For single mode, zoom into the data range for better variance visibility
+            const rawMax = Math.max(...stackedData.map(d => monthlyData[d.month][selectedMode]));
+            const rawMin = Math.min(...stackedData.map(d => monthlyData[d.month][selectedMode]));
+            // Calculate range and add padding above and below
+            const range = rawMax - rawMin;
+            maxValue = rawMax + (range * 0.3);
+            minValue = Math.max(0, rawMin - (range * 0.2)); // Don't go below 0
         }
 
-        const yScale = (value) => chartHeight - (value / maxValue * chartHeight);
+        const yScale = (value) => chartHeight - ((value - minValue) / (maxValue - minValue) * chartHeight);
         const xScale = (month) => ((month - 1) / 11) * chartWidth;
 
         // Create main group
@@ -195,8 +206,8 @@ const Charts = {
             line.setAttribute('y2', y);
             g.appendChild(line);
 
-            // Y-axis label
-            const value = maxValue * (1 - i / 4);
+            // Y-axis label (account for minValue offset)
+            const value = minValue + (maxValue - minValue) * (1 - i / 4);
             const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttribute('class', 'chart-axis-text');
             text.setAttribute('x', -10);
@@ -223,6 +234,61 @@ const Charts = {
                 path.setAttribute('fill', mode.color);
                 g.appendChild(path);
             });
+
+            // Add dots at the top of the entire stack (Bus_end)
+            stackedData.forEach(d => {
+                const cx = xScale(d.month);
+                const cy = yScale(d.Bus_end);
+                const totalPassengers = d.Bus_end;
+
+                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                circle.setAttribute('cx', cx);
+                circle.setAttribute('cy', cy);
+                circle.setAttribute('r', 4);
+                circle.setAttribute('fill', '#1ae83945');
+                circle.setAttribute('cursor', 'pointer');
+
+                // Tooltip events
+                circle.addEventListener('mouseenter', (e) => {
+                    const svgRect = svg.getBoundingClientRect();
+                    const circleX = svgRect.left + margin.left + cx;
+                    const circleY = svgRect.top + margin.top + cy;
+
+                    tooltip.innerHTML = `<strong>${this.monthNames[d.month - 1]} ${year}</strong><br>Total: ${(totalPassengers / 1000000).toFixed(2)}M passengers`;
+                    tooltip.classList.add('show');
+
+                    // Get tooltip dimensions after showing
+                    const tooltipRect = tooltip.getBoundingClientRect();
+                    const windowWidth = window.innerWidth;
+
+                    // Smart positioning: default to right, flip to left if too close to edge
+                    let tooltipX, tooltipY;
+                    const offsetX = 10;
+
+                    // Check if tooltip would go off-screen on the right
+                    if (circleX + offsetX + tooltipRect.width > windowWidth - 20) {
+                        // Position to the left of the dot
+                        tooltipX = circleX - tooltipRect.width - offsetX;
+                    } else {
+                        // Position to the right of the dot
+                        tooltipX = circleX + offsetX;
+                    }
+
+                    // Vertically center the tooltip with the dot
+                    tooltipY = circleY - (tooltipRect.height / 2);
+
+                    tooltip.style.left = tooltipX + 'px';
+                    tooltip.style.top = tooltipY + 'px';
+                    circle.setAttribute('r', 6);
+                });
+
+                circle.addEventListener('mouseleave', () => {
+                    tooltip.classList.remove('show');
+                    circle.setAttribute('r', 4);
+                });
+
+                g.appendChild(circle);
+            });
         } else {
             // Draw single area for selected mode
             const singleModeData = stackedData.map(d => ({
@@ -236,6 +302,60 @@ const Charts = {
             path.setAttribute('d', pathData);
             path.setAttribute('fill', this.colors[selectedMode]);
             g.appendChild(path);
+
+            // Add dots at each data point for better visibility
+            singleModeData.forEach(d => {
+                const cx = xScale(d.month);
+                const cy = yScale(d.value);
+
+                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                circle.setAttribute('cx', cx);
+                circle.setAttribute('cy', cy);
+                circle.setAttribute('r', 4);
+                circle.setAttribute('fill', this.colors[selectedMode]);
+                circle.setAttribute('cursor', 'pointer');
+
+                // Tooltip events
+                circle.addEventListener('mouseenter', (e) => {
+                    const svgRect = svg.getBoundingClientRect();
+                    const circleX = svgRect.left + margin.left + cx;
+                    const circleY = svgRect.top + margin.top + cy;
+
+                    tooltip.innerHTML = `<strong>${this.monthNames[d.month - 1]} ${year}</strong><br>${selectedMode}: ${(d.value / 1000000).toFixed(2)}M passengers`;
+                    tooltip.classList.add('show');
+
+                    // Get tooltip dimensions after showing
+                    const tooltipRect = tooltip.getBoundingClientRect();
+                    const windowWidth = window.innerWidth;
+
+                    // Smart positioning: default to right, flip to left if too close to edge
+                    let tooltipX, tooltipY;
+                    const offsetX = 10;
+
+                    // Check if tooltip would go off-screen on the right
+                    if (circleX + offsetX + tooltipRect.width > windowWidth - 20) {
+                        // Position to the left of the dot
+                        tooltipX = circleX - tooltipRect.width - offsetX;
+                    } else {
+                        // Position to the right of the dot
+                        tooltipX = circleX + offsetX;
+                    }
+
+                    // Vertically center the tooltip with the dot
+                    tooltipY = circleY - (tooltipRect.height / 2);
+
+                    tooltip.style.left = tooltipX + 'px';
+                    tooltip.style.top = tooltipY + 'px';
+                    circle.setAttribute('r', 6);
+                });
+
+                circle.addEventListener('mouseleave', () => {
+                    tooltip.classList.remove('show');
+                    circle.setAttribute('r', 4);
+                });
+
+                g.appendChild(circle);
+            });
         }
 
         // X-axis labels
