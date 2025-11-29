@@ -20,7 +20,7 @@ By following this user manual, readers shall be able to run the application on b
   
   Connection Method: Standard TCP/IP over SSH
   
-  SSH Hostname: 35.212.180.159
+  SSH Hostname: 104.198.169.207
   
   SSH username: inf2003-dev
   
@@ -40,7 +40,7 @@ By following this user manual, readers shall be able to run the application on b
   
   Selecting the option will open up a sftp.json file 
   
-  Edit the values of "host","username" and "remotePath" to "35.212.180.159", "inf2003-dev" and     "/var/www/html" respectively
+  Edit the values of "host","username" and "remotePath" to "104.198.169.207", "inf2003-dev" and     "/var/www/html" respectively
   
   After "openSsh", add two more variables, "interactiveAuth" and "ignore" with the values as "true" and " [".vscode",".git",".DS_Store"]" respectively
   
