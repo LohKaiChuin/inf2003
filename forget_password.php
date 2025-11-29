@@ -83,6 +83,60 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $error = "A system error occurred. Please try again later.";
             }
         }
+    } elseif ($action === 'resend_code') {
+        // Resend verification code
+        $email = $_SESSION['reset_email'] ?? '';
+
+        if (empty($email)) {
+            $error = 'Session expired. Please start over.';
+            $step = 'email';
+        } else {
+            try {
+                $conn = new mysqli($db_host, $db_user, $db_pass, $db_name, $db_port);
+
+                if ($conn->connect_error) {
+                    throw new Exception("Connection failed: " . $conn->connect_error);
+                }
+
+                // Check if email exists
+                $stmt = $conn->prepare("SELECT id, username FROM users WHERE email = ?");
+                $stmt->bind_param("s", $email);
+                $stmt->execute();
+                $result = $stmt->get_result();
+
+                if ($result->num_rows === 1) {
+                    $user = $result->fetch_assoc();
+
+                    // Generate a new 6-digit verification code
+                    $resetCode = sprintf("%06d", mt_rand(1, 999999));
+                    $resetExpiry = date('Y-m-d H:i:s', strtotime('+15 minutes'));
+
+                    // Update reset code in session
+                    $_SESSION['reset_code'] = $resetCode;
+                    $_SESSION['reset_expiry'] = $resetExpiry;
+                    $_SESSION['reset_user_id'] = $user['id'];
+
+                    $step = 'verify';
+                    $success = "A new verification code has been generated. (In production, this would be sent to your email)";
+
+                    // For demonstration purposes, show the code
+                    $success .= " <br><strong>Your new verification code is: " . $resetCode . "</strong>";
+
+                } else {
+                    // For security, don't reveal if email doesn't exist
+                    $step = 'verify';
+                    $success = "If an account with this email exists, a new verification code has been sent.";
+                }
+
+                $stmt->close();
+                $conn->close();
+
+            } catch (Exception $e) {
+                error_log("Database error: " . $e->getMessage());
+                $error = "A system error occurred. Please try again later.";
+                $step = 'verify';
+            }
+        }
     } elseif ($action === 'verify_code') {
         // Step 2: Verify the reset code
         $email = $_SESSION['reset_email'] ?? '';
@@ -96,8 +150,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $step = 'email';
         } elseif (strtotime($_SESSION['reset_expiry']) < time()) {
             $error = 'Verification code has expired. Please request a new one.';
-            $step = 'email';
-            unset($_SESSION['reset_code'], $_SESSION['reset_expiry'], $_SESSION['reset_email']);
+            $step = 'verify';
         } elseif ($code !== $_SESSION['reset_code']) {
             $error = 'Invalid verification code';
             $step = 'verify';
@@ -192,19 +245,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
-            min-height: 100%;
-            height: 100%;
+            background-attachment: fixed;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            overflow-x: hidden;
-            overflow-y: auto;
+            padding: 40px 20px;
         }
 
         @keyframes gradientBG {
@@ -508,6 +553,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .login-link {
             text-align: center;
             margin-top: 25px;
+            margin-bottom: 20px;
             font-size: 14px;
             color: #64748b;
             font-weight: 500;
@@ -532,6 +578,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         .login-link a:hover::after {
+            width: 100%;
+        }
+
+        .resend-link {
+            text-align: center;
+            margin-top: 15px;
+            padding: 0 35px;
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .resend-btn {
+            background: none;
+            border: none;
+            color: #667eea;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            padding: 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .resend-btn:hover {
+            color: #764ba2;
+        }
+
+        .resend-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .resend-btn:hover::after {
             width: 100%;
         }
 
@@ -723,11 +811,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }, 5000);
                 </script>
             <?php endif; ?>
+        </form>
 
-            <div class="login-link">
+        <?php if ($step !== 'success'): ?>
+            <div class="login-link" style="padding: 0 35px;">
                 Remember your password? <a href="login.php">Back to Login</a>
             </div>
+        <?php endif; ?>
+
+        <?php if ($step === 'verify'): ?>
+        <form method="POST" action="forget_password.php" style="margin-bottom: 20px;">
+            <input type="hidden" name="action" value="resend_code">
+            <div class="resend-link">
+                Didn't receive the code?
+                <button type="submit" class="resend-btn">Resend Code</button>
+            </div>
         </form>
+        <?php endif; ?>
     </div>
 
     <script>

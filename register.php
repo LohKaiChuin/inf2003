@@ -149,19 +149,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
-            min-height: 100%;
-            height: 100%;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
             overflow-x: hidden;
-            overflow-y: auto;
         }
 
         @keyframes gradientBG {
