@@ -272,7 +272,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         .register-form {
-            padding: 25px 35px 30px 35px;
+            padding: 25px 35px 40px 35px;
         }
 
         .form-group {
