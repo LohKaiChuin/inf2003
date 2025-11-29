@@ -11,50 +11,64 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['role'])) {
     exit();
 }
 
+// Database connection
+$db_host = '127.0.0.1';
+$db_port = 3306;
+$db_user = 'inf2003-sqldev';
+$db_pass = 'Inf2003#DevSecure!2025';
+$db_name = 'yourtrip_db';
+
 // Handle login POST request
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
     $password = $_POST['password'] ?? '';
     $rememberMe = isset($_POST['rememberMe']);
 
-    // Mock user database (In production, this would query a real database)
-    $mockUsers = [
-        'user' => [
-            ['username' => 'user1', 'email' => 'user1@email.com', 'password' => 'User123!'],
-            ['username' => 'testuser', 'email' => 'test@email.com', 'password' => 'Test123!']
-        ],
-        'admin' => [
-            ['username' => 'admin', 'email' => 'admin@yourtrip.com', 'password' => 'Admin123!'],
-            ['username' => 'superadmin', 'email' => 'superadmin@yourtrip.com', 'password' => 'Super123!']
-        ]
-    ];
-
     $user = null;
     $role = null;
 
-    // Check admin credentials first
-    foreach ($mockUsers['admin'] as $u) {
-        if (($u['username'] === $username || $u['email'] === $username) && $u['password'] === $password) {
-            $user = $u;
-            $role = 'admin';
-            break;
-        }
-    }
+    try {
+        // Create database connection
+        $conn = new mysqli($db_host, $db_user, $db_pass, $db_name, $db_port);
 
-    // Check user credentials if not admin
-    if (!$user) {
-        foreach ($mockUsers['user'] as $u) {
-            if (($u['username'] === $username || $u['email'] === $username) && $u['password'] === $password) {
-                $user = $u;
-                $role = 'user';
-                break;
+        // Check connection
+        if ($conn->connect_error) {
+            throw new Exception("Connection failed: " . $conn->connect_error);
+        }
+
+        // Prepare statement to prevent SQL injection
+        // Assuming you have a 'users' table with columns: id, username, email, password, role
+        $stmt = $conn->prepare("SELECT id, username, email, password, role FROM users WHERE username = ? OR email = ?");
+        $stmt->bind_param("ss", $username, $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows === 1) {
+            $userData = $result->fetch_assoc();
+
+            // Verify password (assuming passwords are hashed in database)
+            // If passwords are stored in plain text (NOT RECOMMENDED), use: $userData['password'] === $password
+            if (password_verify($password, $userData['password'])) {
+                $user = [
+                    'id' => $userData['id'],
+                    'username' => $userData['username'],
+                    'email' => $userData['email']
+                ];
+                $role = $userData['role'];
             }
         }
+
+        $stmt->close();
+        $conn->close();
+
+    } catch (Exception $e) {
+        error_log("Database error: " . $e->getMessage());
+        $error = "A system error occurred. Please try again later.";
     }
 
     if ($user) {
         // Successful login - Set session variables
-        $_SESSION['user_id'] = $user['username']; // In production, use actual user ID from database
+        $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
         $_SESSION['email'] = $user['email'];
         $_SESSION['role'] = $role;
