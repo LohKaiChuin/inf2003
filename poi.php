@@ -14,6 +14,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/poi.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/predictive.css">
 </head>
 <body>
     <!-- Header -->
@@ -24,7 +26,6 @@
                     <h1 class="dashboard-title">POI Recommendations</h1>
                     <p class="dashboard-subtitle">Points of Interest Near Transport Hubs</p>
                 </div>
-                <?php include "inc/navbar.inc.php" ?>
             </div>
         </div>
     </header>
@@ -155,5 +156,6 @@
     <!-- Custom JS -->
     <script src="js/api.js"></script>
     <script src="js/poi.js"></script>
+    <script src="js/navigation.js"></script>
 </body>
 </html>
