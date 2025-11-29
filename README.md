@@ -10,9 +10,9 @@ By following this user manual, readers shall be able to run the application on b
   Visual Studio Code with SFTP extension (by Natizyskunk) installed
   Any web browser with stable internet connection
 
-Environment Setup:
+2. Environment Setup:
 
-  MySQL Database Connection:
+  2.1 MySQL Database Connection:
     Connection Method: Standard TCP/IP over SSH
     SSH Hostname: 35.212.180.159
     SSH username: inf2003-dev
@@ -20,7 +20,7 @@ Environment Setup:
     MySQL Server Port: 3306
     Username: inf2003-sqldev
 
-  Visual Studio Code connection to LAMP server via SFTP
+  2.2 Visual Studio Code connection to LAMP server via SFTP
     Open and Select a new Folder to store the pages
     Within Visual Studio Code, Press CTRL + Shift + P to enable the search bar with a >
     Type and look for > SFTP: Config
