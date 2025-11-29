@@ -1,6 +1,7 @@
 <nav>
     <a href="logout.php" class="btn btn-outline-primary">Logout</a>
     <a href="poi.php" class="btn btn-outline-primary">POI</a>
+    <a href="manage_users.php" class="btn btn-outline-primary">Manage Users</a>
 
     <a href="index.php" class="btn btn-outline-primary">
     <svg width="16" height="16" fill="currentColor" class="me-2" viewBox="0 0 16 16">

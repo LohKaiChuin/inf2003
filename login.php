@@ -36,18 +36,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         // Create database connection
         $pdo = getDBConnection();
-        $conn = $pdo; // for compatibility with existing code if needed, but better to switch to PDO methods
 
         // Prepare statement to prevent SQL injection
         // Assuming you have a 'users' table with columns: id, username, email, password, role
-        $stmt = $conn->prepare("SELECT id, username, email, password, role FROM users WHERE username = ? OR email = ?");
-        $stmt->bind_param("ss", $username, $username);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        $stmt = $pdo->prepare("SELECT id, username, email, password, role FROM users WHERE username = ? OR email = ?");
+        $stmt->execute([$username, $username]);
+        $userData = $stmt->fetch();
 
-        if ($result->num_rows === 1) {
-            $userData = $result->fetch_assoc();
-
+        if ($userData) {
             // Verify password (assuming passwords are hashed in database)
             // If passwords are stored in plain text (NOT RECOMMENDED), use: $userData['password'] === $password
             if (password_verify($password, $userData['password'])) {
@@ -59,8 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $role = $userData['role'];
             }
         }
-
-        $stmt->close();
 
     } catch (Exception $e) {
         error_log("Database error: " . $e->getMessage());
