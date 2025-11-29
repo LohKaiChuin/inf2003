@@ -520,7 +520,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p>Transport Management Platform</p>
         </div>
 
-        <form class="login-form" method="POST" action="login.php">
+        <form class="login-form" method="POST" action="index.php">
             <?php if ($registrationSuccess): ?>
                 <div class="success-message">
                     Account created successfully! Please login with your credentials.
