@@ -10,17 +10,40 @@ let stopNameCache = {};
 
 // API Configuration
 const MULTILINGUAL_API = {
-    baseUrl: 'http://104.198.169.207:5001/api',
+    baseUrl: 'multilingual_api.php',  // PHP API endpoint (same server)
+    timeout: 5000, // 5 second timeout
+
+    /**
+     * Fetch with timeout
+     */
+    async fetchWithTimeout(url, options = {}) {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), this.timeout);
+
+        try {
+            const response = await fetch(url, {
+                ...options,
+                signal: controller.signal
+            });
+            clearTimeout(timeoutId);
+            return response;
+        } catch (error) {
+            clearTimeout(timeoutId);
+            if (error.name === 'AbortError') {
+                throw new Error('Request timeout - API not responding');
+            }
+            throw error;
+        }
+    },
 
     /**
      * Get all stops with selected language
      */
     async getStops(stopType = null, lang = currentLanguage) {
-        const params = new URLSearchParams();
+        const params = new URLSearchParams({ action: 'get_stops', lang });
         if (stopType) params.append('stop_type', stopType);
-        params.append('lang', lang);
 
-        const response = await fetch(`${this.baseUrl}/stops?${params}`);
+        const response = await this.fetchWithTimeout(`${this.baseUrl}?${params}`);
         if (!response.ok) throw new Error('Failed to fetch stops');
         return await response.json();
     },
@@ -29,7 +52,8 @@ const MULTILINGUAL_API = {
      * Get single stop by ID
      */
     async getStop(stopId, lang = currentLanguage) {
-        const response = await fetch(`${this.baseUrl}/stops/${stopId}?lang=${lang}`);
+        const params = new URLSearchParams({ action: 'get_stop', stop_id: stopId, lang });
+        const response = await this.fetchWithTimeout(`${this.baseUrl}?${params}`);
         if (!response.ok) throw new Error('Stop not found');
         return await response.json();
     },
@@ -38,8 +62,8 @@ const MULTILINGUAL_API = {
      * Search stops across all languages
      */
     async searchStops(query, lang = currentLanguage) {
-        const params = new URLSearchParams({ q: query, lang });
-        const response = await fetch(`${this.baseUrl}/stops/search?${params}`);
+        const params = new URLSearchParams({ action: 'search', q: query, lang });
+        const response = await this.fetchWithTimeout(`${this.baseUrl}?${params}`);
         if (!response.ok) throw new Error('Search failed');
         return await response.json();
     },
@@ -48,7 +72,8 @@ const MULTILINGUAL_API = {
      * Get supported languages
      */
     async getLanguages() {
-        const response = await fetch(`${this.baseUrl}/languages`);
+        const params = new URLSearchParams({ action: 'languages' });
+        const response = await this.fetchWithTimeout(`${this.baseUrl}?${params}`);
         if (!response.ok) throw new Error('Failed to fetch languages');
         return await response.json();
     }

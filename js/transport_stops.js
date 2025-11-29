@@ -65,7 +65,7 @@ async function loadTransportStops(stopType) {
         filteredStops = [...allStops];
         currentStopType = stopType;
 
-        console.log(`Loaded ${allStops.length} ${stopType} stops`);
+        console.log(`Loaded ${allStops.length} ${stopType} stops from API`);
 
         // Update metrics
         updateMetrics();
@@ -76,7 +76,11 @@ async function loadTransportStops(stopType) {
 
     } catch (error) {
         console.error('Error loading transport stops:', error);
-        showError('Failed to load transport stops. Please try again.');
+        console.error('Error details:', error.message);
+
+        // Show error without mock data fallback
+        showError(`Failed to load ${stopType} stops from API. Error: ${error.message}`);
+        throw error;
     }
 }
 
@@ -258,11 +262,20 @@ async function loadBothTypes() {
         filteredStops = [...allStops];
         currentStopType = 'all';
 
-        console.log(`Loaded ${mrtStops.length} MRT + ${busStops.length} bus stops`);
+        console.log(`Loaded ${mrtStops.length} MRT + ${busStops.length} bus stops from API`);
 
         // Update metrics
         document.getElementById('metric-mrt-count').textContent = mrtStops.length.toLocaleString();
         document.getElementById('metric-bus-count').textContent = busStops.length.toLocaleString();
+
+        // Update language metric
+        const langNames = {
+            'en': 'English',
+            'zh': '中文',
+            'ta': 'தமிழ்',
+            'ms': 'Bahasa'
+        };
+        document.getElementById('metric-current-lang').textContent = langNames[currentLanguage] || 'English';
 
         // Update map and list
         updateMapMarkers();
@@ -270,7 +283,11 @@ async function loadBothTypes() {
 
     } catch (error) {
         console.error('Error loading both types:', error);
-        showError('Failed to load transport stops. Please try again.');
+        console.error('Error details:', error.message);
+
+        // Show error without mock data fallback
+        showError(`Failed to load transport stops from API. Error: ${error.message}`);
+        throw error;
     }
 }
 
@@ -304,12 +321,46 @@ function showError(message) {
     tbody.innerHTML = `
         <tr>
             <td colspan="4" class="text-center py-5">
-                <div class="alert alert-warning mb-0">
+                <div class="alert alert-danger mb-0">
                     <h5 class="alert-heading">Error</h5>
-                    <p>${message}</p>
+                    <p class="mb-0">${message}</p>
                 </div>
             </td>
         </tr>
+    `;
+}
+
+/**
+ * Show warning message banner
+ */
+function showWarning(message) {
+    // Check if warning banner already exists
+    let warningBanner = document.getElementById('api-warning-banner');
+
+    if (!warningBanner) {
+        // Create warning banner
+        warningBanner = document.createElement('div');
+        warningBanner.id = 'api-warning-banner';
+        warningBanner.className = 'alert alert-warning alert-dismissible fade show';
+        warningBanner.style.cssText = 'margin: 1rem 0; border-radius: 8px;';
+
+        // Insert at the top of main content
+        const mainContent = document.querySelector('main.container');
+        if (mainContent && mainContent.firstChild) {
+            mainContent.insertBefore(warningBanner, mainContent.firstChild);
+        }
+    }
+
+    warningBanner.innerHTML = `
+        <div class="d-flex align-items-center">
+            <svg width="20" height="20" fill="currentColor" class="me-2" viewBox="0 0 16 16">
+                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+            <div class="flex-grow-1">
+                <strong>Warning:</strong> ${message}
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     `;
 }
 
@@ -319,6 +370,16 @@ function showError(message) {
 async function reloadTransportData(language) {
     console.log('Reloading transport data for language:', language);
 
+    // Update language metric IMMEDIATELY when language changes
+    const langNames = {
+        'en': 'English',
+        'zh': '中文',
+        'ta': 'தமிழ்',
+        'ms': 'Bahasa'
+    };
+    document.getElementById('metric-current-lang').textContent = langNames[language] || 'English';
+
+    // Then reload the data
     const stopTypeFilter = document.getElementById('stop-type-filter');
     const selectedType = stopTypeFilter.value;
 
@@ -327,15 +388,6 @@ async function reloadTransportData(language) {
     } else {
         await loadTransportStops(selectedType);
     }
-
-    // Update language metric
-    const langNames = {
-        'en': 'English',
-        'zh': '中文',
-        'ta': 'தமிழ்',
-        'ms': 'Bahasa'
-    };
-    document.getElementById('metric-current-lang').textContent = langNames[language] || 'English';
 }
 
 // Export for use by multilingual.js
