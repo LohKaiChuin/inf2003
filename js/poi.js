@@ -7,8 +7,6 @@
 let allPOIs = [];
 let filteredPOIs = [];
 let poiMap = null;
-let currentPage = 1;
-const itemsPerPage = 9; // Show 9 POIs per page
 let markersLayer = null;
 
 /**
@@ -94,19 +92,27 @@ function initMap() {
  * Update map markers based on filtered POIs
  */
 function updateMapMarkers() {
-    if (!markersLayer) return;
+    console.log('updateMapMarkers called with', filteredPOIs.length, 'POIs');
+
+    if (!markersLayer) {
+        console.error('markersLayer is not initialized');
+        return;
+    }
 
     // Clear existing markers
     markersLayer.clearLayers();
+    console.log('Cleared existing markers');
 
     // Add markers for filtered POIs
-    filteredPOIs.forEach((poi, index) => {
+    let markersAdded = 0;
+    filteredPOIs.forEach((poi) => {
         if (poi.latitude && poi.longitude) {
             const marker = L.marker([poi.latitude, poi.longitude], {
                 icon: getMarkerIcon(poi.category)
             });
 
             // Create popup content
+            const displayHub = poi.translatedHub || poi.nearest_hub;
             const popupContent = `
                 <div style="min-width: 200px;">
                     <h6 style="margin: 0 0 8px 0; color: #1a73e8;">${poi.name}</h6>
@@ -124,9 +130,9 @@ function updateMapMarkers() {
                                 <strong>Distance:</strong> ${poi.distance_to_hub}m to hub
                             </div>
                         ` : ''}
-                        ${poi.nearest_hub ? `
+                        ${displayHub ? `
                             <div>
-                                <strong>Nearest Hub:</strong> ${poi.nearest_hub}
+                                <strong>Nearest Hub:</strong> ${displayHub}
                             </div>
                         ` : ''}
                     </div>
@@ -135,14 +141,27 @@ function updateMapMarkers() {
 
             marker.bindPopup(popupContent);
             marker.addTo(markersLayer);
+            markersAdded++;
         }
     });
 
+    console.log('Added', markersAdded, 'markers to map');
+
     // Fit map to markers if there are any
-    if (filteredPOIs.length > 0 && filteredPOIs.some(poi => poi.latitude && poi.longitude)) {
-        const bounds = markersLayer.getBounds();
-        if (bounds.isValid()) {
+    if (markersAdded > 0) {
+        // Calculate bounds manually from filtered POIs
+        const validPOIs = filteredPOIs.filter(poi => poi.latitude && poi.longitude);
+        if (validPOIs.length > 0) {
+            const lats = validPOIs.map(poi => poi.latitude);
+            const lngs = validPOIs.map(poi => poi.longitude);
+
+            const bounds = L.latLngBounds(
+                [Math.min(...lats), Math.min(...lngs)],
+                [Math.max(...lats), Math.max(...lngs)]
+            );
+
             poiMap.fitBounds(bounds, { padding: [50, 50] });
+            console.log('Map bounds fitted to', validPOIs.length, 'markers');
         }
     }
 }
@@ -205,29 +224,50 @@ function initFilters() {
 /**
  * Apply all filters to POI list
  */
-function applyFilters() {
-    // Reset to the first page whenever filters change
-    currentPage = 1;
-
+async function applyFilters() {
     const category = document.getElementById('category-filter').value;
     const maxDistance = document.getElementById('distance-filter').value;
     const searchTerm = document.getElementById('search-input').value.toLowerCase();
 
-    filteredPOIs = allPOIs.filter(poi => {
-        // Category filter
-        if (category && poi.category !== category) return false;
+    console.log('Applying filters:', { category, maxDistance, searchTerm });
 
-        // Distance filter
-        if (maxDistance && poi.distance_to_hub > parseInt(maxDistance)) return false;
-
-        // Search filter
-        if (searchTerm) {
-            const searchable = `${poi.name} ${poi.category} ${poi.location || ''} ${poi.nearest_hub || ''}`.toLowerCase();
-            if (!searchable.includes(searchTerm)) return false;
+    // If category filter is used, fetch from API
+    if (category) {
+        try {
+            console.log('Fetching POIs for category:', category);
+            const categoryData = await API.getPOIsByCategory(category);
+            console.log('Received POIs:', categoryData.length);
+            filteredPOIs = categoryData;
+        } catch (error) {
+            console.error('Error fetching POIs by category:', error);
+            // Fallback to client-side filtering
+            filteredPOIs = allPOIs.filter(poi => poi.category === category);
         }
+    } else {
+        // No category filter, use all POIs
+        filteredPOIs = [...allPOIs];
+    }
 
-        return true;
-    });
+    // Apply distance filter (client-side)
+    if (maxDistance) {
+        const beforeDistance = filteredPOIs.length;
+        filteredPOIs = filteredPOIs.filter(poi =>
+            poi.distance_to_hub && poi.distance_to_hub <= parseInt(maxDistance)
+        );
+        console.log(`Distance filter: ${beforeDistance} -> ${filteredPOIs.length} POIs`);
+    }
+
+    // Apply search filter (client-side)
+    if (searchTerm) {
+        const beforeSearch = filteredPOIs.length;
+        filteredPOIs = filteredPOIs.filter(poi => {
+            const searchable = `${poi.name} ${poi.category} ${poi.location || ''} ${poi.nearest_hub || ''}`.toLowerCase();
+            return searchable.includes(searchTerm);
+        });
+        console.log(`Search filter: ${beforeSearch} -> ${filteredPOIs.length} POIs`);
+    }
+
+    console.log('Final filtered POIs:', filteredPOIs.length);
 
     // Update UI
     renderPOIList();
@@ -239,16 +279,6 @@ function applyFilters() {
  */
 function renderPOIList() {
     const container = document.getElementById('poi-results');
-    const paginationContainer = document.getElementById('poi-pagination');
-
-    // Clear previous content
-    container.innerHTML = '';
-    paginationContainer.innerHTML = '';
-
-    // Calculate which POIs to display for the current page
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const poisForPage = filteredPOIs.slice(startIndex, endIndex);
 
     if (filteredPOIs.length === 0) {
         container.innerHTML = `
@@ -266,25 +296,23 @@ function renderPOIList() {
     const viewMode = document.getElementById('view-grid').classList.contains('active') ? 'grid' : 'list';
 
     if (viewMode === 'grid') {
-        container.innerHTML = poisForPage.map(poi => createPOICard(poi)).join('');
+        container.innerHTML = filteredPOIs.map(poi => createPOICard(poi)).join('');
     } else {
         container.innerHTML = `
             <div class="col-12">
                 <div class="list-group">
-                    ${poisForPage.map(poi => createPOIListItem(poi)).join('')}
+                    ${filteredPOIs.map(poi => createPOIListItem(poi)).join('')}
                 </div>
             </div>
         `;
     }
-
-    // Render pagination controls
-    renderPagination();
 }
 
 /**
  * Create POI card (grid view)
  */
 function createPOICard(poi) {
+    const displayHub = poi.translatedHub || poi.nearest_hub || 'transport hub';
     return `
         <div class="col-md-6 col-lg-4">
             <div class="card h-100 poi-card">
@@ -303,7 +331,7 @@ function createPOICard(poi) {
                                 <svg width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                                 </svg>
-                                ${poi.distance_to_hub}m from ${poi.nearest_hub || 'transport hub'}
+                                ${poi.distance_to_hub}m from ${displayHub}
                             </small></p>
                         ` : ''}
                     </div>
@@ -317,6 +345,7 @@ function createPOICard(poi) {
  * Create POI list item (list view)
  */
 function createPOIListItem(poi) {
+    const displayHub = poi.translatedHub || poi.nearest_hub || 'transport hub';
     return `
         <div class="list-group-item">
             <div class="d-flex w-100 justify-content-between align-items-center">
@@ -324,7 +353,7 @@ function createPOIListItem(poi) {
                     <h6 class="mb-1">${poi.name}</h6>
                     <p class="mb-1 text-muted"><small>${poi.category}</small></p>
                     ${poi.distance_to_hub ? `
-                        <small class="text-muted">${poi.distance_to_hub}m from ${poi.nearest_hub || 'transport hub'}</small>
+                        <small class="text-muted">${poi.distance_to_hub}m from ${displayHub}</small>
                     ` : ''}
                 </div>
                 ${poi.rating ? `<span class="badge bg-warning text-dark">${poi.rating} ★</span>` : ''}
@@ -332,67 +361,6 @@ function createPOIListItem(poi) {
         </div>
     `;
 }
-
-/**
- * Render pagination controls
- */
-function renderPagination() {
-    const paginationContainer = document.getElementById('poi-pagination');
-    const totalPages = Math.ceil(filteredPOIs.length / itemsPerPage);
-
-    if (totalPages <= 1) {
-        paginationContainer.innerHTML = '';
-        return;
-    }
-
-    let paginationHTML = '<ul class="pagination">';
-
-    // Previous button
-    paginationHTML += `
-        <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
-            <a class="page-link" href="#" data-page="${currentPage - 1}">Previous</a>
-        </li>
-    `;
-
-    // Page numbers
-    for (let i = 1; i <= totalPages; i++) {
-        paginationHTML += `
-            <li class="page-item ${currentPage === i ? 'active' : ''}">
-                <a class="page-link" href="#" data-page="${i}">${i}</a>
-            </li>
-        `;
-    }
-
-    // Next button
-    paginationHTML += `
-        <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
-            <a class="page-link" href="#" data-page="${currentPage + 1}">Next</a>
-        </li>
-    `;
-
-    paginationHTML += '</ul>';
-    paginationContainer.innerHTML = paginationHTML;
-
-    // Add event listeners to pagination links
-    paginationContainer.querySelectorAll('.page-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const page = parseInt(e.target.dataset.page);
-
-            if (page && page !== currentPage) {
-                // Check for valid page range
-                if (page > 0 && page <= totalPages) {
-                    currentPage = page;
-                    renderPOIList();
-
-                    // Scroll to the top of the results list
-                    document.getElementById('poi-list').scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        });
-    });
-}
-
 
 /**
  * Set view mode (grid or list)
@@ -426,6 +394,9 @@ function clearFilters() {
  * Render category distribution chart
  */
 function renderCategoryChart() {
+    const chartContainer = document.getElementById('category-chart');
+    if (!chartContainer) return; // Element doesn't exist on this page
+
     const categoryCounts = {};
     allPOIs.forEach(poi => {
         categoryCounts[poi.category] = (categoryCounts[poi.category] || 0) + 1;
@@ -452,19 +423,20 @@ function renderCategoryChart() {
         `;
     }).join('');
 
-    document.getElementById('category-chart').innerHTML = chartHTML || '<p class="text-muted text-center">No data available</p>';
+    chartContainer.innerHTML = chartHTML || '<p class="text-muted text-center">No data available</p>';
 }
 
 /**
  * Render top rated POIs table
  */
 function renderTopRated() {
+    const tableBody = document.getElementById('top-rated-body');
+    if (!tableBody) return; // Element doesn't exist on this page
+
     const topRated = [...allPOIs]
         .filter(poi => poi.rating)
         .sort((a, b) => b.rating - a.rating)
         .slice(0, 10);
-
-    const tableBody = document.getElementById('top-rated-body');
 
     if (topRated.length === 0) {
         tableBody.innerHTML = `
@@ -477,18 +449,21 @@ function renderTopRated() {
         return;
     }
 
-    tableBody.innerHTML = topRated.map((poi, index) => `
-        <tr>
-            <td>
-                <span class="badge ${index < 3 ? 'bg-warning text-dark' : 'bg-secondary'}">${index + 1}</span>
-            </td>
-            <td><strong>${poi.name}</strong></td>
-            <td>${poi.category}</td>
-            <td>${poi.rating} ★</td>
-            <td>${poi.distance_to_hub ? poi.distance_to_hub + 'm' : '-'}</td>
-            <td>${poi.nearest_hub || '-'}</td>
-        </tr>
-    `).join('');
+    tableBody.innerHTML = topRated.map((poi, index) => {
+        const displayHub = poi.translatedHub || poi.nearest_hub || '-';
+        return `
+            <tr>
+                <td>
+                    <span class="badge ${index < 3 ? 'bg-warning text-dark' : 'bg-secondary'}">${index + 1}</span>
+                </td>
+                <td><strong>${poi.name}</strong></td>
+                <td>${poi.category}</td>
+                <td>${poi.rating} ★</td>
+                <td>${poi.distance_to_hub ? poi.distance_to_hub + 'm' : '-'}</td>
+                <td>${displayHub}</td>
+            </tr>
+        `;
+    }).join('');
 }
 
 /**
@@ -521,6 +496,83 @@ function showNoDataMessage() {
             <p class="text-muted">The POI database is currently being populated. Please check back later.</p>
         </div>
     `;
+}
+
+/**
+ * Update transport stop names (MRT/Bus) with translations
+ * Keep business/POI names in English
+ */
+async function updateTransportStopNames(language) {
+    console.log('Updating transport stop names to language:', language);
+
+    try {
+        // Fetch translated MRT stations from multilingual API
+        const response = await MultilingualAPI.getStops('mrt', language);
+
+        if (!response || !response.stops) {
+            console.warn('No MRT station translations available');
+            return;
+        }
+
+        // Create translation map: English name (uppercase) -> Translated name
+        const translationMap = {};
+        response.stops.forEach(stop => {
+            if (stop.names && stop.names.en) {
+                // Map both with and without "MRT Station" suffix
+                const englishName = stop.names.en.toUpperCase();
+                translationMap[englishName] = stop.name;
+
+                // Also map without "MRT Station" for matching
+                const baseName = englishName.replace(' MRT STATION', '').replace(' MRT', '');
+                translationMap[baseName] = stop.name;
+            }
+        });
+
+        console.log('Translation map created with', Object.keys(translationMap).length, 'entries');
+
+        // Update both allPOIs and filteredPOIs
+        [allPOIs, filteredPOIs].forEach(poiList => {
+            poiList.forEach(poi => {
+                // Check if nearest_hub is a transport stop (contains MRT, LRT, or Bus)
+                if (poi.nearest_hub &&
+                    (poi.nearest_hub.includes('MRT') ||
+                     poi.nearest_hub.includes('LRT') ||
+                     poi.nearest_hub.includes('Bus'))) {
+
+                    const upperHub = poi.nearest_hub.toUpperCase();
+                    const baseHub = upperHub.replace(' MRT STATION', '').replace(' MRT', '');
+
+                    // Try to find translation
+                    const translated = translationMap[upperHub] || translationMap[baseHub];
+
+                    if (translated && translated !== poi.nearest_hub) {
+                        console.log(`Translating: ${poi.nearest_hub} -> ${translated}`);
+                        poi.translatedHub = translated;
+                    } else {
+                        poi.translatedHub = poi.nearest_hub;
+                    }
+                } else {
+                    // Keep non-transport locations in English
+                    poi.translatedHub = poi.nearest_hub;
+                }
+            });
+        });
+
+        // Re-render the UI with updated translations
+        updateMapMarkers();
+        renderPOIList();
+
+        console.log('Transport stop names updated successfully');
+
+    } catch (error) {
+        console.error('Error updating transport stop names:', error);
+        // On error, keep original names
+        [allPOIs, filteredPOIs].forEach(poiList => {
+            poiList.forEach(poi => {
+                poi.translatedHub = poi.nearest_hub;
+            });
+        });
+    }
 }
 
 /**
@@ -559,6 +611,9 @@ function generateMockData() {
 
     return mockPOIs;
 }
+
+// Export updateTransportStopNames for use by multilingual.js
+window.updateTransportStopNames = updateTransportStopNames;
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', initPOIPage);
