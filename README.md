@@ -51,14 +51,6 @@ By following this user manual, readers shall be able to run the application on b
   A prompt to enter the Password should appear
   
   Navigate back to the Explorer tab (CTRL + Shift + E), right click on a blank section, followed by selecting the "Sync Remote -> Local" Option to retrieve the web application files
-    
-
-Instructions:
-
-The Environment Setup and Visual Studio Code Connection grants access to the backend database files as well as the frontend web app page files
-
-To run the application, access the web URI click into the link: http://35.212.180.159/
-
 
 4. Predictive Analytics 
 
@@ -103,3 +95,24 @@ To run the application, access the web URI click into the link: http://35.212.18
     "Connection refused" → Verify SSH tunnel and PHP server are running
     "No training data" → Check database connection
 
+    
+
+5. Instructions:
+
+The Environment Setup and Visual Studio Code Connection grants access to the backend database files as well as the frontend web app page files
+
+To run the application, access the web URI click into the link: http://35.212.180.159/
+
+
+
+User account logins are as follows:
+
+User account
+Username: User1
+Email: User1@email.com
+Password: User123!
+
+Admin Account:
+Username: Admin
+Email: admin@yourtrip.com
+Password: Admin123!
