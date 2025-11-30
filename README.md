@@ -60,3 +60,46 @@ The Environment Setup and Visual Studio Code Connection grants access to the bac
 To run the application, access the web URI click into the link: http://35.212.180.159/
 
 
+4. Predictive Analytics 
+
+  4.1 Prerequisites
+
+    Python 3.8 or later
+    Install required packages:
+    pip install pandas numpy scikit-learn flask flask-cors
+
+  4.2 Setup
+
+    Step 1: Start SSH Tunnel (keep terminal open)
+    ssh -L 33060:127.0.0.1:3306 inf2003-dev@104.198.169.207
+    
+    Step 2: Start PHP API Server (keep terminal open)
+    cd "Database(Predictive analytics)"
+    php -S localhost:8000
+
+  4.3 Train the Model
+
+    In a new terminal:
+    
+    cd "Database(Predictive analytics)"
+    python train_model.py
+    
+    Press Enter when prompted.
+    
+    This will:
+    - Load historical ridership data from MySQL
+    - Train a Random Forest model
+    - Save model to: models/ridership_model.pkl
+
+  4.4 View Predictions
+
+    Navigate to: http://35.212.180.159/predictive.php
+    
+    Select a bus route and date to view hourly ridership forecasts.
+
+  4.5 Troubleshooting
+
+    "Model file not found" → Run train_model.py
+    "Connection refused" → Verify SSH tunnel and PHP server are running
+    "No training data" → Check database connection
+
