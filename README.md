@@ -108,11 +108,17 @@ To run the application, access the web URI click into the link: http://35.212.18
 User account logins are as follows:
 
 User account
+
 Username: User1
+
 Email: User1@email.com
+
 Password: User123!
 
 Admin Account:
+
 Username: Admin
+
 Email: admin@yourtrip.com
+
 Password: Admin123!
